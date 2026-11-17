@@ -149,7 +149,7 @@
     var err = el("div", { class: "err", role: "alert" });
 
     if (p === 1) {
-      mig.appendChild(el("div", { class: "logo", "aria-hidden": "true", text: "CN" }));
+      mig.appendChild(el("img", { class: "logo", src: "icon-192.png", alt: "Club Natació Navàs" }));
       mig.appendChild(el("h1", { class: "gran", text: t("benvinguda") }));
       mig.appendChild(el("p", { text: t("lema") }));
       mig.appendChild(el("div", { class: "dos", role: "group", "aria-label": "Idioma" }, [
@@ -261,7 +261,7 @@
     var bt = el("button", { type: "submit", class: "btn", text: t("entrar") });
     var form = el("form", { class: "pant", novalidate: true }, [
       el("div", { class: "mig" }, [
-        el("div", { class: "logo", "aria-hidden": "true", text: "CN" }),
+        el("img", { class: "logo", src: "icon-192.png", alt: "Club Natació Navàs" }),
         el("h1", { text: t("entrarTit") }),
         el("label", { for: "usu", text: t("usuari") }), inU,
         el("label", { for: "pw", text: t("contrasenya") }), inP,
