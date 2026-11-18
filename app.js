@@ -31,8 +31,9 @@
       entrarTit: "Entrar", entrar: "Entrar", oblidat: "Si has oblidat la contrasenya, demana al club que et desbloquegi o et faci un codi nou.",
       hola: "Hola", avui: "Avui", setmana: "Setmana", calendari: "Calendari", temps: "Temps", equip: "Equip",
       noAvisos: "Cap avís nou. Bon entrenament! 💪",
-      wellTit: "Wellness d'avui", wellTxt: "Aviat el podràs omplir aquí mateix. De moment, fes servir el formulari de sempre.",
-      wellBtn: "Obrir el formulari",
+      wellTit: "Wellness", wellTxt: "Aviat el podràs omplir aquí mateix. De moment, fes servir el formulari de sempre.",
+      wellBtn: "Obrir el formulari", wellFer: "Fer el wellness", wellProva: "Provar el wellness (no s'envia)", wellSessio: "Sessió de",
+      wellFet: "Fet ✅ Gràcies!", wellForm: "o fes servir el formulari", wellSensePerfil: "El teu perfil encara no està connectat al wellness. De moment, fes servir el formulari.",
       aviat: "Pròximament", aviatTxt: "Aquest apartat encara no està obert. L'activarem ben aviat.", aviatEt: "aviat",
       tornar: "Tornar a Avui",
       menu: "Menú", botiga: "Botiga", reunio: "Demanar reunió", quotes: "Quotes", eix: "Eix (bàscula)", documents: "Documents",
@@ -51,7 +52,7 @@
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
       }
     },
     es: {
@@ -76,8 +77,9 @@
       entrarTit: "Entrar", entrar: "Entrar", oblidat: "Si has olvidado la contraseña, pide al club que te desbloquee o te haga un código nuevo.",
       hola: "Hola", avui: "Hoy", setmana: "Semana", calendari: "Calendario", temps: "Tiempos", equip: "Equipo",
       noAvisos: "Ningún aviso nuevo. ¡Buen entreno! 💪",
-      wellTit: "Wellness de hoy", wellTxt: "Pronto lo podrás rellenar aquí mismo. De momento, usa el formulario de siempre.",
-      wellBtn: "Abrir el formulario",
+      wellTit: "Wellness", wellTxt: "Pronto lo podrás rellenar aquí mismo. De momento, usa el formulario de siempre.",
+      wellBtn: "Abrir el formulario", wellFer: "Hacer el wellness", wellProva: "Probar el wellness (no se envía)", wellSessio: "Sesión de",
+      wellFet: "Hecho ✅ ¡Gracias!", wellForm: "o usa el formulario", wellSensePerfil: "Tu perfil todavía no está conectado al wellness. De momento, usa el formulario.",
       aviat: "Próximamente", aviatTxt: "Este apartado todavía no está abierto. Lo activaremos muy pronto.", aviatEt: "pronto",
       tornar: "Volver a Hoy",
       menu: "Menú", botiga: "Tienda", reunio: "Pedir reunión", quotes: "Cuotas", eix: "Eix (báscula)", documents: "Documentos",
@@ -96,7 +98,7 @@
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
       }
     }
   };
@@ -311,7 +313,7 @@
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
         estat.offline = false;
-        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [] };
+        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null };
         escriu("inici", JSON.stringify(estat.inici));
         pantallaApp();
       } else if (r.error === "xarxa" && estat.inici) {
@@ -348,12 +350,15 @@
     var cos = el("div", { class: "cos" });
 
     if (pes === "avui") {
-      if (estatModul("wellness") === "on" && d.rol !== "PARE") {
-        cos.appendChild(el("div", { class: "caixa" }, [
-          el("h2", { text: t("wellTit") }),
-          el("span", { class: "gris", text: t("wellTxt") }),
-          el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "btn", text: t("wellBtn") })
-        ]));
+      if (estatModul("wellness") === "on" && d.rol !== "PARE" && !(d.wellness && d.wellness.no)) {
+        var w = d.wellness || { prova: true };
+        var enllac = el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "wform", text: t("wellForm") });
+        var fills = [el("h2", { text: t("wellTit") + (w.diaTxt ? " · " + t("wellSessio") + " " + w.diaTxt : "") })];
+        if (w.fet) fills.push(el("div", { class: "ok gran", text: t("wellFet") }));
+        else if (w.sensePerfil) fills.push(el("span", { class: "gris", text: t("wellSensePerfil") }),
+          el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "btn", text: t("wellBtn") }));
+        else fills.push(el("button", { type: "button", class: "btn", text: w.prova ? t("wellProva") : t("wellFer"), onclick: obreWellness }), w.prova ? null : enllac);
+        cos.appendChild(el("div", { class: "caixa" }, fills));
       }
       if (!d.avisos.length) cos.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
       d.avisos.forEach(function (a) {
@@ -477,6 +482,16 @@
           estat.veureCom = { id: p.id, nom: p.nom }; estat.pestanya = "avui"; carregaInici();
         } }, [el("span", { text: p.nom }), el("span", { class: "et", text: p.rol })]));
       });
+    });
+  }
+
+  function obreWellness() {
+    if (!window.CNN_W) return;
+    window.CNN_W.obre({
+      el: el, pinta: pinta, crida: crida, t: t, terr: terr,
+      idioma: function () { return estat.idioma; },
+      token: function () { return estat.token; },
+      tornar: function (refresca) { estat.pestanya = "avui"; if (refresca && !estat.veureCom) carregaInici(); else pantallaApp(); }
     });
   }
 
