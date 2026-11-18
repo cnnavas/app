@@ -16,7 +16,7 @@
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
       descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
       noObertaAdmin: "No publicada (només la veus tu)",
-      entrenoTit: "Entreno", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
+      entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
       lema: "La teva setmana, els teus temps i el teu equip, al mòbil.",
@@ -67,7 +67,7 @@
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
       descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
       noObertaAdmin: "No publicada (solo la ves tú)",
-      entrenoTit: "Entreno", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
+      entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
       lema: "Tu semana, tus tiempos y tu equipo, en el móvil.",
@@ -475,7 +475,7 @@
     var orig = b.firstChild.textContent; b.firstChild.textContent = "⏳";
     crida("sessioPdf", { token: estat.token, k: s.k }).then(function (r) {
       b.disabled = false; b.firstChild.textContent = orig;
-      if (!r.ok) { window.alert(terr(r.error)); return; }
+      if (!r.ok) { window.alert(r.error === "permis" ? t("sessioCanviada") : terr(r.error)); if (r.error === "permis") carregaInici(); return; }
       var bin = atob(r.b64), arr = new Uint8Array(bin.length);
       for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
       var url = URL.createObjectURL(new Blob([arr], { type: "application/pdf" }));
