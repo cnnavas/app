@@ -11,6 +11,9 @@
   var T = {
     ca: {
       benvinguda: "Benvingut/da a l'app del Club Natació Navàs",
+      oficial: "App oficial del Club Natació Navàs",
+      veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
+      canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
       lema: "La teva setmana, els teus temps i el teu equip, al mòbil.",
       tincCodi: "Tinc un codi d'invitació", jaTinc: "Ja tinc compte · Entrar",
       codiTit: "El teu codi d'invitació", codiTxt: "Te l'ha enviat el club per privat. Només serveix una vegada.",
@@ -48,11 +51,14 @@
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això."
       }
     },
     es: {
       benvinguda: "Bienvenido/a a la app del Club Natació Navàs",
+      oficial: "App oficial del Club Natació Navàs",
+      veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
+      canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
       lema: "Tu semana, tus tiempos y tu equipo, en el móvil.",
       tincCodi: "Tengo un código de invitación", jaTinc: "Ya tengo cuenta · Entrar",
       codiTit: "Tu código de invitación", codiTxt: "Te lo ha enviado el club por privado. Solo sirve una vez.",
@@ -90,7 +96,7 @@
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto."
       }
     }
   };
@@ -104,7 +110,8 @@
     token: llegeix("token"),
     inici: null,
     pestanya: "avui",
-    offline: false
+    offline: false,
+    veureCom: null
   };
   try { estat.inici = JSON.parse(llegeix("inici") || "null"); } catch (e) { estat.inici = null; }
 
@@ -150,6 +157,7 @@
 
     if (p === 1) {
       mig.appendChild(el("img", { class: "logo", src: "icon-192.png", alt: "Club Natació Navàs" }));
+      mig.appendChild(el("div", { class: "oficial", text: t("oficial") }));
       mig.appendChild(el("h1", { class: "gran", text: t("benvinguda") }));
       mig.appendChild(el("p", { text: t("lema") }));
       mig.appendChild(el("div", { class: "dos", role: "group", "aria-label": "Idioma" }, [
@@ -261,7 +269,7 @@
     var bt = el("button", { type: "submit", class: "btn", text: t("entrar") });
     var form = el("form", { class: "pant", novalidate: true }, [
       el("div", { class: "mig" }, [
-        el("img", { class: "logo", src: "icon-192.png", alt: "Club Natació Navàs" }),
+        el("img", { class: "logo", src: "icon-192.png", alt: "Club Natació Navàs" }), el("div", { class: "oficial", text: t("oficial") }),
         el("h1", { text: t("entrarTit") }),
         el("label", { for: "usu", text: t("usuari") }), inU,
         el("label", { for: "pw", text: t("contrasenya") }), inP,
@@ -277,7 +285,7 @@
       ev.preventDefault();
       bt.disabled = true; bt.textContent = t("carregant"); err.textContent = "";
       crida("entrar", { usuari: inU.value.trim().toLowerCase(), contrasenya: inP.value }).then(function (r) {
-        if (r.ok && r.token) { desaToken(r.token); inP.value = ""; carregaInici(); }
+        if (r.ok && r.token) { desaToken(r.token); inP.value = ""; if (r.canviObligat) pantallaContrasenya(true); else carregaInici(); }
         else { err.textContent = terr(r.error); bt.disabled = false; bt.textContent = t("entrar"); }
       });
     });
@@ -291,6 +299,14 @@
   // ---------- Inici ----------
   function carregaInici() {
     if (!estat.token) { pantallaAlta(); return; }
+    if (estat.veureCom) {
+      pinta(el("div", { class: "carrega", text: t("carregant") }));
+      crida("inici", { token: estat.token, veureCom: estat.veureCom.id }).then(function (r) {
+        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [] }; pantallaApp(); }
+        else { estat.veureCom = null; estat.dadesVC = null; carregaInici(); }
+      });
+      return;
+    }
     if (estat.inici) pantallaApp(); else pinta(el("div", { class: "carrega", text: t("carregant") }));
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
@@ -311,7 +327,8 @@
     });
   }
 
-  function estatModul(clau) { var m = (estat.inici && estat.inici.moduls) || {}; return m[clau] || "aviat"; }
+  function dades() { return estat.veureCom ? estat.dadesVC : estat.inici; }
+  function estatModul(clau) { var m = (dades() && dades().moduls) || {}; return m[clau] || "aviat"; }
 
   var BARRA = [
     { clau: "avui", ic: "🏠" }, { clau: "setmana", ic: "📅" }, { clau: "calendari", ic: "🗓️" },
@@ -319,7 +336,7 @@
   ];
 
   function pantallaApp() {
-    var d = estat.inici || { nom: "", moduls: {}, avisos: [] };
+    var d = dades() || { nom: "", moduls: {}, avisos: [] };
     var pes = estat.pestanya;
     var cap = el("div", { class: "cap" }, [
       el("div", {}, [
@@ -354,11 +371,15 @@
       BARRA.filter(function (b) { return b.clau === "avui" || estatModul(b.clau) !== "no"; }).map(function (b) {
         var e = b.clau === "avui" ? "on" : estatModul(b.clau);
         return el("button", { type: "button", class: (pes === b.clau ? "on" : "") + (e === "aviat" ? " aviat" : ""), "aria-current": pes === b.clau ? "page" : null,
-          onclick: function () { estat.pestanya = b.clau; pantallaApp(); } },
+          onclick: function () { estat.pestanya = b.clau; apunta(b.clau); pantallaApp(); } },
           [el("span", { class: "ic", "aria-hidden": "true", text: b.ic }), el("span", { text: t(b.clau) })]);
       }))]);
 
-    var cont = el("div", { class: "envolt" }, [estat.offline ? el("div", { class: "offline", text: t("sense") }) : null, cap, cos, barra]);
+    var banda = estat.veureCom ? el("div", { class: "vc" }, [
+      el("span", { text: "👁️ " + t("veientCom") + ": " + estat.veureCom.nom }),
+      el("button", { type: "button", text: t("sortirVC"), onclick: surtVeureCom })
+    ]) : null;
+    var cont = el("div", { class: "envolt" + (estat.veureCom ? " ambvc" : "") }, [banda, estat.offline ? el("div", { class: "offline", text: t("sense") }) : null, cap, cos, barra]);
     pinta(cont);
   }
 
@@ -382,19 +403,21 @@
     function modul(clau, ic, text) {
       var e = estatModul(clau);
       if (e === "no") return null;
-      return item(ic, text, function () { estat.pestanya = clau; pantallaApp(); }, e === "aviat" ? t("aviatEt") : null);
+      return item(ic, text, function () { estat.pestanya = clau; apunta(clau); pantallaApp(); }, e === "aviat" ? t("aviatEt") : null);
     }
     var panell = el("div", { class: "panell", role: "dialog", "aria-label": t("menu") }, [
       modul("botiga", "🛍️", t("botiga")),
       modul("reunions", "🤝", t("reunio")),
       modul("quotes", "💶", t("quotes")),
       el("hr"),
-      item("🔑", t("perfil"), pantallaContrasenya),
+      estat.veureCom ? item("👁️", t("sortirVC") + " · " + t("veureCom"), surtVeureCom) : null,
+      !estat.veureCom && estat.inici && estat.inici.rol === "ADMIN" ? item("👁️", t("veureCom"), pantallaPerfils) : null,
+      estat.veureCom ? null : item("🔑", t("perfil"), function () { pantallaContrasenya(false); }),
       item("🌐", t("idioma"), function () { canviaIdioma(estat.idioma === "ca" ? "es" : "ca"); }),
       item("❓", t("ajuda"), pantallaAjuda),
-      el("hr"),
-      item("🚪", t("sortir"), function () { surt(false); }),
-      item("📵", t("sortirTot"), function () { if (window.confirm(t("sortirSeg"))) surt(true); }),
+      estat.veureCom ? null : el("hr"),
+      estat.veureCom ? null : item("🚪", t("sortir"), function () { surt(false); }),
+      estat.veureCom ? null : item("📵", t("sortirTot"), function () { if (window.confirm(t("sortirSeg"))) surt(true); }),
       el("button", { type: "button", class: "btn2", text: t("tancar"), onclick: tanca })
     ]);
     capa = el("div", { class: "menu", onclick: function (e) { if (e.target === capa) tanca(); } }, [panell]);
@@ -410,7 +433,7 @@
 
   function pantallaAjuda() { pantallaSimple(t("ajuda"), [el("p", { text: t("ajudaTxt") })]); }
 
-  function pantallaContrasenya() {
+  function pantallaContrasenya(obligat) {
     var a = el("input", { id: "a", type: "password", autocomplete: "current-password", maxlength: "100" });
     var n = el("input", { id: "n", type: "password", autocomplete: "new-password", maxlength: "100" });
     var n2 = el("input", { id: "n2", type: "password", autocomplete: "new-password", maxlength: "100" });
@@ -418,23 +441,46 @@
     var bt = el("button", { type: "button", class: "btn", text: t("desar") });
     bt.addEventListener("click", function () {
       err.textContent = "";
-      if (n.value.length < 8) { err.textContent = terr("contrasenya_curta"); return; }
+      var minim = (obligat || (estat.inici && estat.inici.rol === "ADMIN")) ? 12 : 8;
+      if (n.value.length < minim) { err.textContent = terr(minim === 12 ? "contrasenya_admin" : "contrasenya_curta"); return; }
       if (n.value !== n2.value) { err.textContent = terr("noCoincideixen"); return; }
       bt.disabled = true;
       crida("canviarContrasenya", { token: estat.token, antiga: a.value, nova: n.value }).then(function (r) {
         bt.disabled = false;
-        if (r.ok) { a.value = n.value = n2.value = ""; err.className = "ok"; err.textContent = t("desat"); }
+        if (r.ok) { a.value = n.value = n2.value = ""; err.className = "ok"; err.textContent = t("desat"); if (obligat) setTimeout(carregaInici, 1200); }
         else if (r.error === "sessio") { oblida(); pantallaEntrar(); }
         else { err.className = "err"; err.textContent = terr(r.error); }
       });
     });
     pantallaSimple(t("perfil"), [
+      obligat ? el("div", { class: "caixa", text: t("canviObligat") }) : null,
       el("label", { for: "a", text: t("antiga") }), a,
       el("label", { for: "n", text: t("nova") }), n,
       el("label", { for: "n2", text: t("repeteix") }), n2,
       err, bt
     ]);
   }
+
+  function apunta(clau) {
+    if (estat.veureCom || clau === "avui" || !estat.token) return;
+    crida("vista", { token: estat.token, apartat: clau });
+  }
+
+  function pantallaPerfils() {
+    var llista = el("div", { class: "llista" }, [el("div", { class: "gris", text: t("carregant") })]);
+    pantallaSimple(t("veureCom"), [el("p", { text: t("triaPerfil") }), llista]);
+    crida("perfils", { token: estat.token }).then(function (r) {
+      llista.textContent = "";
+      if (!r.ok) { llista.appendChild(el("div", { class: "err", text: terr(r.error) })); return; }
+      r.perfils.forEach(function (p) {
+        llista.appendChild(el("button", { type: "button", class: "btn3 perfil", onclick: function () {
+          estat.veureCom = { id: p.id, nom: p.nom }; estat.pestanya = "avui"; carregaInici();
+        } }, [el("span", { text: p.nom }), el("span", { class: "et", text: p.rol })]));
+      });
+    });
+  }
+
+  function surtVeureCom() { estat.veureCom = null; estat.dadesVC = null; estat.pestanya = "avui"; pantallaApp(); }
 
   function surt(totes) {
     var tk = estat.token;

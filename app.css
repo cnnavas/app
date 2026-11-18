@@ -9,7 +9,8 @@ button{cursor:pointer}
 .punts span{flex:1;height:4px;border-radius:2px;background:#3A3A3A}
 .punts span.on{background:#F1C332}
 .mig{flex:1;display:flex;flex-direction:column;justify-content:center;gap:16px}
-.logo{width:96px;height:96px;border-radius:24px;display:block}
+.logo{width:104px;height:104px;border-radius:50%;display:block}
+.oficial{font-size:13px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#F1C332}
 h1{margin:0;font-size:28px;font-weight:800;line-height:1.15}
 h1.gran{font-size:32px}
 h2{margin:0;font-size:20px;font-weight:800}
@@ -58,3 +59,9 @@ input.codi{font-size:22px;font-weight:800;letter-spacing:3px;text-transform:uppe
 .offline{background:#3A2F0C;color:#F1C332;font-size:12px;font-weight:700;text-align:center;padding:6px}
 .envolt{display:flex;flex-direction:column;min-height:100%}
 a.btn{display:flex;align-items:center;justify-content:center;text-decoration:none}
+.vc{position:sticky;top:0;z-index:4;background:#F1C332;color:#111;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:calc(8px + env(safe-area-inset-top)) 14px 8px}
+.vc button{border:0;border-radius:10px;background:#111;color:#F1C332;font-weight:800;font-size:13px;min-height:36px;padding:0 14px}
+.ambvc .cap{padding-top:12px}
+.llista{display:flex;flex-direction:column;gap:8px}
+.perfil{display:flex;justify-content:space-between;align-items:center;padding:0 14px;text-align:left}
+.perfil .et{font-size:11px;color:#9A9A9A}
