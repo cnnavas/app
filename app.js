@@ -16,6 +16,7 @@
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
       descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
       noObertaAdmin: "No publicada (només la veus tu)",
+      entrenoTit: "Entreno", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
       lema: "La teva setmana, els teus temps i el teu equip, al mòbil.",
@@ -66,6 +67,7 @@
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
       descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
       noObertaAdmin: "No publicada (solo la ves tú)",
+      entrenoTit: "Entreno", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
       lema: "Tu semana, tus tiempos y tu equipo, en el móvil.",
@@ -321,7 +323,7 @@
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
         estat.offline = false;
-        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null };
+        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [] };
         escriu("inici", JSON.stringify(estat.inici));
         pantallaApp();
       } else if (r.error === "xarxa" && estat.inici) {
@@ -367,6 +369,9 @@
           el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "btn", text: t("wellBtn") }));
         else fills.push(el("button", { type: "button", class: "btn", text: w.prova ? t("wellProva") : t("wellFer"), onclick: obreWellness }), w.prova ? null : enllac);
         cos.appendChild(el("div", { class: "caixa" }, fills));
+      }
+      if (d.sessions && d.sessions.length) {
+        cos.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("entrenoTit") })].concat(d.sessions.map(function (s) { return botoSessio(s, false); }))));
       }
       if (!d.avisos.length) cos.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
       d.avisos.forEach(function (a) {
@@ -436,6 +441,7 @@
           franja(t("mati"), dd.am); franja(t("tarda"), dd.pm);
           if (dd.sec) linies.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: t("sec") }), el("span", { class: "setm-xip sec", text: dd.sec.t })]));
           if (!linies.length) linies.push(el("div", { class: "gris", text: dd.festiu ? t("festiu") : t("descans") }));
+          (r.sessions || []).filter(function (x) { return x.data === dd.data; }).forEach(function (x) { linies.push(botoSessio(x, true)); });
           var dm = dd.data ? dd.data.slice(8, 10) + "/" + dd.data.slice(5, 7) : "";
           cont.appendChild(el("div", { class: "setm-dia" + (esAvui ? " avui" : "") + (dd.festiu ? " festiu" : "") }, [
             el("div", { class: "setm-dcap" }, [el("strong", { text: dd.d + " " + dm }), esAvui ? el("span", { class: "setm-tag", text: t("avuiTag") }) : null]),
@@ -450,6 +456,33 @@
       if (estat.pestanya === "setmana" && cont.isConnected) dibuixa(r.ok || !estat.cacheSetmana ? r : estat.cacheSetmana);
     });
     return cont;
+  }
+
+  function botoSessio(s, curt) {
+    var avui = new Date(); var ka = avui.getFullYear() + "-" + ("0" + (avui.getMonth() + 1)).slice(-2) + "-" + ("0" + avui.getDate()).slice(-2);
+    var quan = s.data === ka ? t("avuiMin") : (s.dia ? s.dia.charAt(0) + s.dia.slice(1).toLowerCase() : "") + " " + s.data.slice(8, 10) + "/" + s.data.slice(5, 7);
+    var b = el("button", { type: "button", class: curt ? "btn3 sbtn curt" : "btn3 sbtn" }, [
+      el("span", { class: "sbtn-ic", "aria-hidden": "true", text: "📄" }),
+      el("span", { class: "sbtn-t" }, [el("strong", { text: curt ? t("sessioPdf") : quan + (s.hora ? " · " + s.hora : "") }),
+        el("span", { class: "gris", text: curt ? (s.hora || "") : t("sessioN") + " " + s.num + (s.titol ? " · " + s.titol : "") })])
+    ]);
+    b.addEventListener("click", function () { descarregaSessio(s, b); });
+    return b;
+  }
+
+  function descarregaSessio(s, b) {
+    b.disabled = true;
+    var orig = b.firstChild.textContent; b.firstChild.textContent = "⏳";
+    crida("sessioPdf", { token: estat.token, k: s.k }).then(function (r) {
+      b.disabled = false; b.firstChild.textContent = orig;
+      if (!r.ok) { window.alert(terr(r.error)); return; }
+      var bin = atob(r.b64), arr = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+      var url = URL.createObjectURL(new Blob([arr], { type: "application/pdf" }));
+      var a = el("a", { href: url, download: r.nom || "sessio.pdf" });
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+    });
   }
 
   function proximament() {
