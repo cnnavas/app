@@ -99,7 +99,7 @@
   }
 
   // ---------- Pantalles ----------
-  var botoSeg = null, validador = null;
+  var botoSeg = null, validador = null, ultimPas = null;
   function validaBoto() { if (botoSeg && validador) botoSeg.disabled = !validador(); }
 
   function pantalla(titol, cos, valid, textBoto, accio) {
@@ -115,12 +115,15 @@
       el("button", { type: "button", class: "btn2", text: i > 0 ? x("enrere") : x("sortir"), onclick: function () {
         if (i > 0) { pas = s[i - 1]; pinta(); } else if (window.confirm(x("sortirSeg"))) C.tornar();
       } })]);
+    var y = pas === ultimPas ? (window.scrollY || window.pageYOffset || 0) : 0;
+    ultimPas = pas;
     C.pinta(el("div", { class: "pant wpant" }, [
       el("div", { class: "wcap" }, [barra, el("div", { class: "wdia", text: x("sessio") + " " + info.diaTxt }), info.prova ? el("div", { class: "wprova", text: x("provaTit") }) : null]),
       el("h1", { class: "wh", text: titol }),
       el("div", { class: "wcos" }, cos),
       peu
     ]));
+    window.scrollTo(0, y);
     validaBoto();
   }
 
