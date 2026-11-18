@@ -112,3 +112,24 @@ input.wtx{min-height:52px}
 .wresum{max-height:50vh;overflow:auto}
 .prox-ic{font-size:48px}
 .wpeu{position:sticky;bottom:0;background:#111;padding-top:10px}
+
+/* Setmana */
+.setm{display:flex;flex-direction:column;gap:10px}
+.setm-sub{margin-top:14px}
+.setm-cap{background:#000;border:1px solid #2A2A2A;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.setm-tit{font-size:18px;font-weight:800;color:#F1C332}
+.setm-obs{font-size:15px;line-height:1.4}
+.setm-xifres{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.setm-xifres div{background:#1C1C1C;border-radius:12px;padding:8px;display:flex;flex-direction:column;align-items:center}
+.setm-xifres strong{font-size:20px}
+.setm-xifres span{font-size:12px;color:#9A9A9A}
+.setm-dia{background:#1C1C1C;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;border:2px solid transparent}
+.setm-dia.avui{border-color:#F1C332}
+.setm-dia.festiu{background:#2A1515}
+.setm-dcap{display:flex;align-items:center;justify-content:space-between}
+.setm-tag{background:#F1C332;color:#111;font-size:11px;font-weight:800;border-radius:6px;padding:2px 8px}
+.setm-lins{display:flex;flex-direction:column;gap:6px}
+.setm-lin{display:flex;align-items:center;gap:10px}
+.setm-fr{width:52px;font-size:12px;color:#9A9A9A;font-weight:700;flex-shrink:0}
+.setm-xip{flex:1;border-radius:8px;padding:7px 10px;font-size:14px;font-weight:700;background:#2A2A2A;color:#fff}
+.setm-xip.sec{background:#3A1E1E;color:#FFB4B4}

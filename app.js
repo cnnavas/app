@@ -12,6 +12,10 @@
     ca: {
       benvinguda: "Benvingut/da a l'app del Club Natació Navàs",
       oficial: "App oficial del Club Natació Navàs",
+      ocultModul: "👁️ Només ho veus tu: aquest apartat encara està tancat per als nedadors (MÒDULS).",
+      setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
+      descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
+      noObertaAdmin: "No publicada (només la veus tu)",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
       lema: "La teva setmana, els teus temps i el teu equip, al mòbil.",
@@ -52,12 +56,16 @@
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
       }
     },
     es: {
       benvinguda: "Bienvenido/a a la app del Club Natació Navàs",
       oficial: "App oficial del Club Natació Navàs",
+      ocultModul: "👁️ Solo lo ves tú: este apartado todavía está cerrado para los nadadores (MÒDULS).",
+      setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
+      descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
+      noObertaAdmin: "No publicada (solo la ves tú)",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
       lema: "Tu semana, tus tiempos y tu equipo, en el móvil.",
@@ -98,7 +106,7 @@
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
       }
     }
   };
@@ -368,6 +376,9 @@
           a.text ? el("div", { class: "txt", text: a.text }) : null
         ]));
       });
+    } else if (pes === "setmana" && (estatModul("setmana") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("setmana") !== "no"))) {
+      if (estatModul("setmana") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaSetmana());
     } else {
       cos.appendChild(proximament());
     }
@@ -386,6 +397,59 @@
     ]) : null;
     var cont = el("div", { class: "envolt" + (estat.veureCom ? " ambvc" : "") }, [banda, estat.offline ? el("div", { class: "offline", text: t("sense") }) : null, cap, cos, barra]);
     pinta(cont);
+  }
+
+  function textSobre(hex) {
+    var h = String(hex || "").replace("#", "");
+    if (h.length !== 6) return "#111";
+    var r = parseInt(h.substr(0, 2), 16), g = parseInt(h.substr(2, 2), 16), b = parseInt(h.substr(4, 2), 16);
+    return (0.299 * r + 0.587 * g + 0.114 * b) > 150 ? "#111" : "#fff";
+  }
+
+  function vistaSetmana() {
+    var cont = el("div", { class: "setm" });
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (!r.setmanes.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("setTancada") })); return; }
+      r.setmanes.forEach(function (s, idx) {
+        if (idx > 0) cont.appendChild(el("h2", { class: "setm-sub", text: t("setmanaVinent") }));
+        cont.appendChild(el("div", { class: "setm-cap" }, [
+          el("div", { class: "setm-tit", text: s.titol }),
+          s.oberta === false ? el("div", { class: "wprova", text: t("noObertaAdmin") }) : null,
+          s.obs ? el("div", { class: "setm-obs", text: s.obs }) : null,
+          el("div", { class: "setm-xifres" }, [
+            el("div", {}, [el("strong", { text: s.aigua || "–" }), el("span", { text: t("aiguaK") })]),
+            el("div", {}, [el("strong", { text: s.sec || "–" }), el("span", { text: t("secK") })]),
+            el("div", {}, [el("strong", { text: s.km || "–" }), el("span", { text: t("kmK") })])
+          ])
+        ]));
+        s.dies.forEach(function (dd) {
+          var esAvui = dd.data === r.avui;
+          var linies = [];
+          function franja(nom, f) {
+            if (!f) return;
+            var xip = el("span", { class: "setm-xip", text: f.t });
+            if (f.c) { xip.style.background = f.c; xip.style.color = textSobre(f.c); }
+            linies.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: nom }), xip]));
+          }
+          franja(t("mati"), dd.am); franja(t("tarda"), dd.pm);
+          if (dd.sec) linies.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: t("sec") }), el("span", { class: "setm-xip sec", text: dd.sec.t })]));
+          if (!linies.length) linies.push(el("div", { class: "gris", text: dd.festiu ? t("festiu") : t("descans") }));
+          var dm = dd.data ? dd.data.slice(8, 10) + "/" + dd.data.slice(5, 7) : "";
+          cont.appendChild(el("div", { class: "setm-dia" + (esAvui ? " avui" : "") + (dd.festiu ? " festiu" : "") }, [
+            el("div", { class: "setm-dcap" }, [el("strong", { text: dd.d + " " + dm }), esAvui ? el("span", { class: "setm-tag", text: t("avuiTag") }) : null]),
+            el("div", { class: "setm-lins" }, linies)
+          ]));
+        });
+      });
+    }
+    if (estat.cacheSetmana) dibuixa(estat.cacheSetmana); else cont.appendChild(el("div", { class: "carrega", text: t("carregant") }));
+    crida("setmana", { token: estat.token }).then(function (r) {
+      if (r.ok) estat.cacheSetmana = r;
+      if (estat.pestanya === "setmana" && cont.isConnected) dibuixa(r.ok || !estat.cacheSetmana ? r : estat.cacheSetmana);
+    });
+    return cont;
   }
 
   function proximament() {
