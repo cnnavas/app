@@ -16,6 +16,7 @@
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
       descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
       noObertaAdmin: "No publicada (només la veus tu)",
+      calTemp: "Temporada", calMes: "Mes", calDia: "Dia", calLlegComp: "competició", calLlegFest: "festiu", calMesBuit: "Aquest mes no hi ha competicions.", calDiaBuit: "Aquest dia no hi ha res apuntat.",
       calPassades: "Veure competicions passades", calProperes: "← Tornar a les properes", calBuit: "No hi ha res al calendari.", calAra: "Ara!", calDema: "Demà", calFalten: "Falten {n} dies", senseCategoria: "El teu perfil encara no té categoria. Parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
@@ -68,6 +69,7 @@
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
       descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
       noObertaAdmin: "No publicada (solo la ves tú)",
+      calTemp: "Temporada", calMes: "Mes", calDia: "Día", calLlegComp: "competición", calLlegFest: "festivo", calMesBuit: "Este mes no hay competiciones.", calDiaBuit: "Este día no hay nada apuntado.",
       calPassades: "Ver competiciones pasadas", calProperes: "← Volver a las próximas", calBuit: "No hay nada en el calendario.", calAra: "¡Ahora!", calDema: "Mañana", calFalten: "Faltan {n} días", senseCategoria: "Tu perfil todavía no tiene categoría. Habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
@@ -499,11 +501,37 @@
 
   function vistaCalendari() {
     var cont = el("div", { class: "cal" });
-    var veurePassades = false;
-    function dibuixa(r) {
-      cont.textContent = "";
-      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
-      if (r.senseCategoria) cont.appendChild(el("div", { class: "caixa gris", text: t("senseCategoria") }));
+    var zoom = estat.calZoom || "mes", veurePassades = false;
+    var avuiK = (function () { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); })();
+    var mesVist = estat.calMes || avuiK.slice(0, 7), diaVist = estat.calDia || avuiK;
+    function k(y, m, d) { return y + "-" + ("0" + m).slice(-2) + "-" + ("0" + d).slice(-2); }
+    function delDia(r, dk) {
+      return { comps: r.evs.filter(function (e) { return e.inici <= dk && e.fi >= dk; }), fest: r.festius.filter(function (f) { return f.data === dk; }) };
+    }
+    function xipCat(e) {
+      var xip = el("span", { class: "cal-cat", text: e.cat || "" });
+      if (e.color && e.color !== "#ffffff") { xip.style.background = e.color; xip.style.color = textSobre(e.color); }
+      return xip;
+    }
+    function selector(r) {
+      var b = el("div", { class: "cal-zoom", role: "tablist" });
+      [["temp", t("calTemp")], ["mes", t("calMes")], ["dia", t("calDia")]].forEach(function (z) {
+        b.appendChild(el("button", { type: "button", class: zoom === z[0] ? "on" : "", role: "tab", "aria-selected": zoom === z[0] ? "true" : "false", text: z[1],
+          onclick: function () { zoom = estat.calZoom = z[0]; dibuixa(r); } }));
+      });
+      return b;
+    }
+    function targeta(e, r, ambFalten) {
+      var falten = diesFins(e.inici, r.avui);
+      var quan = dCurt(e.inici) + (e.fi !== e.inici ? " – " + dCurt(e.fi) : "");
+      return el("div", { class: "cal-ev" + (e.inici <= r.avui && e.fi >= r.avui ? " ara" : "") + (e.fi < r.avui ? " passada" : "") }, [
+        el("div", { class: "cal-ev-cap" }, [el("strong", { text: quan }), e.cat ? xipCat(e) : null]),
+        el("div", { class: "cal-nom", text: e.nom }),
+        ambFalten && e.fi >= r.avui ? el("div", { class: "gris cal-falten", text: falten <= 0 ? t("calAra") : (falten === 1 ? t("calDema") : t("calFalten").replace("{n}", falten)) }) : null
+      ]);
+    }
+
+    function vistaTemp(r) {
       var items = r.evs.map(function (e) { return { tipus: "c", inici: e.inici, fi: e.fi, e: e }; })
         .concat(r.festius.map(function (f) { return { tipus: "f", inici: f.data, fi: f.data, e: f }; }))
         .filter(function (x) { return veurePassades ? x.fi < r.avui : x.fi >= r.avui; })
@@ -515,26 +543,92 @@
       items.forEach(function (x) {
         var mes = x.inici.slice(0, 7);
         if (mes !== mesAnt) { mesAnt = mes; cont.appendChild(el("h2", { class: "cal-mes", text: MESOS[estat.idioma][Number(mes.slice(5, 7)) - 1] + " " + mes.slice(0, 4) })); }
-        var quan = dCurt(x.inici) + (x.fi !== x.inici ? " – " + dCurt(x.fi) : "");
         if (x.tipus === "f") {
-          cont.appendChild(el("div", { class: "cal-f" }, [el("span", { class: "cal-d", text: quan }), el("span", { text: "🔴 " + x.e.nom })]));
+          cont.appendChild(el("div", { class: "cal-f" }, [el("span", { class: "cal-d", text: dCurt(x.inici) }), el("span", { text: "🔴 " + x.e.nom })]));
           return;
         }
-        var falten = diesFins(x.inici, r.avui);
-        var xip = el("span", { class: "cal-cat", text: x.e.cat || "" });
-        if (x.e.color && x.e.color !== "#ffffff") { xip.style.background = x.e.color; xip.style.color = textSobre(x.e.color); }
-        cont.appendChild(el("div", { class: "cal-ev" + (x.inici <= r.avui && x.fi >= r.avui ? " ara" : "") }, [
-          el("div", { class: "cal-ev-cap" }, [el("strong", { text: quan }), x.e.cat ? xip : null]),
-          el("div", { class: "cal-nom", text: x.e.nom }),
-          !veurePassades ? el("div", { class: "gris cal-falten", text: falten <= 0 ? t("calAra") : (falten === 1 ? t("calDema") : t("calFalten").replace("{n}", falten)) }) : null
-        ]));
+        cont.appendChild(targeta(x.e, r, !veurePassades));
       });
+    }
+
+    function vistaMes(r) {
+      var y = Number(mesVist.slice(0, 4)), m = Number(mesVist.slice(5, 7));
+      function mou(d) { var nm = m + d, ny = y; if (nm < 1) { nm = 12; ny--; } if (nm > 12) { nm = 1; ny++; } mesVist = estat.calMes = ny + "-" + ("0" + nm).slice(-2); dibuixa(r); }
+      cont.appendChild(el("div", { class: "cal-nav" }, [
+        el("button", { type: "button", class: "cal-fl", "aria-label": "‹", text: "‹", onclick: function () { mou(-1); } }),
+        el("strong", { text: MESOS[estat.idioma][m - 1] + " " + y }),
+        el("button", { type: "button", class: "cal-fl", "aria-label": "›", text: "›", onclick: function () { mou(1); } })
+      ]));
+      var graella = el("div", { class: "cal-graella" });
+      var noms = estat.idioma === "es" ? ["L", "M", "X", "J", "V", "S", "D"] : ["DL", "DT", "DC", "DJ", "DV", "DS", "DG"];
+      noms.forEach(function (n) { graella.appendChild(el("div", { class: "cal-gcap", text: n })); });
+      var primer = new Date(y, m - 1, 1), offset = (primer.getDay() + 6) % 7, nd = new Date(y, m, 0).getDate();
+      for (var i = 0; i < offset; i++) graella.appendChild(el("div", { class: "cal-gbuit" }));
+      var delMes = [];
+      for (var d = 1; d <= nd; d++) (function (d) {
+        var dk = k(y, m, d), info = delDia(r, dk);
+        var cel = el("button", { type: "button", class: "cal-gdia" + (dk === avuiK ? " avui" : "") + (info.fest.length ? " fest" : "") + (info.comps.length ? " comp" : "") + (dk === diaVist ? " sel" : ""),
+          "aria-label": dk, onclick: function () { diaVist = estat.calDia = dk; zoom = estat.calZoom = "dia"; dibuixa(r); } },
+          [el("span", { text: String(d) })]);
+        if (info.comps.length) {
+          var c0 = info.comps[0];
+          var punt = el("span", { class: "cal-punt" });
+          punt.style.background = c0.color && c0.color !== "#ffffff" ? c0.color : "#F1C332";
+          cel.appendChild(punt);
+          info.comps.forEach(function (c) { if (delMes.indexOf(c) < 0) delMes.push(c); });
+        }
+        graella.appendChild(cel);
+      })(d);
+      cont.appendChild(graella);
+      cont.appendChild(el("div", { class: "cal-llegenda gris" }, [el("span", { class: "cal-punt" }), " " + t("calLlegComp") + "   ", el("span", { class: "cal-quad" }), " " + t("calLlegFest")]));
+      if (delMes.length) delMes.forEach(function (e) { cont.appendChild(targeta(e, r, true)); });
+      else cont.appendChild(el("div", { class: "caixa gris", text: t("calMesBuit") }));
+    }
+
+    function vistaDia(r) {
+      var x = dObj(diaVist);
+      function mou(dd) { var n = new Date(x.getTime() + dd * 864e5); diaVist = estat.calDia = k(n.getFullYear(), n.getMonth() + 1, n.getDate()); mesVist = estat.calMes = diaVist.slice(0, 7); dibuixa(r); }
+      cont.appendChild(el("div", { class: "cal-nav" }, [
+        el("button", { type: "button", class: "cal-fl", "aria-label": "‹", text: "‹", onclick: function () { mou(-1); } }),
+        el("strong", { text: dCurt(diaVist) + " " + MESOS[estat.idioma][x.getMonth()] + (diaVist === avuiK ? " · " + t("avuiMin") : "") }),
+        el("button", { type: "button", class: "cal-fl", "aria-label": "›", text: "›", onclick: function () { mou(1); } })
+      ]));
+      var info = delDia(r, diaVist), res = false;
+      info.fest.forEach(function (f) { res = true; cont.appendChild(el("div", { class: "caixa cal-festiu", text: "🔴 " + t("festiu") + " · " + f.nom })); });
+      info.comps.forEach(function (e) { res = true; cont.appendChild(targeta(e, r, true)); });
+      // Entreno d'aquell dia, si la setmana està publicada
+      var sm = estat.cacheSetmana;
+      if (sm && sm.setmanes) sm.setmanes.forEach(function (s) {
+        s.dies.forEach(function (dd) {
+          if (dd.data !== diaVist) return;
+          var lin = [];
+          [["mati", dd.am], ["tarda", dd.pm]].forEach(function (p) {
+            if (!p[1]) return;
+            var xip = el("span", { class: "setm-xip", text: p[1].t });
+            if (p[1].c) { xip.style.background = p[1].c; xip.style.color = textSobre(p[1].c); }
+            lin.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: t(p[0]) }), xip]));
+          });
+          if (dd.sec) lin.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: t("sec") }), el("span", { class: "setm-xip sec", text: dd.sec.t })]));
+          (sm.sessions || []).filter(function (q) { return q.data === diaVist; }).forEach(function (q) { lin.push(botoSessio(q, true)); });
+          if (lin.length) { res = true; cont.appendChild(el("div", { class: "setm-dia" }, [el("strong", { text: t("entrenoTit") })].concat(lin))); }
+        });
+      });
+      if (!res) cont.appendChild(el("div", { class: "caixa gris", text: t("calDiaBuit") }));
+    }
+
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (r.senseCategoria) cont.appendChild(el("div", { class: "caixa gris", text: t("senseCategoria") }));
+      cont.appendChild(selector(r));
+      if (zoom === "temp") vistaTemp(r); else if (zoom === "dia") vistaDia(r); else vistaMes(r);
     }
     if (estat.cacheCal) dibuixa(estat.cacheCal); else cont.appendChild(el("div", { class: "carrega", text: t("carregant") }));
     crida("calendari", { token: estat.token }).then(function (r) {
       if (r.ok) estat.cacheCal = r;
       if (estat.pestanya === "calendari" && cont.isConnected) dibuixa(r.ok || !estat.cacheCal ? r : estat.cacheCal);
     });
+    if (!estat.cacheSetmana && estatModul("setmana") !== "no") crida("setmana", { token: estat.token }).then(function (r) { if (r.ok) estat.cacheSetmana = r; });
     return cont;
   }
 
