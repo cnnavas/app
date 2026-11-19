@@ -35,6 +35,20 @@
       cwRetirarSeg: "Si retires el permís, no podràs fer el wellness a l'app. Continuar?", cwCal: "Per fer el wellness a l'app, primer cal el teu permís.",
       calTemp: "Temporada", calMes: "Mes", calDia: "Dia", calVeureLlista: "Veure en llista", calVeureGraella: "Veure el calendari de la temporada", calProxima: "Propera competició", calLlegComp: "competició", calLlegFest: "festiu", calMesBuit: "Aquest mes no hi ha competicions.", calDiaBuit: "Aquest dia no hi ha res apuntat.",
       calPassades: "Veure competicions passades", calProperes: "← Tornar a les properes", calBuit: "No hi ha res al calendari.", calAra: "Ara!", calDema: "Demà", calFalten: "Falten {n} dies", senseCategoria: "El teu perfil encara no té categoria. Parla amb el Jaime.",
+      convTit: "Convocatòria", convVeure: "Veure la convocatòria", convFalta: "⚠️ Falta respondre", convRespost: "✅ Respost",
+      convHores: "Horaris", convHConv: "Convocatòria", convHEscalf: "Escalfament", convHInici: "Inici de la competició",
+      convAvisos: "Avisos", convMaps: "📍 Com arribar", convLlistat: "📄 Llistat de sortides", convResultats: "🏁 Resultats",
+      convProves: "Proves", convProva: "Prova", convHora: "Hora", convNum: "Nº", convSerie: "Sèrie", convCarrer: "Carrer",
+      convPreAvis: "És una preconvocatòria: les hores, sèries i carrers encara poden canviar.",
+      convLlista: "Llista de convocats", convLlistaTxt: "Del més petit al més gran.",
+      convVas: "Hi anirà?", convSi: "✅ Sí, hi va", convNo: "❌ No pot venir", convAnada: "Anada", convTornada: "Tornada",
+      trPorto: "L'hi portem nosaltres", trLloc: "Ens veiem al lloc", trNecessita: "Necessita que algú el porti", trSol: "Hi va pel seu compte",
+      convPlaces: "Places lliures al cotxe per a altres nedadors", convDinar: "Es queda a dinar?", dSi: "Sí", dNo: "No",
+      convNota: "Nota per al Jaime (opcional)", convDesar: "Enviar la resposta", convCanviar: "Canviar la resposta", convDesat: "Fet ✅ Resposta enviada. Només la veu l'equip tècnic.",
+      convFaltaResp: "Contesta si hi va, l'anada i la tornada.", convFaltaDinar: "Contesta si es queda a dinar.", convProvaAdmin: "Mode prova (admin): no s'ha desat res.",
+      convPares: "Ho confirmaran els teus pares des del seu compte.", convPrivat: "Les respostes només les veu l'equip tècnic.",
+      convResum: "Respostes (només equip tècnic)", convVan: "Hi van", convNoVan: "No poden", convSense: "Sense resposta", convNecessiten: "Necessiten transport", convPlacesOf: "Places ofertes", convDinen: "Dinen",
+      convNoPub: "👁️ No publicada: només la veus tu. Marca «Publicar a l'app» a la hoja.", convCap: "Ara mateix no hi ha cap convocatòria.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -105,6 +119,20 @@
       cwRetirarSeg: "Si retiras el permiso, no podrás hacer el wellness en la app. ¿Continuar?", cwCal: "Para hacer el wellness en la app, primero hace falta tu permiso.",
       calTemp: "Temporada", calMes: "Mes", calDia: "Día", calVeureLlista: "Ver en lista", calVeureGraella: "Ver el calendario de la temporada", calProxima: "Próxima competición", calLlegComp: "competición", calLlegFest: "festivo", calMesBuit: "Este mes no hay competiciones.", calDiaBuit: "Este día no hay nada apuntado.",
       calPassades: "Ver competiciones pasadas", calProperes: "← Volver a las próximas", calBuit: "No hay nada en el calendario.", calAra: "¡Ahora!", calDema: "Mañana", calFalten: "Faltan {n} días", senseCategoria: "Tu perfil todavía no tiene categoría. Habla con Jaime.",
+      convTit: "Convocatoria", convVeure: "Ver la convocatoria", convFalta: "⚠️ Falta responder", convRespost: "✅ Respondido",
+      convHores: "Horarios", convHConv: "Convocatoria", convHEscalf: "Calentamiento", convHInici: "Inicio de la competición",
+      convAvisos: "Avisos", convMaps: "📍 Cómo llegar", convLlistat: "📄 Listado de salidas", convResultats: "🏁 Resultados",
+      convProves: "Pruebas", convProva: "Prueba", convHora: "Hora", convNum: "Nº", convSerie: "Serie", convCarrer: "Calle",
+      convPreAvis: "Es una preconvocatoria: las horas, series y calles todavía pueden cambiar.",
+      convLlista: "Lista de convocados", convLlistaTxt: "Del más pequeño al más mayor.",
+      convVas: "¿Irá?", convSi: "✅ Sí, va", convNo: "❌ No puede ir", convAnada: "Ida", convTornada: "Vuelta",
+      trPorto: "Lo llevamos nosotros", trLloc: "Nos vemos allí", trNecessita: "Necesita que alguien lo lleve", trSol: "Va por su cuenta",
+      convPlaces: "Plazas libres en el coche para otros nadadores", convDinar: "¿Se queda a comer?", dSi: "Sí", dNo: "No",
+      convNota: "Nota para Jaime (opcional)", convDesar: "Enviar la respuesta", convCanviar: "Cambiar la respuesta", convDesat: "Hecho ✅ Respuesta enviada. Solo la ve el equipo técnico.",
+      convFaltaResp: "Contesta si va, la ida y la vuelta.", convFaltaDinar: "Contesta si se queda a comer.", convProvaAdmin: "Modo prueba (admin): no se ha guardado nada.",
+      convPares: "Lo confirmarán tus padres desde su cuenta.", convPrivat: "Las respuestas solo las ve el equipo técnico.",
+      convResum: "Respuestas (solo equipo técnico)", convVan: "Van", convNoVan: "No pueden", convSense: "Sin respuesta", convNecessiten: "Necesitan transporte", convPlacesOf: "Plazas ofrecidas", convDinen: "Comen",
+      convNoPub: "👁️ No publicada: solo la ves tú. Marca «Publicar a l'app» en la hoja.", convCap: "Ahora mismo no hay ninguna convocatoria.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -361,12 +389,18 @@
   function oblida() { estat.token = null; estat.inici = null; escriu("token", null); escriu("inici", null); }
 
   // ---------- Inici ----------
+  function guardaInici(r) {
+    estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null };
+    escriu("inici", JSON.stringify(estat.inici));
+    estat.inici.convs = r.convs || [];   // les convocatòries no es desen al mòbil
+  }
+
   function carregaInici() {
     if (!estat.token) { pantallaAlta(); return; }
     if (estat.veureCom) {
       pinta(el("div", { class: "carrega", text: t("carregant") }));
       crida("inici", { token: estat.token, veureCom: estat.veureCom.id }).then(function (r) {
-        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [] }; pantallaApp(); }
+        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], convs: r.convs || [] }; pantallaApp(); }
         else { estat.veureCom = null; estat.dadesVC = null; carregaInici(); }
       });
       return;
@@ -375,8 +409,7 @@
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
         estat.offline = false;
-        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null };
-        escriu("inici", JSON.stringify(estat.inici));
+        guardaInici(r);
         if (r.privacitat && r.privacitat.obligatoria && !r.privacitat.acceptada) { pantallaPrivacitat(true); return; }
         pantallaApp();
       } else if (r.error === "xarxa" && estat.inici) {
@@ -428,6 +461,7 @@
       if (d.sessions && d.sessions.length) {
         cos.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("entrenoTit") })].concat(d.sessions.map(function (s) { return botoSessio(s, false); }))));
       }
+      (d.convs || []).forEach(function (c) { cos.appendChild(targetaConv(c)); });
       var potAvisar = (d.rol === "NEDADOR" || d.rol === "PARE" || d.rol === "ADMIN") && !estat.veureCom &&
         (estatModul("avisar") === "on" || d.rol === "ADMIN") && (d.rol === "ADMIN" || (d.fills || []).some(function (f) { return f.entreno; }));
       if (potAvisar || (d.faltes && d.faltes.length)) {
@@ -594,10 +628,13 @@
     function targeta(e, r, ambFalten) {
       var falten = diesFins(e.inici, r.avui);
       var quan = dCurt(e.inici) + (e.fi !== e.inici ? " – " + dCurt(e.fi) : "");
-      return el("div", { class: "cal-ev" + (e.inici <= r.avui && e.fi >= r.avui ? " ara" : "") + (e.fi < r.avui ? " passada" : "") }, [
+      var cv = convDe(e);
+      return el("div", { class: "cal-ev" + (e.inici <= r.avui && e.fi >= r.avui ? " ara" : "") + (e.fi < r.avui ? " passada" : "") + (cv ? " amb-conv" : ""),
+        onclick: cv ? function () { pantallaConv(cv.k); } : null }, [
         el("div", { class: "cal-ev-cap" }, [el("strong", { text: quan }), e.cat ? xipCat(e) : null]),
         el("div", { class: "cal-nom", text: e.nom }),
-        ambFalten && e.fi >= r.avui ? el("div", { class: "gris cal-falten", text: falten <= 0 ? t("calAra") : (falten === 1 ? t("calDema") : t("calFalten").replace("{n}", falten)) }) : null
+        ambFalten && e.fi >= r.avui ? el("div", { class: "gris cal-falten", text: falten <= 0 ? t("calAra") : (falten === 1 ? t("calDema") : t("calFalten").replace("{n}", falten)) }) : null,
+        cv ? el("div", { class: "conv-enll", text: "📣 " + t("convVeure") + " ›" }) : null
       ]);
     }
 
@@ -796,6 +833,152 @@
     ]
   };
   PRIV.es = PRIV.ca;
+
+  // ---------- Convocatòries ----------
+  function clauNom(x) { return String(x || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim(); }
+  function convDe(e) {
+    var cs = ((dades() || {}).convs || []).filter(function (c) { return c.data >= e.inici && c.data <= e.fi; });
+    if (!cs.length) return null;
+    var ke = clauNom(e.nom);
+    var bo = cs.filter(function (c) { var kc = clauNom(c.nom); return kc.indexOf(ke) >= 0 || ke.indexOf(kc) >= 0 ||
+      kc.split(" ").filter(function (w) { return w.length > 3 && ke.split(" ").indexOf(w) >= 0; }).length >= 2; });
+    return bo[0] || (cs.length === 1 ? cs[0] : null);
+  }
+  function txtTr(v) { return { porto: t("trPorto"), lloc: t("trLloc"), necessita: t("trNecessita"), sol: t("trSol") }[v] || v || "—"; }
+  function dataLlarga(k) { var x = dObj(k); return dCurt(k) + " " + MESOS[estat.idioma][x.getMonth()]; }
+
+  function targetaConv(c) {
+    var pendents = (c.meus || []).filter(function (m) { return m.potRespondre && !m.resposta; }).length;
+    var fills = [
+      el("h2", { text: "📣 " + t("convTit") + " · " + c.fase }),
+      el("strong", { text: c.nom }),
+      el("span", { class: "gris", text: dataLlarga(c.data) + (c.sede ? " · " + c.sede : "") + (c.hConv ? " · " + c.hConv : "") }),
+      c.noPublicada ? el("span", { class: "gris", text: t("convNoPub") }) : null,
+      (c.meus || []).length ? el("span", { class: pendents ? "conv-pend" : "ok", text: pendents ? t("convFalta") : ((c.meus || []).some(function (m) { return m.resposta; }) ? t("convRespost") : "") }) : null,
+      el("button", { type: "button", class: "btn", text: t("convVeure"), onclick: function () { pantallaConv(c.k); } })
+    ];
+    return el("div", { class: "caixa conv" }, fills);
+  }
+
+  function pantallaConv(k, missatge) {
+    var c = ((dades() || {}).convs || []).filter(function (x) { return x.k === k; })[0];
+    if (!c) { pantallaApp(); return; }
+    apunta("convocatories");
+    var y = window.scrollY || 0;
+    var f = [];
+    f.push(el("div", { class: "conv-cap" }, [el("span", { class: "conv-fase", text: c.fase }), el("span", { class: "gris", text: dataLlarga(c.data) + (c.franja ? " · " + c.franja : "") })]));
+    f.push(el("h2", { class: "conv-nom", text: c.nom }));
+    if (c.noPublicada) f.push(el("div", { class: "caixa gris", text: t("convNoPub") }));
+    if (missatge) f.push(el("div", { class: "ok gran", text: missatge }));
+    if (/^pre/i.test(c.fase)) f.push(el("div", { class: "caixa gris", text: t("convPreAvis") }));
+    // Lloc
+    var lloc = [el("strong", { text: c.sede || "" }), c.adreca ? el("span", { class: "gris", text: c.adreca }) : null];
+    if (c.maps) lloc.push(el("a", { href: c.maps, target: "_blank", rel: "noopener noreferrer", class: "btn3", text: t("convMaps") }));
+    if (c.sede || c.adreca) f.push(el("div", { class: "caixa" }, lloc));
+    // Horaris
+    var hs = [[t("convHConv"), c.hConv], [t("convHEscalf"), c.hEscalf], [t("convHInici"), c.hInici]].filter(function (h) { return h[1]; });
+    if (hs.length) f.push(el("div", { class: "caixa" }, [el("h2", { text: t("convHores") })].concat(hs.map(function (h) {
+      return el("div", { class: "conv-h" }, [el("span", { text: h[0] }), el("strong", { text: h[1] })]); }))));
+    if (c.avisos) f.push(el("div", { class: "caixa avis" }, [el("div", { class: "tit", text: "⚠️ " + t("convAvisos") }), el("div", { class: "txt", text: c.avisos })]));
+    var enl = [];
+    if (c.llistat) enl.push(el("a", { href: c.llistat, target: "_blank", rel: "noopener noreferrer", class: "btn3", text: t("convLlistat") }));
+    if (c.resultats) enl.push(el("a", { href: c.resultats, target: "_blank", rel: "noopener noreferrer", class: "btn3", text: t("convResultats") }));
+    if (enl.length) f.push(el("div", { class: "caixa" }, enl));
+    // Els meus nedadors
+    (c.meus || []).forEach(function (m) {
+      var bloc = [el("h2", { text: m.nom })];
+      m.proves.forEach(function (p) {
+        bloc.push(el("div", { class: "conv-prova" }, [
+          el("div", { class: "conv-pl" }, [el("strong", { text: p.prova }), p.hora ? el("span", { class: "conv-hora", text: p.hora }) : null]),
+          el("div", { class: "gris", text: [p.num ? t("convNum") + " " + p.num : "", p.serie ? t("convSerie") + " " + p.serie : "", p.carrer ? t("convCarrer") + " " + p.carrer : ""].filter(Boolean).join(" · ") }),
+          p.notes ? el("div", { class: "gris", text: "📝 " + p.notes }) : null
+        ]));
+      });
+      if (m.potRespondre && !estat.veureCom) bloc.push(formResposta(c, m));
+      else if (m.resposta) bloc.push(el("div", { class: "ok", text: t("convRespost") + ": " + (m.resposta.va === "Sí" ? t("convSi") : t("convNo")) }));
+      else if (!estat.veureCom && (dades() || {}).rol === "NEDADOR") bloc.push(el("div", { class: "gris", text: t("convPares") }));
+      f.push(el("div", { class: "caixa" }, bloc));
+    });
+    // Resum per a l'equip tècnic
+    if (c.resum) {
+      var van = c.resum.filter(function (r) { return r.va === "Sí"; }), no = c.resum.filter(function (r) { return r.va === "No"; }), sense = c.resum.filter(function (r) { return !r.va; });
+      var nec = van.filter(function (r) { return r.anada === "necessita" || r.tornada === "necessita"; });
+      var places = van.reduce(function (s, r) { return s + (Number(r.places) || 0); }, 0);
+      var res = [el("h2", { text: t("convResum") }),
+        el("div", { class: "conv-h" }, [el("span", { text: t("convVan") }), el("strong", { text: String(van.length) })]),
+        el("div", { class: "conv-h" }, [el("span", { text: t("convNoVan") }), el("strong", { text: String(no.length) })]),
+        el("div", { class: "conv-h" }, [el("span", { text: t("convSense") }), el("strong", { text: String(sense.length) })]),
+        el("div", { class: "conv-h" }, [el("span", { text: t("convNecessiten") }), el("strong", { text: String(nec.length) })]),
+        el("div", { class: "conv-h" }, [el("span", { text: t("convPlacesOf") }), el("strong", { text: String(places) })])];
+      if (c.dinar) res.push(el("div", { class: "conv-h" }, [el("span", { text: t("convDinen") }), el("strong", { text: String(van.filter(function (r) { return r.dinar === "Sí"; }).length) })]));
+      c.resum.forEach(function (r) {
+        var det = !r.va ? t("convSense") : (r.va === "No" ? t("convNo") : t("convAnada") + ": " + txtTr(r.anada) + " · " + t("convTornada") + ": " + txtTr(r.tornada) +
+          (r.places ? " · 🚗 " + r.places : "") + (r.dinar ? " · 🍽️ " + r.dinar : ""));
+        res.push(el("div", { class: "conv-r" + (!r.va ? " sense" : "") }, [el("strong", { text: r.nom }), el("div", { class: "gris", text: det }), r.nota ? el("div", { class: "gris", text: "📝 " + r.nota }) : null]));
+      });
+      f.push(el("div", { class: "caixa" }, res));
+    }
+    // Llista completa
+    if (c.llista && c.llista.length) {
+      f.push(el("div", { class: "caixa" }, [el("h2", { text: t("convLlista") + " (" + c.llista.length + ")" }), el("span", { class: "gris", text: t("convLlistaTxt") })].concat(c.llista.map(function (x) {
+        return el("div", { class: "conv-ll " + (x.sexe === "F" ? "f" : (x.sexe === "M" ? "m" : "")) }, [el("span", { text: x.nom }), el("span", { class: "gris", text: [x.any, x.cat].filter(Boolean).join(" · ") })]);
+      }))));
+    }
+    pantallaSimple(t("convTit"), f);
+    window.scrollTo(0, missatge ? 0 : y);
+  }
+
+  function formResposta(c, m) {
+    var r0 = m.resposta || {};
+    var s = { va: r0.va === "Sí" ? "si" : (r0.va === "No" ? "no" : null), anada: r0.anada || null, tornada: r0.tornada || null,
+              places: r0.places || "0", dinar: r0.dinar === "Sí" ? "si" : (r0.dinar === "No" ? "no" : null) };
+    var caixa = el("div", { class: "conv-form" });
+    var nota = el("textarea", { class: "wtx", rows: "2", maxlength: "200", placeholder: t("convNota") });
+    nota.value = r0.nota || "";
+    var err = el("div", { class: "err", role: "alert" });
+    function botons(opts, clau) {
+      return el("div", { class: "wb" }, opts.map(function (o) {
+        return el("button", { type: "button", class: "wbtn" + (s[clau] === o[0] ? " on" : ""), text: o[1], onclick: function () { s[clau] = o[0]; dibuixa(); } });
+      }));
+    }
+    function dibuixa() {
+      caixa.textContent = "";
+      var trs = [["porto", t("trPorto")], ["lloc", t("trLloc")], ["necessita", t("trNecessita")], ["sol", t("trSol")]];
+      caixa.appendChild(el("div", { class: "wq-t", text: t("convVas") }));
+      caixa.appendChild(botons([["si", t("convSi")], ["no", t("convNo")]], "va"));
+      if (s.va === "si") {
+        caixa.appendChild(el("div", { class: "wq-t", text: t("convAnada") })); caixa.appendChild(botons(trs, "anada"));
+        caixa.appendChild(el("div", { class: "wq-t", text: t("convTornada") })); caixa.appendChild(botons(trs, "tornada"));
+        if (s.anada === "porto" || s.tornada === "porto") {
+          caixa.appendChild(el("div", { class: "wq-t", text: t("convPlaces") }));
+          var pl = el("div", { class: "conv-places" });
+          ["0", "1", "2", "3", "4"].forEach(function (n) { pl.appendChild(el("button", { type: "button", class: "wbtn" + (String(s.places) === n ? " on" : ""), text: n === "4" ? "4+" : n, onclick: function () { s.places = n; dibuixa(); } })); });
+          caixa.appendChild(pl);
+        }
+        if (c.dinar) { caixa.appendChild(el("div", { class: "wq-t", text: t("convDinar") })); caixa.appendChild(botons([["si", t("dSi")], ["no", t("dNo")]], "dinar")); }
+      }
+      caixa.appendChild(nota);
+      caixa.appendChild(err);
+      var bt = el("button", { type: "button", class: "btn", text: m.resposta ? t("convCanviar") : t("convDesar"), onclick: function () {
+        err.textContent = "";
+        if (!s.va || (s.va === "si" && (!s.anada || !s.tornada))) { err.textContent = t("convFaltaResp"); return; }
+        if (s.va === "si" && c.dinar && !s.dinar) { err.textContent = t("convFaltaDinar"); return; }
+        bt.disabled = true; bt.textContent = t("carregant");
+        crida("respondreConv", { token: estat.token, k: c.k, idCnn: m.id, va: s.va, anada: s.anada, tornada: s.tornada, places: s.places, dinar: s.dinar, nota: nota.value }).then(function (r) {
+          if (!r.ok) { err.textContent = terr(r.error); bt.disabled = false; bt.textContent = t("convDesar"); return; }
+          if (r.prova) { window.alert(t("convProvaAdmin")); bt.disabled = false; bt.textContent = t("convDesar"); return; }
+          crida("inici", { token: estat.token }).then(function (r2) {
+            if (r2.ok) guardaInici(r2);
+            pantallaConv(c.k, t("convDesat"));
+          });
+        });
+      } });
+      caixa.appendChild(bt);
+      caixa.appendChild(el("div", { class: "gris", text: t("convPrivat") }));
+    }
+    dibuixa();
+    return caixa;
+  }
 
   function caixaPrivacitat() {
     var tot = el("div", { class: "priv-tot" });
