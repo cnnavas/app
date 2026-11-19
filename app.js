@@ -16,6 +16,11 @@
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
       descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
       noObertaAdmin: "No publicada (només la veus tu)",
+      avisarTit: "Avisar", faltesTit: "📋 Avisos de falta", avisarTxt: "Si un dia no pots venir, arribaràs tard o marxaràs abans, avisa aquí.", avisarBtn: "Avisar que no vinc / arribaré tard",
+      perPares: "avisat pels pares", anullar: "Anul·lar", anullarSeg: "Vols anul·lar aquest avís?", quiFalta: "Qui?", quinDia: "Quin dia?", queFas: "Què passa?",
+      tNoVinc: "No vinc", tTard: "Arribaré tard", tAbans: "Marxaré abans", motiu: "Motiu", motiuPh: "Ex.: tinc un examen, metge, viatge…",
+      motiuAjuda: "No cal que hi posis detalls de salut. Ho veuran el Jaime i la teva família.", enviarAvis: "Enviar l'avís", avisFalta: "Tria el dia, què passa i escriu el motiu.",
+      avisEnviat: "Fet ✅ Avís enviat. El Jaime i la teva família ja ho poden veure.", avisProva: "Mode prova (admin): no s'ha desat res.",
       calTemp: "Temporada", calMes: "Mes", calDia: "Dia", calLlegComp: "competició", calLlegFest: "festiu", calMesBuit: "Aquest mes no hi ha competicions.", calDiaBuit: "Aquest dia no hi ha res apuntat.",
       calPassades: "Veure competicions passades", calProperes: "← Tornar a les properes", calBuit: "No hi ha res al calendari.", calAra: "Ara!", calDema: "Demà", calFalten: "Falten {n} dies", senseCategoria: "El teu perfil encara no té categoria. Parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
@@ -69,6 +74,11 @@
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
       descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
       noObertaAdmin: "No publicada (solo la ves tú)",
+      avisarTit: "Avisar", faltesTit: "📋 Avisos de falta", avisarTxt: "Si un día no puedes venir, llegarás tarde o te irás antes, avisa aquí.", avisarBtn: "Avisar que no voy / llegaré tarde",
+      perPares: "avisado por los padres", anullar: "Anular", anullarSeg: "¿Quieres anular este aviso?", quiFalta: "¿Quién?", quinDia: "¿Qué día?", queFas: "¿Qué pasa?",
+      tNoVinc: "No voy", tTard: "Llegaré tarde", tAbans: "Me iré antes", motiu: "Motivo", motiuPh: "Ej.: tengo un examen, médico, viaje…",
+      motiuAjuda: "No hace falta poner detalles de salud. Lo verán Jaime y tu familia.", enviarAvis: "Enviar el aviso", avisFalta: "Elige el día, qué pasa y escribe el motivo.",
+      avisEnviat: "Hecho ✅ Aviso enviado. Jaime y tu familia ya lo pueden ver.", avisProva: "Modo prueba (admin): no se ha guardado nada.",
       calTemp: "Temporada", calMes: "Mes", calDia: "Día", calLlegComp: "competición", calLlegFest: "festivo", calMesBuit: "Este mes no hay competiciones.", calDiaBuit: "Este día no hay nada apuntado.",
       calPassades: "Ver competiciones pasadas", calProperes: "← Volver a las próximas", calBuit: "No hay nada en el calendario.", calAra: "¡Ahora!", calDema: "Mañana", calFalten: "Faltan {n} días", senseCategoria: "Tu perfil todavía no tiene categoría. Habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
@@ -327,7 +337,7 @@
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
         estat.offline = false;
-        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [] };
+        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [] };
         escriu("inici", JSON.stringify(estat.inici));
         pantallaApp();
       } else if (r.error === "xarxa" && estat.inici) {
@@ -376,6 +386,25 @@
       }
       if (d.sessions && d.sessions.length) {
         cos.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("entrenoTit") })].concat(d.sessions.map(function (s) { return botoSessio(s, false); }))));
+      }
+      var potAvisar = (d.rol === "NEDADOR" || d.rol === "PARE" || d.rol === "ADMIN") && !estat.veureCom &&
+        (estatModul("avisar") === "on" || d.rol === "ADMIN") && (d.rol === "ADMIN" || (d.fills || []).some(function (f) { return f.entreno; }));
+      if (potAvisar || (d.faltes && d.faltes.length)) {
+        var tecnic = d.rol === "ADMIN" || d.rol === "TECNIC";
+        var fl = [el("h2", { text: tecnic ? t("faltesTit") : t("avisarTit") })];
+        (d.faltes || []).forEach(function (f) {
+          fl.push(el("div", { class: "falta" }, [
+            el("div", {}, [el("strong", { text: (tecnic || (d.fills || []).length > 1 ? f.nom + " · " : "") + f.tipus + " · " + dCurt(f.data) }),
+              el("div", { class: "gris", text: f.motiu + (f.perPares ? " (" + t("perPares") + ")" : "") })]),
+            tecnic ? null : el("button", { type: "button", class: "btn2 falta-x", text: t("anullar"), onclick: function () {
+              if (!window.confirm(t("anullarSeg"))) return;
+              crida("anullarFalta", { token: estat.token, k: f.k }).then(function (r) { if (r.ok) carregaInici(); else window.alert(terr(r.error)); });
+            } })
+          ]));
+        });
+        if (!tecnic && !(d.faltes || []).length) fl.push(el("span", { class: "gris", text: t("avisarTxt") }));
+        if (potAvisar) fl.push(el("button", { type: "button", class: "btn3", text: "📢 " + t("avisarBtn"), onclick: pantallaAvisar }));
+        cos.appendChild(el("div", { class: "caixa" }, fl));
       }
       if (!d.avisos.length) cos.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
       d.avisos.forEach(function (a) {
@@ -630,6 +659,47 @@
     });
     if (!estat.cacheSetmana && estatModul("setmana") !== "no") crida("setmana", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) { if (r.ok) estat.cacheSetmana = r; });
     return cont;
+  }
+
+  function pantallaAvisar() {
+    var d = estat.inici || {};
+    var fills = (d.fills || []).filter(function (f) { return f.entreno; });
+    var s = { id: fills.length ? fills[0].id : "", data: null, tipus: null };
+    var err = el("div", { class: "err", role: "alert" });
+    var motiu = el("textarea", { class: "wtx", rows: "3", maxlength: "300", placeholder: t("motiuPh") });
+    function avuiMes(n) { var x = new Date(Date.now() + n * 864e5); return x.getFullYear() + "-" + ("0" + (x.getMonth() + 1)).slice(-2) + "-" + ("0" + x.getDate()).slice(-2); }
+    function pinta2() {
+      var fillsB = fills.length > 1 ? el("div", { class: "wq" }, [el("div", { class: "wq-t", text: t("quiFalta") }), el("div", { class: "wb" }, fills.map(function (f) {
+        return el("button", { type: "button", class: "wbtn" + (s.id === f.id ? " on" : ""), text: f.nom, onclick: function () { s.id = f.id; pinta2(); } }); }))]) : null;
+      var dies = el("div", { class: "dies-av" });
+      for (var n = 0; n < 14; n++) (function (k) {
+        dies.appendChild(el("button", { type: "button", class: "dia-av" + (s.data === k ? " on" : ""), text: (n === 0 ? t("avuiMin") : dCurt(k)) + (n === 0 ? "" : "/" + k.slice(5, 7)),
+          onclick: function () { s.data = k; pinta2(); } }));
+      })(avuiMes(n));
+      var tipus = el("div", { class: "wb" }, [t("tNoVinc"), t("tTard"), t("tAbans")].map(function (tx, i) {
+        var val = ["No vinc", "Arribaré tard", "Marxaré abans"][i];
+        return el("button", { type: "button", class: "wbtn" + (s.tipus === val ? " on" : ""), text: tx, onclick: function () { s.tipus = val; pinta2(); } });
+      }));
+      var bt = el("button", { type: "button", class: "btn", text: t("enviarAvis"), onclick: function () {
+        err.textContent = "";
+        if (!s.data || !s.tipus || motiu.value.trim().length < 3) { err.textContent = t("avisFalta"); return; }
+        bt.disabled = true; bt.textContent = t("carregant");
+        crida("avisarFalta", { token: estat.token, idCnn: s.id, data: s.data, tipus: s.tipus, motiu: motiu.value }).then(function (r) {
+          if (r.ok) { window.alert(r.prova ? t("avisProva") : t("avisEnviat")); estat.pestanya = "avui"; carregaInici(); }
+          else { err.textContent = terr(r.error); bt.disabled = false; bt.textContent = t("enviarAvis"); }
+        });
+      } });
+      var y = window.scrollY || 0;
+      pantallaSimple(t("avisarTit"), [
+        fillsB,
+        el("div", { class: "wq" }, [el("div", { class: "wq-t", text: t("quinDia") }), dies]),
+        el("div", { class: "wq" }, [el("div", { class: "wq-t", text: t("queFas") }), tipus]),
+        el("div", { class: "wq" }, [el("div", { class: "wq-t", text: t("motiu") }), motiu, el("div", { class: "gris", text: t("motiuAjuda") })]),
+        err, bt
+      ]);
+      window.scrollTo(0, y);
+    }
+    pinta2();
   }
 
   function proximament() {
