@@ -16,6 +16,7 @@
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
       descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
       noObertaAdmin: "No publicada (només la veus tu)",
+      calPassades: "Veure competicions passades", calProperes: "← Tornar a les properes", calBuit: "No hi ha res al calendari.", calAra: "Ara!", calDema: "Demà", calFalten: "Falten {n} dies", senseCategoria: "El teu perfil encara no té categoria. Parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -67,6 +68,7 @@
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
       descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
       noObertaAdmin: "No publicada (solo la ves tú)",
+      calPassades: "Ver competiciones pasadas", calProperes: "← Volver a las próximas", calBuit: "No hay nada en el calendario.", calAra: "¡Ahora!", calDema: "Mañana", calFalten: "Faltan {n} días", senseCategoria: "Tu perfil todavía no tiene categoría. Habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -384,6 +386,9 @@
     } else if (pes === "setmana" && (estatModul("setmana") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("setmana") !== "no"))) {
       if (estatModul("setmana") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaSetmana());
+    } else if (pes === "calendari" && (estatModul("calendari") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("calendari") !== "no"))) {
+      if (estatModul("calendari") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaCalendari());
     } else {
       cos.appendChild(proximament());
     }
@@ -483,6 +488,54 @@
       document.body.appendChild(a); a.click(); document.body.removeChild(a);
       setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
     });
+  }
+
+  var MESOS = { ca: ["gener", "febrer", "març", "abril", "maig", "juny", "juliol", "agost", "setembre", "octubre", "novembre", "desembre"],
+                es: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"] };
+  var DSEM = { ca: ["dg", "dl", "dt", "dc", "dj", "dv", "ds"], es: ["do", "lu", "ma", "mi", "ju", "vi", "sá"] };
+  function dObj(k) { return new Date(k + "T12:00:00"); }
+  function dCurt(k) { var x = dObj(k); return DSEM[estat.idioma][x.getDay()] + " " + x.getDate(); }
+  function diesFins(k, avui) { return Math.round((dObj(k) - dObj(avui)) / 864e5); }
+
+  function vistaCalendari() {
+    var cont = el("div", { class: "cal" });
+    var veurePassades = false;
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (r.senseCategoria) cont.appendChild(el("div", { class: "caixa gris", text: t("senseCategoria") }));
+      var items = r.evs.map(function (e) { return { tipus: "c", inici: e.inici, fi: e.fi, e: e }; })
+        .concat(r.festius.map(function (f) { return { tipus: "f", inici: f.data, fi: f.data, e: f }; }))
+        .filter(function (x) { return veurePassades ? x.fi < r.avui : x.fi >= r.avui; })
+        .sort(function (a, b) { return veurePassades ? b.inici.localeCompare(a.inici) : a.inici.localeCompare(b.inici); });
+      cont.appendChild(el("button", { type: "button", class: "btn2 cal-tog", text: veurePassades ? t("calProperes") : t("calPassades"),
+        onclick: function () { veurePassades = !veurePassades; dibuixa(r); } }));
+      if (!items.length) cont.appendChild(el("div", { class: "caixa gris", text: t("calBuit") }));
+      var mesAnt = "";
+      items.forEach(function (x) {
+        var mes = x.inici.slice(0, 7);
+        if (mes !== mesAnt) { mesAnt = mes; cont.appendChild(el("h2", { class: "cal-mes", text: MESOS[estat.idioma][Number(mes.slice(5, 7)) - 1] + " " + mes.slice(0, 4) })); }
+        var quan = dCurt(x.inici) + (x.fi !== x.inici ? " – " + dCurt(x.fi) : "");
+        if (x.tipus === "f") {
+          cont.appendChild(el("div", { class: "cal-f" }, [el("span", { class: "cal-d", text: quan }), el("span", { text: "🔴 " + x.e.nom })]));
+          return;
+        }
+        var falten = diesFins(x.inici, r.avui);
+        var xip = el("span", { class: "cal-cat", text: x.e.cat || "" });
+        if (x.e.color && x.e.color !== "#ffffff") { xip.style.background = x.e.color; xip.style.color = textSobre(x.e.color); }
+        cont.appendChild(el("div", { class: "cal-ev" + (x.inici <= r.avui && x.fi >= r.avui ? " ara" : "") }, [
+          el("div", { class: "cal-ev-cap" }, [el("strong", { text: quan }), x.e.cat ? xip : null]),
+          el("div", { class: "cal-nom", text: x.e.nom }),
+          !veurePassades ? el("div", { class: "gris cal-falten", text: falten <= 0 ? t("calAra") : (falten === 1 ? t("calDema") : t("calFalten").replace("{n}", falten)) }) : null
+        ]));
+      });
+    }
+    if (estat.cacheCal) dibuixa(estat.cacheCal); else cont.appendChild(el("div", { class: "carrega", text: t("carregant") }));
+    crida("calendari", { token: estat.token }).then(function (r) {
+      if (r.ok) estat.cacheCal = r;
+      if (estat.pestanya === "calendari" && cont.isConnected) dibuixa(r.ok || !estat.cacheCal ? r : estat.cacheCal);
+    });
+    return cont;
   }
 
   function proximament() {

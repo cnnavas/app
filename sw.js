@@ -1,6 +1,6 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v9';
-const FITXERS = ['./', 'index.html', 'app.css?v=9', 'app.js?v=9', 'cos.js?v=9', 'wellness.js?v=9', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const VERSIO = 'cnn-v10';
+const FITXERS = ['./', 'index.html', 'app.css?v=10', 'app.js?v=10', 'cos.js?v=10', 'wellness.js?v=10', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS)).then(() => self.skipWaiting()));

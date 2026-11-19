@@ -139,3 +139,16 @@ input.wtx{min-height:52px}
 .sbtn-ic{font-size:22px}
 .sbtn-t{display:flex;flex-direction:column;gap:2px;font-size:15px}
 .sbtn-t .gris{font-size:13px}
+
+/* Calendari */
+.cal{display:flex;flex-direction:column;gap:8px}
+.cal-tog{align-self:flex-start;width:auto;padding:0 4px;min-height:36px;color:#F1C332}
+.cal-mes{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.5px;color:#9A9A9A}
+.cal-ev{background:#1C1C1C;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;border:2px solid transparent}
+.cal-ev.ara{border-color:#F1C332}
+.cal-ev-cap{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cal-cat{font-size:11px;font-weight:800;border-radius:6px;padding:2px 8px;background:#2A2A2A;color:#fff;white-space:nowrap}
+.cal-nom{font-size:15px;font-weight:700;line-height:1.35}
+.cal-falten{font-size:13px}
+.cal-f{display:flex;gap:10px;font-size:13px;color:#FF9C9C;padding:2px 4px}
+.cal-d{width:96px;flex-shrink:0;color:#9A9A9A}
