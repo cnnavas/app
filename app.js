@@ -21,7 +21,19 @@
       tNoVinc: "No vinc", tTard: "Arribaré tard", tAbans: "Marxaré abans", motiu: "Motiu", motiuPh: "Ex.: tinc un examen, metge, viatge…",
       motiuAjuda: "No cal que hi posis detalls de salut. Ho veuran el Jaime i la teva família.", enviarAvis: "Enviar l'avís", avisFalta: "Tria el dia, què passa i escriu el motiu.",
       avisEnviat: "Fet ✅ Avís enviat. El Jaime i la teva família ja ho poden veure.", avisProva: "Mode prova (admin): no s'ha desat res.",
-      calTemp: "Temporada", calMes: "Mes", calDia: "Dia", calLlegComp: "competició", calLlegFest: "festiu", calMesBuit: "Aquest mes no hi ha competicions.", calDiaBuit: "Aquest dia no hi ha res apuntat.",
+      privTit: "Privacitat", privLlegir: "Llegir la informació completa", privAmagar: "Amagar la informació",
+      privAccepto: "He llegit la informació de privacitat i accepto les normes del club",
+      privWellness: "Autoritzo que l'equip tècnic tracti el meu wellness (inclou dades de salut) només per al seguiment esportiu. Puc retirar-ho quan vulgui. (opcional)",
+      privFamilia: "He llegit la informació de privacitat. Entenc que veuré la informació esportiva dels meus fills, però no el seu wellness",
+      privMenorAvis: "👨‍👩‍👧 Aquest compte és d'un nedador o nedadora menor de 14 anys. L'ha d'activar el pare, mare o tutor.",
+      tutorNom: "Nom i cognoms del pare, mare o tutor",
+      tutorAccepto: "Soc el pare, mare o tutor legal. He llegit la informació de privacitat i autoritzo que el meu fill o filla tingui un compte a l'app del club",
+      tutorWellness: "Autoritzo que l'equip tècnic tracti el wellness del meu fill o filla (inclou dades de salut) només per al seguiment esportiu. Entenc que és privat del nedador i de l'equip tècnic. (opcional)",
+      privActualitzat: "Hem actualitzat la informació de privacitat de l'app. Llegeix-la i accepta-la per continuar.",
+      cwTit: "Permís per al wellness", cwDonat: "✅ Has donat el permís per al wellness.", cwNoDonat: "No has donat el permís per al wellness.",
+      cwTxt: "El wellness inclou dades de salut. Només el veus tu i l'equip tècnic, mai la teva família.", cwDonar: "Donar el permís", cwRetirar: "Retirar el permís",
+      cwRetirarSeg: "Si retires el permís, no podràs fer el wellness a l'app. Continuar?", cwCal: "Per fer el wellness a l'app, primer cal el teu permís.",
+      calTemp: "Temporada", calMes: "Mes", calDia: "Dia", calVeureLlista: "Veure en llista", calVeureGraella: "Veure el calendari de la temporada", calProxima: "Propera competició", calLlegComp: "competició", calLlegFest: "festiu", calMesBuit: "Aquest mes no hi ha competicions.", calDiaBuit: "Aquest dia no hi ha res apuntat.",
       calPassades: "Veure competicions passades", calProperes: "← Tornar a les properes", calBuit: "No hi ha res al calendari.", calAra: "Ara!", calDema: "Demà", calFalten: "Falten {n} dies", senseCategoria: "El teu perfil encara no té categoria. Parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
@@ -64,7 +76,7 @@
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", tutor: "Escriu el nom complet del pare, mare o tutor i marca l'autorització.", privacitat: "Cal acceptar la informació de privacitat.", sense_consentiment: "Per fer el wellness a l'app, primer cal el teu permís (menú ☰ › Privacitat).", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
       }
     },
     es: {
@@ -79,7 +91,19 @@
       tNoVinc: "No voy", tTard: "Llegaré tarde", tAbans: "Me iré antes", motiu: "Motivo", motiuPh: "Ej.: tengo un examen, médico, viaje…",
       motiuAjuda: "No hace falta poner detalles de salud. Lo verán Jaime y tu familia.", enviarAvis: "Enviar el aviso", avisFalta: "Elige el día, qué pasa y escribe el motivo.",
       avisEnviat: "Hecho ✅ Aviso enviado. Jaime y tu familia ya lo pueden ver.", avisProva: "Modo prueba (admin): no se ha guardado nada.",
-      calTemp: "Temporada", calMes: "Mes", calDia: "Día", calLlegComp: "competición", calLlegFest: "festivo", calMesBuit: "Este mes no hay competiciones.", calDiaBuit: "Este día no hay nada apuntado.",
+      privTit: "Privacidad", privLlegir: "Leer la información completa", privAmagar: "Ocultar la información",
+      privAccepto: "He leído la información de privacidad y acepto las normas del club",
+      privWellness: "Autorizo que el equipo técnico trate mi wellness (incluye datos de salud) solo para el seguimiento deportivo. Puedo retirarlo cuando quiera. (opcional)",
+      privFamilia: "He leído la información de privacidad. Entiendo que veré la información deportiva de mis hijos, pero no su wellness",
+      privMenorAvis: "👨‍👩‍👧 Esta cuenta es de un nadador o nadadora menor de 14 años. La tiene que activar el padre, madre o tutor.",
+      tutorNom: "Nombre y apellidos del padre, madre o tutor",
+      tutorAccepto: "Soy el padre, madre o tutor legal. He leído la información de privacidad y autorizo que mi hijo o hija tenga una cuenta en la app del club",
+      tutorWellness: "Autorizo que el equipo técnico trate el wellness de mi hijo o hija (incluye datos de salud) solo para el seguimiento deportivo. Entiendo que es privado del nadador y del equipo técnico. (opcional)",
+      privActualitzat: "Hemos actualizado la información de privacidad de la app. Léela y acéptala para continuar.",
+      cwTit: "Permiso para el wellness", cwDonat: "✅ Has dado el permiso para el wellness.", cwNoDonat: "No has dado el permiso para el wellness.",
+      cwTxt: "El wellness incluye datos de salud. Solo lo ves tú y el equipo técnico, nunca tu familia.", cwDonar: "Dar el permiso", cwRetirar: "Retirar el permiso",
+      cwRetirarSeg: "Si retiras el permiso, no podrás hacer el wellness en la app. ¿Continuar?", cwCal: "Para hacer el wellness en la app, primero hace falta tu permiso.",
+      calTemp: "Temporada", calMes: "Mes", calDia: "Día", calVeureLlista: "Ver en lista", calVeureGraella: "Ver el calendario de la temporada", calProxima: "Próxima competición", calLlegComp: "competición", calLlegFest: "festivo", calMesBuit: "Este mes no hay competiciones.", calDiaBuit: "Este día no hay nada apuntado.",
       calPassades: "Ver competiciones pasadas", calProperes: "← Volver a las próximas", calBuit: "No hay nada en el calendario.", calAra: "¡Ahora!", calDema: "Mañana", calFalten: "Faltan {n} días", senseCategoria: "Tu perfil todavía no tiene categoría. Habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
@@ -122,7 +146,7 @@
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", tutor: "Escribe el nombre completo del padre, madre o tutor y marca la autorización.", privacitat: "Hay que aceptar la información de privacidad.", sense_consentiment: "Para hacer el wellness en la app, primero hace falta tu permiso (menú ☰ › Privacidad).", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
       }
     }
   };
@@ -204,7 +228,12 @@
       botons.appendChild(el("button", { type: "button", class: "btn", text: t("continuar"), onclick: function () {
         alta.codi = inC.value.toUpperCase().replace(/[^A-Z0-9]/g, "");
         if (alta.codi.length !== 10) { err.textContent = terr("codi"); return; }
-        alta.pas = 3; pantallaAlta();
+        err.textContent = t("carregant");
+        crida("mirarCodi", { codi: alta.codi }).then(function (r) {
+          if (!r.ok) { err.textContent = terr(r.error); return; }
+          alta.menor = !!r.menor; alta.rol = r.rol;
+          alta.pas = 3; pantallaAlta();
+        });
       } }));
     }
 
@@ -242,20 +271,29 @@
     }
 
     if (p === 4) {
-      var chk = el("input", { type: "checkbox", id: "acc" });
       var bt = el("button", { type: "button", class: "btn", text: t("acceptar"), disabled: true });
-      chk.addEventListener("change", function () { bt.disabled = !chk.checked; });
-      mig.appendChild(el("h1", { text: t("normesTit") }));
-      mig.appendChild(el("div", { class: "caixa" }, [
-        el("span", { text: t("normesTxt") }),
-        el("span", { class: "gris", text: t("wellPrivat") }),
-        el("span", { class: "gris", text: t("noDadesPrivades") })
-      ]));
-      mig.appendChild(el("label", { class: "check", for: "acc" }, [chk, t("accepto")]));
+      var chk = el("input", { type: "checkbox", id: "acc" });
+      var chkW = el("input", { type: "checkbox", id: "accw" });
+      var inT = el("input", { type: "text", id: "tutor", maxlength: "80", autocomplete: "name" });
+      function revisa() { bt.disabled = !(chk.checked && (!alta.menor || inT.value.trim().length >= 5)); }
+      chk.addEventListener("change", revisa); inT.addEventListener("input", revisa);
+      mig.appendChild(el("h1", { text: t("privTit") }));
+      if (alta.menor) mig.appendChild(el("div", { class: "caixa avis-menor", text: t("privMenorAvis") }));
+      mig.appendChild(caixaPrivacitat());
+      if (alta.menor) {
+        mig.appendChild(el("label", { for: "tutor", text: t("tutorNom") }));
+        mig.appendChild(inT);
+        mig.appendChild(el("label", { class: "check", for: "acc" }, [chk, t("tutorAccepto")]));
+        mig.appendChild(el("label", { class: "check", for: "accw" }, [chkW, t("tutorWellness")]));
+      } else {
+        mig.appendChild(el("label", { class: "check", for: "acc" }, [chk, alta.rol === "PARE" ? t("privFamilia") : t("privAccepto")]));
+        if (alta.rol === "NEDADOR") mig.appendChild(el("label", { class: "check", for: "accw" }, [chkW, t("privWellness")]));
+      }
       mig.appendChild(err);
       bt.addEventListener("click", function () {
         bt.disabled = true; bt.textContent = t("carregant");
-        crida("activar", { codi: alta.codi, usuari: alta.usuari, contrasenya: alta.pw1 }).then(function (r) {
+        crida("activar", { codi: alta.codi, usuari: alta.usuari, contrasenya: alta.pw1, privacitat: chk.checked === true,
+          wellness: chkW.checked === true, tutorNom: alta.menor ? inT.value.trim() : "", tutorAccepta: alta.menor ? chk.checked === true : false }).then(function (r) {
           if (r.ok && r.token) {
             desaToken(r.token);
             alta.pw1 = alta.pw2 = "";
@@ -337,8 +375,9 @@
     crida("inici", { token: estat.token }).then(function (r) {
       if (r.ok) {
         estat.offline = false;
-        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [] };
+        estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null };
         escriu("inici", JSON.stringify(estat.inici));
+        if (r.privacitat && r.privacitat.obligatoria && !r.privacitat.acceptada) { pantallaPrivacitat(true); return; }
         pantallaApp();
       } else if (r.error === "xarxa" && estat.inici) {
         estat.offline = true; pantallaApp();
@@ -381,6 +420,8 @@
         if (w.fet) fills.push(el("div", { class: "ok gran", text: t("wellFet") }));
         else if (w.sensePerfil) fills.push(el("span", { class: "gris", text: t("wellSensePerfil") }),
           el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "btn", text: t("wellBtn") }));
+        else if (!w.prova && d.privacitat && d.privacitat.obligatoria && d.rol === "NEDADOR" && !d.privacitat.wellness)
+          fills.push(el("span", { class: "gris", text: t("cwCal") }), el("button", { type: "button", class: "btn", text: t("cwDonar"), onclick: function () { pantallaPrivacitat(false); } }));
         else fills.push(el("button", { type: "button", class: "btn", text: w.prova ? t("wellProva") : t("wellFer"), onclick: obreWellness }), w.prova ? null : enllac);
         cos.appendChild(el("div", { class: "caixa" }, fills));
       }
@@ -561,6 +602,8 @@
     }
 
     function vistaTemp(r) {
+      if (!estat.calLlista) return vistaAny(r);
+      cont.appendChild(el("button", { type: "button", class: "btn2 cal-tog", text: "🗓️ " + t("calVeureGraella"), onclick: function () { estat.calLlista = false; dibuixa(r); } }));
       var items = r.evs.map(function (e) { return { tipus: "c", inici: e.inici, fi: e.fi, e: e }; })
         .concat(r.festius.map(function (f) { return { tipus: "f", inici: f.data, fi: f.data, e: f }; }))
         .filter(function (x) { return veurePassades ? x.fi < r.avui : x.fi >= r.avui; })
@@ -578,6 +621,45 @@
         }
         cont.appendChild(targeta(x.e, r, !veurePassades));
       });
+    }
+
+    function vistaAny(r) {
+      var tots = r.evs.map(function (e) { return e.inici; }).concat(r.festius.map(function (f) { return f.data; })).sort();
+      var ini = tots.length ? tots[0].slice(0, 7) : avuiK.slice(0, 7), fi = tots.length ? r.evs.map(function (e) { return e.fi; }).concat(tots).sort().pop().slice(0, 7) : ini;
+      cont.appendChild(el("button", { type: "button", class: "btn2 cal-tog", text: "☰ " + t("calVeureLlista"), onclick: function () { estat.calLlista = true; dibuixa(r); } }));
+      // Llegenda de categories que surten
+      var cats = {};
+      r.evs.forEach(function (e) { if (e.cat && !cats[e.cat]) cats[e.cat] = e.color || "#F1C332"; });
+      var lleg = el("div", { class: "any-lleg" });
+      Object.keys(cats).forEach(function (c) { var p = el("span", { class: "any-lc" }); p.style.background = cats[c] && cats[c] !== "#ffffff" ? cats[c] : "#F1C332"; lleg.appendChild(el("span", { class: "any-li" }, [p, c])); });
+      lleg.appendChild(el("span", { class: "any-li" }, [el("span", { class: "any-lc fest" }), t("festiu")]));
+      cont.appendChild(lleg);
+      var graella = el("div", { class: "any" });
+      var y = Number(ini.slice(0, 4)), m = Number(ini.slice(5, 7)), guard = 0;
+      while ((y + "-" + ("0" + m).slice(-2)) <= fi && guard++ < 14) {
+        (function (y, m) {
+        var mk = y + "-" + ("0" + m).slice(-2);
+        var cap = el("button", { type: "button", class: "any-mcap", text: MESOS[estat.idioma][m - 1].slice(0, 3) + " " + String(y).slice(2),
+          onclick: function () { mesVist = estat.calMes = mk; zoom = estat.calZoom = "mes"; dibuixa(r); } });
+        var g = el("div", { class: "any-g" });
+        var off = (new Date(y, m - 1, 1).getDay() + 6) % 7, nd = new Date(y, m, 0).getDate();
+        for (var i = 0; i < off; i++) g.appendChild(el("span", { class: "any-b" }));
+        for (var d = 1; d <= nd; d++) (function (d) {
+          var dk = k(y, m, d), info = delDia(r, dk);
+          var c = el("button", { type: "button", class: "any-d" + (info.fest.length ? " fest" : "") + (info.comps.length ? " comp" : "") + (dk === avuiK ? " avui" : "") + (dk < avuiK ? " pass" : ""),
+            "aria-label": dk + (info.comps.length ? " · " + info.comps[0].nom : ""), text: info.comps.length || info.fest.length || dk === avuiK ? String(d) : "",
+            onclick: function () { diaVist = estat.calDia = dk; zoom = estat.calZoom = "dia"; dibuixa(r); } });
+          if (info.comps.length) { var col = info.comps[0].color && info.comps[0].color !== "#ffffff" ? info.comps[0].color : "#F1C332"; c.style.background = col; c.style.color = textSobre(col); }
+          g.appendChild(c);
+        })(d);
+        graella.appendChild(el("div", { class: "any-m" + (mk === avuiK.slice(0, 7) ? " ara" : "") }, [cap, g]));
+        })(y, m);
+        m++; if (m > 12) { m = 1; y++; }
+      }
+      cont.appendChild(graella);
+      // Pròxima competició
+      var prox = r.evs.filter(function (e) { return e.fi >= r.avui; }).sort(function (a, b) { return a.inici.localeCompare(b.inici); })[0];
+      if (prox) { cont.appendChild(el("h2", { class: "cal-mes", text: t("calProxima") })); cont.appendChild(targeta(prox, r, true)); }
     }
 
     function vistaMes(r) {
@@ -702,6 +784,80 @@
     pinta2();
   }
 
+  var PRIV = {
+    ca: [
+      ["Qui és el responsable", "Club Natació Navàs (NIF G59519678), Pla d'Alzineta s/n, 08670 Navàs. Correu: cnatacio_navas@hotmail.com."],
+      ["Quines dades fa servir", "Compte (nom, usuari, rol i nedadors vinculats; la contrasenya va xifrada), activitat esportiva (planificació, sessions, calendari), wellness (inclou dades de salut; el cicle és opcional), avisos de falta i un registre d'ús sense contingut. Mai mostra telèfons, comptes bancaris ni documents privats."],
+      ["Qui ho veu", "Cada nedador veu només el seu. Les famílies veuen la informació esportiva dels seus fills, però mai el wellness. L'equip tècnic (Jaime, Eudald, Ilona) veu el necessari per entrenar. No es compara ningú amb ningú."],
+      ["Menors", "Fins als 14 anys, el compte l'activa i l'autoritza el pare, mare o tutor. De 14 a 17, el nedador. Les famílies poden demanar en qualsevol moment que es desactivi el compte d'un menor."],
+      ["On es guarda", "En fulls privats del compte de Google del club. La pàgina de l'app (GitHub) no conté dades personals. Accés amb codi personal i contrasenya; bloqueig després de 5 intents."],
+      ["Quant de temps", "Compte: mentre estiguis actiu al club. Wellness: aquesta temporada i la següent. Sessions en PDF: 31 dies. Avisos de falta: fins al final de la temporada. Registre d'ús: 12 mesos."],
+      ["Els teus drets", "Pots demanar accedir, corregir o esborrar les teves dades, i retirar el permís del wellness quan vulguis (menú ☰ › Privacitat). Per correu al club o en persona. També pots reclamar a l'Agència Espanyola de Protecció de Dades (aepd.es)."]
+    ]
+  };
+  PRIV.es = PRIV.ca;
+
+  function caixaPrivacitat() {
+    var tot = el("div", { class: "priv-tot" });
+    var obert = false;
+    var bt = el("button", { type: "button", class: "btn2 priv-mes", text: t("privLlegir") });
+    bt.addEventListener("click", function () {
+      obert = !obert; tot.textContent = "";
+      bt.textContent = obert ? t("privAmagar") : t("privLlegir");
+      if (obert) PRIV[estat.idioma].forEach(function (s) { tot.appendChild(el("div", { class: "priv-s" }, [el("strong", { text: s[0] }), el("span", { text: s[1] })])); });
+    });
+    return el("div", { class: "caixa" }, [
+      el("span", { text: t("normesTxt") }),
+      el("span", { class: "gris", text: t("wellPrivat") }),
+      el("span", { class: "gris", text: t("noDadesPrivades") }),
+      bt, tot
+    ]);
+  }
+
+  function pantallaPrivacitat(gate) {
+    var d = estat.inici || {};
+    var pr = d.privacitat || {};
+    var err = el("div", { class: "err", role: "alert" });
+    var fills = [];
+    if (gate) fills.push(el("div", { class: "caixa avis-menor", text: t("privActualitzat") }));
+    fills.push(caixaPrivacitat());
+    if (d.rol === "NEDADOR") {
+      var estatW = pr.wellness ? t("cwDonat") : t("cwNoDonat");
+      fills.push(el("h2", { text: t("cwTit") }));
+      fills.push(el("div", { class: "caixa" }, [el("span", { text: estatW }), el("span", { class: "gris", text: t("cwTxt") })]));
+      if (!gate) {
+        var inT = el("input", { type: "text", maxlength: "80", placeholder: t("tutorNom") });
+        var chT = el("input", { type: "checkbox", id: "cwt" });
+        if (!pr.wellness && pr.tutelat) { fills.push(inT); fills.push(el("label", { class: "check", for: "cwt" }, [chT, t("tutorWellness")])); }
+        fills.push(el("button", { type: "button", class: pr.wellness ? "btn3" : "btn", text: pr.wellness ? t("cwRetirar") : t("cwDonar"), onclick: function () {
+          if (pr.wellness && !window.confirm(t("cwRetirarSeg"))) return;
+          crida("consentimentWellness", { token: estat.token, valor: !pr.wellness, tutorNom: inT.value.trim(), tutorAccepta: chT.checked === true }).then(function (r) {
+            if (r.ok) carregaInici(); else err.textContent = terr(r.error);
+          });
+        } }));
+      }
+    }
+    fills.push(err);
+    if (gate) {
+      var ch = el("input", { type: "checkbox", id: "pga" });
+      var chW = el("input", { type: "checkbox", id: "pgw" });
+      var bt = el("button", { type: "button", class: "btn", text: t("acceptar"), disabled: true });
+      ch.addEventListener("change", function () { bt.disabled = !ch.checked; });
+      fills.push(el("label", { class: "check", for: "pga" }, [ch, d.rol === "PARE" ? t("privFamilia") : t("privAccepto")]));
+      if (d.rol === "NEDADOR" && !pr.wellness && !pr.tutelat) fills.push(el("label", { class: "check", for: "pgw" }, [chW, t("privWellness")]));
+      bt.addEventListener("click", function () {
+        bt.disabled = true;
+        crida("acceptarPrivacitat", { token: estat.token, wellness: chW.checked === true }).then(function (r) {
+          if (r.ok) carregaInici(); else { err.textContent = terr(r.error); bt.disabled = false; }
+        });
+      });
+      fills.push(bt);
+      pinta(el("div", { class: "pant" }, [el("div", { class: "mig" }, [el("h1", { text: t("privTit") })].concat(fills))]));
+    } else {
+      pantallaSimple(t("privTit"), fills);
+    }
+  }
+
   function proximament() {
     return el("div", { class: "prox" }, [
       el("div", { class: "ic", "aria-hidden": "true", text: "🚧" }),
@@ -733,6 +889,7 @@
       !estat.veureCom && estat.inici && estat.inici.rol === "ADMIN" ? item("👁️", t("veureCom"), pantallaPerfils) : null,
       estat.veureCom ? null : item("🔑", t("perfil"), function () { pantallaContrasenya(false); }),
       item("🌐", t("idioma"), function () { canviaIdioma(estat.idioma === "ca" ? "es" : "ca"); }),
+      estat.veureCom ? null : item("🔒", t("privTit"), function () { pantallaPrivacitat(false); }),
       item("❓", t("ajuda"), pantallaAjuda),
       estat.veureCom ? null : el("hr"),
       estat.veureCom ? null : item("🚪", t("sortir"), function () { surt(false); }),
