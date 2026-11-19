@@ -458,7 +458,7 @@
       });
     }
     if (estat.cacheSetmana) dibuixa(estat.cacheSetmana); else cont.appendChild(el("div", { class: "carrega", text: t("carregant") }));
-    crida("setmana", { token: estat.token }).then(function (r) {
+    crida("setmana", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
       if (r.ok) estat.cacheSetmana = r;
       if (estat.pestanya === "setmana" && cont.isConnected) dibuixa(r.ok || !estat.cacheSetmana ? r : estat.cacheSetmana);
     });
@@ -624,11 +624,11 @@
       if (zoom === "temp") vistaTemp(r); else if (zoom === "dia") vistaDia(r); else vistaMes(r);
     }
     if (estat.cacheCal) dibuixa(estat.cacheCal); else cont.appendChild(el("div", { class: "carrega", text: t("carregant") }));
-    crida("calendari", { token: estat.token }).then(function (r) {
+    crida("calendari", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
       if (r.ok) estat.cacheCal = r;
       if (estat.pestanya === "calendari" && cont.isConnected) dibuixa(r.ok || !estat.cacheCal ? r : estat.cacheCal);
     });
-    if (!estat.cacheSetmana && estatModul("setmana") !== "no") crida("setmana", { token: estat.token }).then(function (r) { if (r.ok) estat.cacheSetmana = r; });
+    if (!estat.cacheSetmana && estatModul("setmana") !== "no") crida("setmana", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) { if (r.ok) estat.cacheSetmana = r; });
     return cont;
   }
 
@@ -723,7 +723,7 @@
       if (!r.ok) { llista.appendChild(el("div", { class: "err", text: terr(r.error) })); return; }
       r.perfils.forEach(function (p) {
         llista.appendChild(el("button", { type: "button", class: "btn3 perfil", onclick: function () {
-          estat.veureCom = { id: p.id, nom: p.nom }; estat.pestanya = "avui"; carregaInici();
+          estat.veureCom = { id: p.id, nom: p.nom }; estat.pestanya = "avui"; estat.cacheCal = estat.cacheSetmana = null; carregaInici();
         } }, [el("span", { text: p.nom }), el("span", { class: "et", text: p.rol })]));
       });
     });
@@ -739,7 +739,7 @@
     });
   }
 
-  function surtVeureCom() { estat.veureCom = null; estat.dadesVC = null; estat.pestanya = "avui"; pantallaApp(); }
+  function surtVeureCom() { estat.veureCom = null; estat.dadesVC = null; estat.cacheCal = estat.cacheSetmana = null; estat.pestanya = "avui"; pantallaApp(); }
 
   function surt(totes) {
     var tk = estat.token;
