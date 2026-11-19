@@ -40,7 +40,7 @@
       convAvisos: "Avisos", convMaps: "📍 Com arribar", convLlistat: "📄 Llistat de sortides", convResultats: "🏁 Resultats",
       convProves: "Proves", convProva: "Prova", convHora: "Hora", convNum: "Nº", convSerie: "Sèrie", convCarrer: "Carrer",
       convPreAvis: "És una preconvocatòria: les hores, sèries i carrers encara poden canviar.",
-      convLlista: "Llista de convocats", convLlistaTxt: "Del més petit al més gran.",
+      convLlista: "Llista de convocats", convLlistaTxt: "Del més petit al més gran. Toca un nom per veure què neda i quan.",
       convVas: "Hi anirà?", convSi: "✅ Sí, hi va", convNo: "❌ No pot venir", convAnada: "Anada", convTornada: "Tornada",
       trPorto: "L'hi portem nosaltres", trLloc: "Ens veiem al lloc", trNecessita: "Necessita que algú el porti", trSol: "Hi va pel seu compte",
       convPlaces: "Places lliures al cotxe per a altres nedadors", convDinar: "Es queda a dinar?", dSi: "Sí", dNo: "No",
@@ -125,7 +125,7 @@
       convAvisos: "Avisos", convMaps: "📍 Cómo llegar", convLlistat: "📄 Listado de salidas", convResultats: "🏁 Resultados",
       convProves: "Pruebas", convProva: "Prueba", convHora: "Hora", convNum: "Nº", convSerie: "Serie", convCarrer: "Calle",
       convPreAvis: "Es una preconvocatoria: las horas, series y calles todavía pueden cambiar.",
-      convLlista: "Lista de convocados", convLlistaTxt: "Del más pequeño al más mayor.",
+      convLlista: "Lista de convocados", convLlistaTxt: "Del más pequeño al más mayor. Toca un nombre para ver qué nada y cuándo.",
       convVas: "¿Irá?", convSi: "✅ Sí, va", convNo: "❌ No puede ir", convAnada: "Ida", convTornada: "Vuelta",
       trPorto: "Lo llevamos nosotros", trLloc: "Nos vemos allí", trNecessita: "Necesita que alguien lo lleve", trSol: "Va por su cuenta",
       convPlaces: "Plazas libres en el coche para otros nadadores", convDinar: "¿Se queda a comer?", dSi: "Sí", dNo: "No",
@@ -924,7 +924,14 @@
     // Llista completa
     if (c.llista && c.llista.length) {
       f.push(el("div", { class: "caixa" }, [el("h2", { text: t("convLlista") + " (" + c.llista.length + ")" }), el("span", { class: "gris", text: t("convLlistaTxt") })].concat(c.llista.map(function (x) {
-        return el("div", { class: "conv-ll " + (x.sexe === "F" ? "f" : (x.sexe === "M" ? "m" : "")) }, [el("span", { text: x.nom }), el("span", { class: "gris", text: [x.any, x.cat].filter(Boolean).join(" · ") })]);
+        var det = el("div", { class: "conv-ll-det" });
+        (x.proves || []).forEach(function (p) {
+          det.appendChild(el("div", { class: "conv-ll-p" }, [el("span", { text: p.prova }), el("span", { class: "gris", text: [p.hora, p.serie ? t("convSerie") + " " + p.serie : "", p.carrer ? t("convCarrer") + " " + p.carrer : ""].filter(Boolean).join(" · ") })]));
+        });
+        var fila = el("button", { type: "button", class: "conv-ll " + (x.sexe === "F" ? "f" : (x.sexe === "M" ? "m" : "")), "aria-expanded": "false" }, [
+          el("div", { class: "conv-ll-cap" }, [el("span", { text: x.nom }), el("span", { class: "gris", text: [x.any, x.cat].filter(Boolean).join(" · ") + ((x.proves || []).length ? "  ▾" : "") })]), det]);
+        fila.addEventListener("click", function () { var o = fila.classList.toggle("obert"); fila.setAttribute("aria-expanded", o ? "true" : "false"); });
+        return fila;
       }))));
     }
     pantallaSimple(t("convTit"), f);

@@ -221,3 +221,8 @@ input.wtx{min-height:52px}
 .conv-enll{color:#F1C332;font-weight:700;font-size:14px}
 .cal-ev.amb-conv{cursor:pointer;border-color:#5a4a12}
 a.btn3{display:flex;align-items:center;justify-content:center;text-decoration:none;min-height:46px}
+button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;font:inherit;border-top:0;border-right:0;border-bottom:0;text-align:left;cursor:pointer}
+.conv-ll-cap{display:flex;justify-content:space-between;gap:8px}
+.conv-ll-det{display:none;flex-direction:column;gap:4px;margin-top:6px;padding-top:6px;border-top:1px solid #2A2A2A}
+.conv-ll.obert .conv-ll-det{display:flex}
+.conv-ll-p{display:flex;justify-content:space-between;gap:8px;font-size:14px}
