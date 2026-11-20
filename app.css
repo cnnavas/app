@@ -226,3 +226,11 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .conv-ll-det{display:none;flex-direction:column;gap:4px;margin-top:6px;padding-top:6px;border-top:1px solid #2A2A2A}
 .conv-ll.obert .conv-ll-det{display:flex}
 .conv-ll-p{display:flex;justify-content:space-between;gap:8px;font-size:14px}
+.as-sel{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
+.as-res{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.as-n{background:#1C1C1C;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:2px}
+.as-n strong{font-size:30px;color:#F1C332;line-height:1.1}
+.as-f{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid #2A2A2A;padding:6px 0}
+.as-f:last-child{border-bottom:0}
+.as-x{font-size:13px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.as-ok{background:#16351f;color:#7ee2a0}.as-no{background:#3d1717;color:#ff9b9b}.as-av{background:#2c2c2c;color:#d6d6d6}.as-t{background:#3A2F0C;color:#F1C332}

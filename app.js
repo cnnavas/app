@@ -50,6 +50,12 @@
       convResum: "Respostes (només equip tècnic)", convVan: "Hi van", convNoVan: "No poden", convSense: "Sense resposta", convNecessiten: "Necessiten transport", convPlacesOf: "Places ofertes", convDinen: "Dinen",
       convLlic: "Llicència", convVCForm: "👁️ Aquí la família veu el formulari per respondre (hi va, anada, tornada, places al cotxe). En «Veure com…» no es pot respondre: és només per mirar.",
       convNoPub: "👁️ No publicada: només la veus tu. Marca «Publicar a l'app» a la hoja.", convCap: "Ara mateix no hi ha cap convocatòria.",
+      assistencia: "Assistència", asTecnic: "Per veure l'assistència d'un nedador, fes servir ☰ › Veure com… i tria el seu compte o el dels pares.",
+      asBuit: "Encara no hi ha cap entreno marcat aquesta temporada.", asMajors: "A partir dels 18 anys, l'assistència només la veu el mateix nedador.",
+      asMes: "Aquest mes", asTemp: "Temporada", asDe: "de", asTard: "Arribades tard", asAbans: "Marxes abans", asVeure: "📊 Veure l'assistència",
+      asPresent: "✅ Present", asFalta: "❌ No hi era", asFaltaAv: "📩 No hi era (avisat)", asMesBtn: "Veure mesos anteriors",
+      asTxt: "Ho marquen els monitors a cada entreno. Si veus algun error, parla amb el Jaime.",
+      pTard: "⏰ Arriba tard", pAbans: "↩️ Marxa abans", pTardAbans: "⏰ Tard i marxa abans",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -135,6 +141,12 @@
       convResum: "Respuestas (solo equipo técnico)", convVan: "Van", convNoVan: "No pueden", convSense: "Sin respuesta", convNecessiten: "Necesitan transporte", convPlacesOf: "Plazas ofrecidas", convDinen: "Comen",
       convLlic: "Licencia", convVCForm: "👁️ Aquí la familia ve el formulario para responder (va, ida, vuelta, plazas en el coche). En «Ver como…» no se puede responder: es solo para mirar.",
       convNoPub: "👁️ No publicada: solo la ves tú. Marca «Publicar a l'app» en la hoja.", convCap: "Ahora mismo no hay ninguna convocatoria.",
+      assistencia: "Asistencia", asTecnic: "Para ver la asistencia de un nadador, usa ☰ › Ver como… y elige su cuenta o la de los padres.",
+      asBuit: "Todavía no hay ningún entreno marcado esta temporada.", asMajors: "A partir de los 18 años, la asistencia solo la ve el propio nadador.",
+      asMes: "Este mes", asTemp: "Temporada", asDe: "de", asTard: "Llegadas tarde", asAbans: "Salidas antes", asVeure: "📊 Ver la asistencia",
+      asPresent: "✅ Presente", asFalta: "❌ No estaba", asFaltaAv: "📩 No estaba (avisado)", asMesBtn: "Ver meses anteriores",
+      asTxt: "Lo marcan los monitores en cada entreno. Si ves algún error, habla con Jaime.",
+      pTard: "⏰ Llega tarde", pAbans: "↩️ Se va antes", pTardAbans: "⏰ Tarde y se va antes",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -481,6 +493,7 @@
         });
         if (!tecnic && !(d.faltes || []).length) fl.push(el("span", { class: "gris", text: t("avisarTxt") }));
         if (potAvisar) fl.push(el("button", { type: "button", class: "btn3", text: "📢 " + t("avisarBtn"), onclick: pantallaAvisar }));
+        if (!tecnic && estatModul("assistencia") === "on") fl.push(el("button", { type: "button", class: "btn3", text: t("asVeure"), onclick: function () { estat.pestanya = "assistencia"; apunta("assistencia"); pantallaApp(); } }));
         cos.appendChild(el("div", { class: "caixa" }, fl));
       }
       if (!d.avisos.length) cos.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
@@ -497,6 +510,9 @@
     } else if (pes === "calendari" && (estatModul("calendari") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("calendari") !== "no"))) {
       if (estatModul("calendari") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaCalendari());
+    } else if (pes === "assistencia" && (estatModul("assistencia") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("assistencia") !== "no"))) {
+      if (estatModul("assistencia") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaAssistencia());
     } else {
       cos.appendChild(proximament());
     }
@@ -836,6 +852,65 @@
   };
   PRIV.es = PRIV.ca;
 
+  // ---------- Assistència ----------
+  function vistaAssistencia() {
+    var cont = el("div", { class: "cal" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    var mostraTot = false;
+    function estatFila(f) {
+      if (f.present) {
+        if (/tard i/i.test(f.punt)) return ["as-t", t("pTardAbans")];
+        if (/tard/i.test(f.punt)) return ["as-t", t("pTard")];
+        if (/abans/i.test(f.punt)) return ["as-t", t("pAbans")];
+        return ["as-ok", t("asPresent")];
+      }
+      return (/avisat/i.test(f.punt) || f.app) ? ["as-av", t("asFaltaAv")] : ["as-no", t("asFalta")];
+    }
+    function pct(a, b) { return b ? Math.round(a / b * 100) + "%" : "—"; }
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("asTecnic") })); return; }
+      if (!r.nedadors.length) { cont.appendChild(el("div", { class: "caixa gris", text: r.majors ? t("asMajors") : t("asBuit") })); return; }
+      var sel = r.nedadors.filter(function (n) { return n.id === estat.asSel; })[0] || r.nedadors[0];
+      if (r.nedadors.length > 1) cont.appendChild(el("div", { class: "cal-zoom as-sel" }, r.nedadors.map(function (n) {
+        return el("button", { type: "button", class: n.id === sel.id ? "on" : "", text: String(n.nom).split(" ")[0], onclick: function () { estat.asSel = n.id; dibuixa(r); } });
+      })));
+      var fs = sel.files;
+      if (!fs.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("asBuit") })); return; }
+      var mesK = fs[0].data.slice(0, 7);
+      var delMes = fs.filter(function (f) { return f.data.slice(0, 7) === mesK; });
+      function compta(l) { return l.filter(function (f) { return f.present; }).length; }
+      var tard = fs.filter(function (f) { return f.present && /tard/i.test(f.punt); }).length;
+      var abans = fs.filter(function (f) { return f.present && /abans/i.test(f.punt); }).length;
+      cont.appendChild(el("div", { class: "as-res" }, [
+        el("div", { class: "as-n" }, [el("strong", { text: pct(compta(delMes), delMes.length) }), el("span", { text: t("asMes") }), el("span", { class: "gris", text: compta(delMes) + " " + t("asDe") + " " + delMes.length })]),
+        el("div", { class: "as-n" }, [el("strong", { text: pct(compta(fs), fs.length) }), el("span", { text: t("asTemp") }), el("span", { class: "gris", text: compta(fs) + " " + t("asDe") + " " + fs.length })])
+      ]));
+      if (tard || abans) cont.appendChild(el("div", { class: "caixa" }, [
+        el("div", { class: "conv-h" }, [el("span", { text: t("asTard") }), el("strong", { text: String(tard) })]),
+        el("div", { class: "conv-h" }, [el("span", { text: t("asAbans") }), el("strong", { text: String(abans) })])]));
+      var mesos = [];
+      fs.forEach(function (f) { var k = f.data.slice(0, 7); if (mesos.indexOf(k) < 0) mesos.push(k); });
+      (mostraTot ? mesos : mesos.slice(0, 2)).forEach(function (mk) {
+        var l = fs.filter(function (f) { return f.data.slice(0, 7) === mk; });
+        var caixa = el("div", { class: "caixa" }, [el("h2", { text: MESOS[estat.idioma][Number(mk.slice(5)) - 1] + " " + mk.slice(0, 4) + " · " + pct(compta(l), l.length) })]);
+        l.forEach(function (f) {
+          var e = estatFila(f);
+          caixa.appendChild(el("div", { class: "as-f" }, [
+            el("div", {}, [el("strong", { text: dCurt(f.data) }), el("div", { class: "gris", text: f.grup.replace(/^(Dl|Dt|Dc|Dj|Dv|Ds|Dg)\s+/, "") })]),
+            el("span", { class: "as-x " + e[0], text: e[1] })]));
+        });
+        cont.appendChild(caixa);
+      });
+      if (!mostraTot && mesos.length > 2) cont.appendChild(el("button", { type: "button", class: "btn3", text: t("asMesBtn"), onclick: function () { mostraTot = true; dibuixa(r); } }));
+      cont.appendChild(el("div", { class: "gris", text: t("asTxt") }));
+    }
+    crida("assistencia", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
+      if (estat.pestanya === "assistencia" && cont.isConnected) dibuixa(r);
+    });
+    return cont;
+  }
+
   // ---------- Convocatòries ----------
   function clauNom(x) { return String(x || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim(); }
   function convDe(e) {
@@ -1075,6 +1150,7 @@
       return item(ic, text, function () { estat.pestanya = clau; apunta(clau); pantallaApp(); }, e === "aviat" ? t("aviatEt") : null);
     }
     var panell = el("div", { class: "panell", role: "dialog", "aria-label": t("menu") }, [
+      modul("assistencia", "📊", t("assistencia")),
       modul("botiga", "🛍️", t("botiga")),
       modul("reunions", "🤝", t("reunio")),
       modul("quotes", "💶", t("quotes")),
