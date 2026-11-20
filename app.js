@@ -59,7 +59,7 @@
       tmFitxa: "Llicència", tmCat: "Categoria", tmAny: "Any", tmMillors: "Millors marques", tmToca: "Toca una prova per veure com ha anat evolucionant.",
       tmUltimes: "Últimes competicions", tmTests: "Els meus tests", tmTestsTxt: "Només els veus tu.", tmBuit: "Encara no hi ha cap marca oficial.",
       tmTecnic: "Per veure els temps d'un nedador, fes servir ☰ › Veure com…", tmMajors: "A partir dels 18 anys, els temps només els veu el mateix nedador.",
-      tmManual: "M = cronometratge manual", tecCerca: "Cerca un nedador…", tecMeu: "el teu fill/a", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
+      tmManual: "M = cronometratge manual", tecCerca: "Cerca un nedador…", botigaTit: "La botiga del club", botigaTxt: "Roba i material del Club Natació Navàs: fotos, descripció i talles. Aviat també hi podràs fer comandes.", botigaObrir: "Obrir la botiga", botigaSense: "Aviat hi trobaràs l'enllaç a la botiga.", tecMeu: "el teu fill/a", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -154,7 +154,7 @@
       tmFitxa: "Licencia", tmCat: "Categoría", tmAny: "Año", tmMillors: "Mejores marcas", tmToca: "Toca una prueba para ver cómo ha ido evolucionando.",
       tmUltimes: "Últimas competiciones", tmTests: "Mis tests", tmTestsTxt: "Solo los ves tú.", tmBuit: "Todavía no hay ninguna marca oficial.",
       tmTecnic: "Para ver los tiempos de un nadador, usa ☰ › Ver como…", tmMajors: "A partir de los 18 años, los tiempos solo los ve el propio nadador.",
-      tmManual: "M = cronometraje manual", tecCerca: "Busca un nadador…", tecMeu: "tu hijo/a", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
+      tmManual: "M = cronometraje manual", tecCerca: "Busca un nadador…", botigaTit: "La tienda del club", botigaTxt: "Ropa y material del Club Natació Navàs: fotos, descripción y tallas. Pronto también podrás hacer pedidos.", botigaObrir: "Abrir la tienda", botigaSense: "Pronto encontrarás aquí el enlace a la tienda.", tecMeu: "tu hijo/a", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -412,7 +412,7 @@
 
   // ---------- Inici ----------
   function guardaInici(r) {
-    estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null };
+    estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "" };
     escriu("inici", JSON.stringify(estat.inici));
     estat.inici.convs = r.convs || [];   // les convocatòries no es desen al mòbil
   }
@@ -422,7 +422,7 @@
     if (estat.veureCom) {
       pinta(el("div", { class: "carrega", text: t("carregant") }));
       crida("inici", { token: estat.token, veureCom: estat.veureCom.id }).then(function (r) {
-        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], convs: r.convs || [] }; pantallaApp(); }
+        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], convs: r.convs || [], botigaUrl: r.botigaUrl || "" }; pantallaApp(); }
         else { estat.veureCom = null; estat.dadesVC = null; carregaInici(); }
       });
       return;
@@ -518,6 +518,15 @@
     } else if (pes === "calendari" && (estatModul("calendari") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("calendari") !== "no"))) {
       if (estatModul("calendari") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaCalendari());
+    } else if (pes === "botiga" && (estatModul("botiga") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("botiga") !== "no"))) {
+      if (estatModul("botiga") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(el("div", { class: "caixa botiga" }, [
+        el("div", { class: "botiga-ic", "aria-hidden": "true", text: "🛍️" }),
+        el("h2", { text: t("botigaTit") }),
+        el("p", { class: "gris", text: t("botigaTxt") }),
+        d.botigaUrl ? el("a", { href: d.botigaUrl, target: "_blank", rel: "noopener noreferrer", class: "btn", text: t("botigaObrir") })
+          : el("div", { class: "gris", text: t("botigaSense") })
+      ]));
     } else if (pes === "temps" && (estatModul("temps") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("temps") !== "no"))) {
       if (estatModul("temps") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaTemps());
