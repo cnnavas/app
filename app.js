@@ -56,6 +56,10 @@
       asPresent: "✅ Present", asFalta: "❌ No hi era", asFaltaAv: "📩 No hi era (avisat)", asMesBtn: "Veure mesos anteriors", asLlista: "Llista", asTardC: "Tard / abans", asToca: "Toca un dia per veure'n el detall.",
       asTxt: "Ho marquen els monitors a cada entreno. Si veus algun error, parla amb el Jaime.",
       pTard: "⏰ Arriba tard", pAbans: "↩️ Marxa abans", pTardAbans: "⏰ Tard i marxa abans",
+      tmFitxa: "Llicència", tmCat: "Categoria", tmAny: "Any", tmMillors: "Millors marques", tmToca: "Toca una prova per veure com ha anat evolucionant.",
+      tmUltimes: "Últimes competicions", tmTests: "Els meus tests", tmTestsTxt: "Només els veus tu.", tmBuit: "Encara no hi ha cap marca oficial.",
+      tmTecnic: "Per veure els temps d'un nedador, fes servir ☰ › Veure com…", tmMajors: "A partir dels 18 anys, els temps només els veu el mateix nedador.",
+      tmManual: "M = cronometratge manual", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -147,6 +151,10 @@
       asPresent: "✅ Presente", asFalta: "❌ No estaba", asFaltaAv: "📩 No estaba (avisado)", asMesBtn: "Ver meses anteriores", asLlista: "Lista", asTardC: "Tarde / antes", asToca: "Toca un día para ver el detalle.",
       asTxt: "Lo marcan los monitores en cada entreno. Si ves algún error, habla con Jaime.",
       pTard: "⏰ Llega tarde", pAbans: "↩️ Se va antes", pTardAbans: "⏰ Tarde y se va antes",
+      tmFitxa: "Licencia", tmCat: "Categoría", tmAny: "Año", tmMillors: "Mejores marcas", tmToca: "Toca una prueba para ver cómo ha ido evolucionando.",
+      tmUltimes: "Últimas competiciones", tmTests: "Mis tests", tmTestsTxt: "Solo los ves tú.", tmBuit: "Todavía no hay ninguna marca oficial.",
+      tmTecnic: "Para ver los tiempos de un nadador, usa ☰ › Ver como…", tmMajors: "A partir de los 18 años, los tiempos solo los ve el propio nadador.",
+      tmManual: "M = cronometraje manual", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -510,6 +518,9 @@
     } else if (pes === "calendari" && (estatModul("calendari") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("calendari") !== "no"))) {
       if (estatModul("calendari") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaCalendari());
+    } else if (pes === "temps" && (estatModul("temps") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("temps") !== "no"))) {
+      if (estatModul("temps") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaTemps());
     } else if (pes === "assistencia" && (estatModul("assistencia") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("assistencia") !== "no"))) {
       if (estatModul("assistencia") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaAssistencia());
@@ -853,6 +864,83 @@
     ]
   };
   PRIV.es = PRIV.ca;
+
+  // ---------- Temps ----------
+  function fmtT(s) {
+    s = Number(s); if (!(s > 0)) return "—";
+    var m = Math.floor(s / 60), r = (s - m * 60).toFixed(2);
+    if (m === 0) return r.replace(".", ",");
+    return m + ":" + (r.length < 5 ? "0" + r : r).replace(".", ",");
+  }
+  function dataCurta(k) { return k.slice(8, 10) + "/" + k.slice(5, 7) + "/" + k.slice(2, 4); }
+  var ESTILS = ["lliure", "esquena", "braça", "papallona", "estils"];
+  function ordreProva(p) {
+    var x = String(p).toLowerCase(), e = 9;
+    ESTILS.forEach(function (n, i) { if (x.indexOf(n.slice(0, 4)) >= 0 || (n === "lliure" && x.indexOf("libre") >= 0) || (n === "papallona" && x.indexOf("mariposa") >= 0) || (n === "esquena" && x.indexOf("espalda") >= 0) || (n === "braça" && x.indexOf("braza") >= 0)) e = Math.min(e, i); });
+    return e * 10000 + (parseInt(x, 10) || 0);
+  }
+  function vistaTemps() {
+    var cont = el("div", { class: "cal" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    var obert = {};
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmTecnic") })); return; }
+      if (!r.nedadors.length) { cont.appendChild(el("div", { class: "caixa gris", text: r.majors ? t("tmMajors") : t("tmBuit") })); return; }
+      var n = r.nedadors.filter(function (x) { return x.id === estat.asSel; })[0] || r.nedadors[0];
+      if (r.nedadors.length > 1) cont.appendChild(el("div", { class: "cal-zoom as-sel" }, r.nedadors.map(function (x) {
+        return el("button", { type: "button", class: x.id === n.id ? "on" : "", text: String(x.nom).split(" ")[0], onclick: function () { estat.asSel = x.id; dibuixa(r); } });
+      })));
+      cont.appendChild(el("div", { class: "caixa tm-fitxa" }, [
+        el("h2", { text: n.nom }),
+        el("div", { class: "tm-dades" }, [[t("tmFitxa"), n.llic], [t("tmCat"), n.cat], [t("tmAny"), n.any]].filter(function (x) { return x[1]; }).map(function (x) {
+          return el("div", {}, [el("span", { class: "gris", text: x[0] }), el("strong", { text: x[1] })]); }))
+      ]));
+      if (!n.millors.length) cont.appendChild(el("div", { class: "caixa gris", text: t("tmBuit") }));
+      ["25", "50"].forEach(function (pisc) {
+        var l = n.millors.filter(function (m) { return String(m.pisc).indexOf(pisc) === 0; }).sort(function (a, b) { return ordreProva(a.prova) - ordreProva(b.prova); });
+        if (!l.length) return;
+        var caixa = el("div", { class: "caixa" }, [el("h2", { text: t("tmMillors") + " · " + t("tmP") + " " + pisc + " m" }), el("span", { class: "gris", text: t("tmToca") })]);
+        l.forEach(function (m) {
+          var k = m.prova + "|" + m.pisc;
+          var det = el("div", { class: "tm-hist" });
+          if (obert[k]) m.hist.slice().reverse().forEach(function (h, i, arr) {
+            var ant = arr[i + 1], dif = ant ? h.s - ant.s : null;
+            det.appendChild(el("div", { class: "tm-h" }, [
+              el("span", { class: "gris", text: dataCurta(h.data) + " · " + h.comp }),
+              el("span", { class: "tm-hs" }, [el("strong", { text: fmtT(h.s) + (h.crono ? " M" : "") }),
+                dif !== null ? el("span", { class: dif < 0 ? "tm-millor" : "tm-pitjor", text: (dif < 0 ? "▼ " : "▲ ") + Math.abs(dif).toFixed(2).replace(".", ",") }) : null])
+            ]));
+          });
+          caixa.appendChild(el("button", { type: "button", class: "tm-m" + (obert[k] ? " obert" : ""), onclick: function () { obert[k] = !obert[k]; dibuixa(r); } }, [
+            el("div", { class: "tm-mc" }, [el("span", { text: m.prova }), el("strong", { class: "tm-t", text: fmtT(m.s) + (m.crono ? " M" : "") })]),
+            el("div", { class: "gris tm-sub", text: dataCurta(m.data) + " · " + m.comp + "  " + (obert[k] ? "▴" : "▾") }), det]));
+        });
+        cont.appendChild(caixa);
+      });
+      if (n.ultimes.length) {
+        var u = el("div", { class: "caixa" }, [el("h2", { text: t("tmUltimes") })]);
+        n.ultimes.forEach(function (c) {
+          u.appendChild(el("div", { class: "tm-comp" }, [el("strong", { text: c.comp }), el("span", { class: "gris", text: dataCurta(c.data) + (c.pisc ? " · " + c.pisc + " m" : "") })].concat(c.proves.map(function (p) {
+            return el("div", { class: "conv-h" }, [el("span", { text: p.prova }), el("strong", { text: fmtT(p.s) + (p.crono ? " M" : "") })]); }))));
+        });
+        cont.appendChild(u);
+      }
+      if (n.tests && n.tests.length) {
+        var tc = el("div", { class: "caixa" }, [el("h2", { text: "🔒 " + t("tmTests") }), el("span", { class: "gris", text: t("tmTestsTxt") })]);
+        n.tests.forEach(function (x) {
+          tc.appendChild(el("div", { class: "tm-h" }, [el("span", { class: "gris", text: dataCurta(x.data) + " · " + (x.test || "") }),
+            el("span", { class: "tm-hs" }, [el("span", { text: x.prova + (x.pisc ? " (" + x.pisc + ")" : "") }), el("strong", { text: fmtT(x.s) + (x.crono ? " M" : "") })])]));
+        });
+        cont.appendChild(tc);
+      }
+      cont.appendChild(el("div", { class: "gris", text: t("tmTxt") + " " + t("tmManual") + "." }));
+    }
+    crida("temps", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
+      if (estat.pestanya === "temps" && cont.isConnected) dibuixa(r);
+    });
+    return cont;
+  }
 
   // ---------- Assistència ----------
   function vistaAssistencia() {
