@@ -59,7 +59,7 @@
       tmFitxa: "Llicència", tmCat: "Categoria", tmAny: "Any", tmMillors: "Millors marques", tmToca: "Toca una prova per veure com ha anat evolucionant.",
       tmUltimes: "Últimes competicions", tmTests: "Els meus tests", tmTestsTxt: "Només els veus tu.", tmBuit: "Encara no hi ha cap marca oficial.",
       tmTecnic: "Per veure els temps d'un nedador, fes servir ☰ › Veure com…", tmMajors: "A partir dels 18 anys, els temps només els veu el mateix nedador.",
-      tmManual: "M = cronometratge manual", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
+      tmManual: "M = cronometratge manual", tecCerca: "Cerca un nedador…", tecMeu: "el teu fill/a", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -154,7 +154,7 @@
       tmFitxa: "Licencia", tmCat: "Categoría", tmAny: "Año", tmMillors: "Mejores marcas", tmToca: "Toca una prueba para ver cómo ha ido evolucionando.",
       tmUltimes: "Últimas competiciones", tmTests: "Mis tests", tmTestsTxt: "Solo los ves tú.", tmBuit: "Todavía no hay ninguna marca oficial.",
       tmTecnic: "Para ver los tiempos de un nadador, usa ☰ › Ver como…", tmMajors: "A partir de los 18 años, los tiempos solo los ve el propio nadador.",
-      tmManual: "M = cronometraje manual", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
+      tmManual: "M = cronometraje manual", tecCerca: "Busca un nadador…", tecMeu: "tu hijo/a", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -865,6 +865,35 @@
   };
   PRIV.es = PRIV.ca;
 
+  // ---------- Selector de nedador per a l'equip tècnic ----------
+  var recarregaTec = null;
+  function selectorTecnic(r, redibuixa) {
+    var actual = (r.nedadors[0] && r.nedadors[0].id) || estat.tecSel;
+    var nomA = (r.llista.filter(function (x) { return x.id === actual; })[0] || {}).nom || "—";
+    var caixa = el("div", { class: "cal" });
+    var obre = !!estat.tecObr;
+    caixa.appendChild(el("button", { type: "button", class: "tm-sel", "aria-expanded": obre ? "true" : "false", onclick: function () { estat.tecObr = !obre; redibuixa(); } },
+      [el("span", { text: "👤 " + nomA }), el("span", { class: "tm-sel-f", text: obre ? "▴" : "▾" })]));
+    if (obre) {
+      var cerca = el("input", { type: "search", class: "tec-cerca", placeholder: t("tecCerca"), "aria-label": t("tecCerca") });
+      var llista = el("div", { class: "tm-opcions tec-llista", role: "listbox" });
+      function omple() {
+        llista.textContent = "";
+        var q = cerca.value.trim().toLowerCase();
+        r.llista.filter(function (x) { return !q || x.nom.toLowerCase().indexOf(q) >= 0; }).forEach(function (x) {
+          llista.appendChild(el("button", { type: "button", role: "option", class: "tm-op" + (x.id === actual ? " on" : ""),
+            onclick: function () { estat.tecSel = x.id; estat.tecObr = false; if (recarregaTec) recarregaTec(); } },
+            [el("span", { text: x.nom }), x.meu ? el("span", { class: "tm-op-n", text: t("tecMeu") }) : null]));
+        });
+      }
+      cerca.addEventListener("input", omple);
+      omple();
+      caixa.appendChild(cerca);
+      caixa.appendChild(llista);
+    }
+    return caixa;
+  }
+
   // ---------- Temps ----------
   function fmtT(s) {
     s = Number(s); if (!(s > 0)) return "—";
@@ -924,6 +953,7 @@
       cont.textContent = "";
       if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
       if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmTecnic") })); return; }
+      if (r.llista) cont.appendChild(selectorTecnic(r, function () { dibuixa(r); }));
       if (!r.nedadors.length) { cont.appendChild(el("div", { class: "caixa gris", text: r.majors ? t("tmMajors") : t("tmBuit") })); return; }
       var n = r.nedadors.filter(function (x) { return x.id === estat.asSel; })[0] || r.nedadors[0];
       if (r.nedadors.length > 1) cont.appendChild(el("div", { class: "cal-zoom as-sel" }, r.nedadors.map(function (x) {
@@ -978,9 +1008,13 @@
       }
       cont.appendChild(el("div", { class: "gris", text: t("tmTxt") + " " + t("tmManual") + "." }));
     }
-    crida("temps", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
-      if (estat.pestanya === "temps" && cont.isConnected) dibuixa(r);
-    });
+    function carrega() {
+      crida("temps", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null, idCnn: estat.tecSel || null }).then(function (r) {
+        if (estat.pestanya === "temps" && cont.isConnected) dibuixa(r);
+      });
+    }
+    recarregaTec = carrega;
+    carrega();
     return cont;
   }
 
@@ -1043,6 +1077,7 @@
       cont.textContent = "";
       if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
       if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("asTecnic") })); return; }
+      if (r.llista) cont.appendChild(selectorTecnic(r, function () { dibuixa(r); }));
       if (!r.nedadors.length) { cont.appendChild(el("div", { class: "caixa gris", text: r.majors ? t("asMajors") : t("asBuit") })); return; }
       var sel = r.nedadors.filter(function (n) { return n.id === estat.asSel; })[0] || r.nedadors[0];
       if (r.nedadors.length > 1) cont.appendChild(el("div", { class: "cal-zoom as-sel" }, r.nedadors.map(function (n) {
@@ -1084,9 +1119,13 @@
       if (!mostraTot && mesos.length > 2) cont.appendChild(el("button", { type: "button", class: "btn3", text: t("asMesBtn"), onclick: function () { mostraTot = true; dibuixa(r); } }));
       cont.appendChild(el("div", { class: "gris", text: t("asTxt") }));
     }
-    crida("assistencia", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
-      if (estat.pestanya === "assistencia" && cont.isConnected) dibuixa(r);
-    });
+    function carrega() {
+      crida("assistencia", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null, idCnn: estat.tecSel || null }).then(function (r) {
+        if (estat.pestanya === "assistencia" && cont.isConnected) dibuixa(r);
+      });
+    }
+    recarregaTec = carrega;
+    carrega();
     return cont;
   }
 
