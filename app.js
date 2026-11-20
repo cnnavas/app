@@ -48,7 +48,7 @@
       convFaltaResp: "Contesta si hi va, l'anada i la tornada.", convFaltaDinar: "Contesta si es queda a dinar.", convProvaAdmin: "Mode prova (admin): no s'ha desat res.",
       convPares: "Ho confirmaran els teus pares des del seu compte.", convPrivat: "Les respostes només les veu l'equip tècnic.",
       convResum: "Respostes (només equip tècnic)", convVan: "Hi van", convNoVan: "No poden", convSense: "Sense resposta", convNecessiten: "Necessiten transport", convPlacesOf: "Places ofertes", convDinen: "Dinen",
-      convVCForm: "👁️ Aquí la família veu el formulari per respondre (hi va, anada, tornada, places al cotxe). En «Veure com…» no es pot respondre: és només per mirar.",
+      convLlic: "Llicència", convVCForm: "👁️ Aquí la família veu el formulari per respondre (hi va, anada, tornada, places al cotxe). En «Veure com…» no es pot respondre: és només per mirar.",
       convNoPub: "👁️ No publicada: només la veus tu. Marca «Publicar a l'app» a la hoja.", convCap: "Ara mateix no hi ha cap convocatòria.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
@@ -133,7 +133,7 @@
       convFaltaResp: "Contesta si va, la ida y la vuelta.", convFaltaDinar: "Contesta si se queda a comer.", convProvaAdmin: "Modo prueba (admin): no se ha guardado nada.",
       convPares: "Lo confirmarán tus padres desde su cuenta.", convPrivat: "Las respuestas solo las ve el equipo técnico.",
       convResum: "Respuestas (solo equipo técnico)", convVan: "Van", convNoVan: "No pueden", convSense: "Sin respuesta", convNecessiten: "Necesitan transporte", convPlacesOf: "Plazas ofrecidas", convDinen: "Comen",
-      convVCForm: "👁️ Aquí la familia ve el formulario para responder (va, ida, vuelta, plazas en el coche). En «Ver como…» no se puede responder: es solo para mirar.",
+      convLlic: "Licencia", convVCForm: "👁️ Aquí la familia ve el formulario para responder (va, ida, vuelta, plazas en el coche). En «Ver como…» no se puede responder: es solo para mirar.",
       convNoPub: "👁️ No publicada: solo la ves tú. Marca «Publicar a l'app» en la hoja.", convCap: "Ahora mismo no hay ninguna convocatoria.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
@@ -888,7 +888,7 @@
     if (enl.length) f.push(el("div", { class: "caixa" }, enl));
     // Els meus nedadors
     (c.meus || []).forEach(function (m) {
-      var bloc = [el("h2", { text: m.nom })];
+      var bloc = [el("h2", { text: m.nom }), m.llic ? el("span", { class: "gris", text: t("convLlic") + ": " + m.llic }) : null];
       m.proves.forEach(function (p) {
         bloc.push(el("div", { class: "conv-prova" }, [
           el("div", { class: "conv-pl" }, [el("strong", { text: p.prova }), p.hora ? el("span", { class: "conv-hora", text: p.hora }) : null]),
@@ -925,6 +925,7 @@
     if (c.llista && c.llista.length) {
       f.push(el("div", { class: "caixa" }, [el("h2", { text: t("convLlista") + " (" + c.llista.length + ")" }), el("span", { class: "gris", text: t("convLlistaTxt") })].concat(c.llista.map(function (x) {
         var det = el("div", { class: "conv-ll-det" });
+        if (x.llic) det.appendChild(el("div", { class: "conv-ll-p" }, [el("span", { text: t("convLlic") }), el("strong", { text: x.llic })]));
         (x.proves || []).forEach(function (p) {
           det.appendChild(el("div", { class: "conv-ll-p" }, [el("span", { text: p.prova }), el("span", { class: "gris", text: [p.hora, p.serie ? t("convSerie") + " " + p.serie : "", p.carrer ? t("convCarrer") + " " + p.carrer : ""].filter(Boolean).join(" · ") })]));
         });
