@@ -59,7 +59,7 @@
       tmFitxa: "Llicència", tmCat: "Categoria", tmAny: "Any", tmMillors: "Millors marques", tmToca: "Toca una prova per veure com ha anat evolucionant.",
       tmUltimes: "Últimes competicions", tmTests: "Els meus tests", tmTestsTxt: "Només els veus tu.", tmBuit: "Encara no hi ha cap marca oficial.",
       tmTecnic: "Per veure els temps d'un nedador, fes servir ☰ › Veure com…", tmMajors: "A partir dels 18 anys, els temps només els veu el mateix nedador.",
-      tmManual: "M = cronometratge manual", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
+      tmManual: "M = cronometratge manual", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -154,7 +154,7 @@
       tmFitxa: "Licencia", tmCat: "Categoría", tmAny: "Año", tmMillors: "Mejores marcas", tmToca: "Toca una prueba para ver cómo ha ido evolucionando.",
       tmUltimes: "Últimas competiciones", tmTests: "Mis tests", tmTestsTxt: "Solo los ves tú.", tmBuit: "Todavía no hay ninguna marca oficial.",
       tmTecnic: "Para ver los tiempos de un nadador, usa ☰ › Ver como…", tmMajors: "A partir de los 18 años, los tiempos solo los ve el propio nadador.",
-      tmManual: "M = cronometraje manual", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
+      tmManual: "M = cronometraje manual", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -882,6 +882,39 @@
   function vistaTemps() {
     var cont = el("div", { class: "cal" }, [el("div", { class: "carrega", text: t("carregant") })]);
     var obert = {};
+
+    function vistaMinimes(n, r) {
+      if (!n.minimes) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmMinProx") })); return; }
+      if (!n.minimes.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmMinCap") })); return; }
+      var c = n.minimes.filter(function (x) { return x.clau === estat.tmComp; })[0] || n.minimes[0];
+      var sel = el("select", { class: "tm-sel", "aria-label": t("tmMinimes") });
+      n.minimes.forEach(function (x) { var o = el("option", { value: x.clau, text: x.nom || x.clau }); if (x.clau === c.clau) o.selected = true; sel.appendChild(o); });
+      sel.addEventListener("change", function () { estat.tmComp = sel.value; dibuixa(r); });
+      cont.appendChild(sel);
+      var cap = [el("h2", { text: c.nom || c.clau }), el("span", { class: "gris", text: [c.dates, c.pisc ? t("tmP") + " " + c.pisc : ""].filter(Boolean).join(" · ") })];
+      if (n.veuProp) cap.push(el("div", { class: "tm-assol" }, [el("strong", { text: String(c.assolides) }), el("span", { text: t("tmDe") + " " + c.proves.length + " " + t("tmAssol") })]));
+      if (c.superior) cap.push(el("span", { class: "gris", text: t("tmSup").replace("{a}", c.anyTaula) }));
+      if (n.veuProp && c.des && c.fins) cap.push(el("span", { class: "gris", text: t("tmMarquesDes").replace("{d}", dataCurta(c.des)).replace("{f}", dataCurta(c.fins)) }));
+      cont.appendChild(el("div", { class: "caixa" }, cap));
+      var l = c.proves.slice();
+      if (n.veuProp) l.sort(function (a, b) { return (a.pct === null ? 9 : a.pct) - (b.pct === null ? 9 : b.pct) || ordreProva(a.prova) - ordreProva(b.prova); });
+      else l.sort(function (a, b) { return ordreProva(a.prova) - ordreProva(b.prova); });
+      var caixa = el("div", { class: "caixa" });
+      l.forEach(function (p) {
+        var files = [];
+        [["minA", "mA", "dA", t("tmMinA")], ["minB", "mB", "dB", t("tmMinB")]].forEach(function (k) {
+          if (!p[k[0]]) return;
+          files.push(el("div", { class: "tm-h" }, [el("span", { class: "gris", text: k[3] + ": " + fmtT(p[k[0]]) }),
+            n.veuProp ? el("span", { class: "tm-hs" }, [el("span", { class: "gris", text: p[k[1]] !== null ? t("tmTeva") + " " + fmtT(p[k[1]]) : "" }),
+              p[k[2]] !== null ? el("strong", { class: p[k[2]] <= 0 ? "tm-millor" : "tm-pitjor", text: (p[k[2]] > 0 ? "+" : "") + p[k[2]].toFixed(2).replace(".", ",") }) : null]) : null]));
+        });
+        var est = !n.veuProp ? null : (p.d === null ? el("span", { class: "as-x as-av", text: t("tmSense") }) :
+          (p.d <= 0 ? el("span", { class: "as-x as-ok", text: t("tmOk") }) : el("span", { class: "as-x as-t", text: t("tmFalten").replace("{s}", p.d.toFixed(2).replace(".", ",")) })));
+        caixa.appendChild(el("div", { class: "tm-min" + (n.veuProp && p.d !== null && p.d <= 0 ? " tm-ok" : "") }, [el("div", { class: "tm-mc" }, [el("strong", { text: p.prova }), est])].concat(files)));
+      });
+      cont.appendChild(caixa);
+      cont.appendChild(el("div", { class: "gris", text: t("tmMinTxt") }));
+    }
     function dibuixa(r) {
       cont.textContent = "";
       if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
@@ -893,9 +926,13 @@
       })));
       cont.appendChild(el("div", { class: "caixa tm-fitxa" }, [
         el("h2", { text: n.nom }),
-        el("div", { class: "tm-dades" }, [[t("tmFitxa"), n.llic], [t("tmCat"), n.cat], [t("tmAny"), n.any]].filter(function (x) { return x[1]; }).map(function (x) {
+        el("div", { class: "tm-dades" }, [[t("tmFitxa"), String(n.llicTxt || n.llic).replace(/^(\d{3})(\d{2})(\d{2})$/, "$1 $2 $3")], [t("tmCat"), n.cat], [t("tmAny"), n.any]].filter(function (x) { return x[1]; }).map(function (x) {
           return el("div", {}, [el("span", { class: "gris", text: x[0] }), el("strong", { text: x[1] })]); }))
       ]));
+      var vt = estat.tmVista || "marques";
+      cont.appendChild(el("div", { class: "cal-zoom as-tog" }, [["marques", "⏱️ " + t("tmMarques")], ["minimes", "🎯 " + t("tmMinimes")]].map(function (z) {
+        return el("button", { type: "button", class: vt === z[0] ? "on" : "", text: z[1], onclick: function () { estat.tmVista = z[0]; dibuixa(r); } }); })));
+      if (vt === "minimes") { vistaMinimes(n, r); return; }
       if (!n.millors.length) cont.appendChild(el("div", { class: "caixa gris", text: t("tmBuit") }));
       ["25", "50"].forEach(function (pisc) {
         var l = n.millors.filter(function (m) { return String(m.pisc).indexOf(pisc) === 0; }).sort(function (a, b) { return ordreProva(a.prova) - ordreProva(b.prova); });
