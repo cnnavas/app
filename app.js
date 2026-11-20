@@ -887,10 +887,15 @@
       if (!n.minimes) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmMinProx") })); return; }
       if (!n.minimes.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("tmMinCap") })); return; }
       var c = n.minimes.filter(function (x) { return x.clau === estat.tmComp; })[0] || n.minimes[0];
-      var sel = el("select", { class: "tm-sel", "aria-label": t("tmMinimes") });
-      n.minimes.forEach(function (x) { var o = el("option", { value: x.clau, text: x.nom || x.clau }); if (x.clau === c.clau) o.selected = true; sel.appendChild(o); });
-      sel.addEventListener("change", function () { estat.tmComp = sel.value; dibuixa(r); });
-      cont.appendChild(sel);
+      var obre = !!estat.tmLlistaObr;
+      cont.appendChild(el("button", { type: "button", class: "tm-sel" + (obre ? " obert" : ""), "aria-expanded": obre ? "true" : "false",
+        onclick: function () { estat.tmLlistaObr = !obre; dibuixa(r); } }, [el("span", { text: c.nom || c.clau }), el("span", { class: "tm-sel-f", text: obre ? "▴" : "▾" })]));
+      if (obre) cont.appendChild(el("div", { class: "tm-opcions", role: "listbox" }, n.minimes.map(function (x) {
+        return el("button", { type: "button", role: "option", class: "tm-op" + (x.clau === c.clau ? " on" : ""), "aria-selected": x.clau === c.clau ? "true" : "false",
+          onclick: function () { estat.tmComp = x.clau; estat.tmLlistaObr = false; dibuixa(r); } }, [
+          el("span", { text: x.nom || x.clau }),
+          n.veuProp && x.assolides !== null ? el("span", { class: "tm-op-n", text: x.assolides + "/" + x.proves.length }) : null]);
+      })));
       var cap = [el("h2", { text: c.nom || c.clau }), el("span", { class: "gris", text: [c.dates, c.pisc ? t("tmP") + " " + c.pisc : ""].filter(Boolean).join(" · ") })];
       if (n.veuProp) cap.push(el("div", { class: "tm-assol" }, [el("strong", { text: String(c.assolides) }), el("span", { text: t("tmDe") + " " + c.proves.length + " " + t("tmAssol") })]));
       if (c.superior) cap.push(el("span", { class: "gris", text: t("tmSup").replace("{a}", c.anyTaula) }));
