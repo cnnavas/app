@@ -53,7 +53,7 @@
       assistencia: "Assistència", asTecnic: "Per veure l'assistència d'un nedador, fes servir ☰ › Veure com… i tria el seu compte o el dels pares.",
       asBuit: "Encara no hi ha cap entreno marcat aquesta temporada.", asMajors: "A partir dels 18 anys, l'assistència només la veu el mateix nedador.",
       asMes: "Aquest mes", asTemp: "Temporada", asDe: "de", asTard: "Arribades tard", asAbans: "Marxes abans", asVeure: "📊 Veure l'assistència",
-      asPresent: "✅ Present", asFalta: "❌ No hi era", asFaltaAv: "📩 No hi era (avisat)", asMesBtn: "Veure mesos anteriors",
+      asPresent: "✅ Present", asFalta: "❌ No hi era", asFaltaAv: "📩 No hi era (avisat)", asMesBtn: "Veure mesos anteriors", asLlista: "Llista", asTardC: "Tard / abans", asToca: "Toca un dia per veure'n el detall.",
       asTxt: "Ho marquen els monitors a cada entreno. Si veus algun error, parla amb el Jaime.",
       pTard: "⏰ Arriba tard", pAbans: "↩️ Marxa abans", pTardAbans: "⏰ Tard i marxa abans",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
@@ -144,7 +144,7 @@
       assistencia: "Asistencia", asTecnic: "Para ver la asistencia de un nadador, usa ☰ › Ver como… y elige su cuenta o la de los padres.",
       asBuit: "Todavía no hay ningún entreno marcado esta temporada.", asMajors: "A partir de los 18 años, la asistencia solo la ve el propio nadador.",
       asMes: "Este mes", asTemp: "Temporada", asDe: "de", asTard: "Llegadas tarde", asAbans: "Salidas antes", asVeure: "📊 Ver la asistencia",
-      asPresent: "✅ Presente", asFalta: "❌ No estaba", asFaltaAv: "📩 No estaba (avisado)", asMesBtn: "Ver meses anteriores",
+      asPresent: "✅ Presente", asFalta: "❌ No estaba", asFaltaAv: "📩 No estaba (avisado)", asMesBtn: "Ver meses anteriores", asLlista: "Lista", asTardC: "Tarde / antes", asToca: "Toca un día para ver el detalle.",
       asTxt: "Lo marcan los monitores en cada entreno. Si ves algún error, habla con Jaime.",
       pTard: "⏰ Llega tarde", pAbans: "↩️ Se va antes", pTardAbans: "⏰ Tarde y se va antes",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
@@ -573,7 +573,7 @@
           (r.sessions || []).filter(function (x) { return x.data === dd.data; }).forEach(function (x) { linies.push(botoSessio(x, true)); });
           var dm = dd.data ? dd.data.slice(8, 10) + "/" + dd.data.slice(5, 7) : "";
           cont.appendChild(el("div", { class: "setm-dia" + (esAvui ? " avui" : "") + (dd.festiu ? " festiu" : "") }, [
-            el("div", { class: "setm-dcap" }, [el("strong", { text: dd.d + " " + dm }), esAvui ? el("span", { class: "setm-tag", text: t("avuiTag") }) : null]),
+            el("div", { class: "setm-dcap" }, [el("strong", { text: (dd.data ? nomDia(dd.data) : dd.d) + " " + dm }), esAvui ? el("span", { class: "setm-tag", text: t("avuiTag") }) : null]),
             el("div", { class: "setm-lins" }, linies)
           ]));
         });
@@ -589,7 +589,7 @@
 
   function botoSessio(s, curt) {
     var avui = new Date(); var ka = avui.getFullYear() + "-" + ("0" + (avui.getMonth() + 1)).slice(-2) + "-" + ("0" + avui.getDate()).slice(-2);
-    var quan = s.data === ka ? t("avuiMin") : (s.dia ? s.dia.charAt(0) + s.dia.slice(1).toLowerCase() : "") + " " + s.data.slice(8, 10) + "/" + s.data.slice(5, 7);
+    var quan = s.data === ka ? t("avuiMin") : nomDia(s.data) + " " + s.data.slice(8, 10) + "/" + s.data.slice(5, 7);
     var b = el("button", { type: "button", class: curt ? "btn3 sbtn curt" : "btn3 sbtn" }, [
       el("span", { class: "sbtn-ic", "aria-hidden": "true", text: "📄" }),
       el("span", { class: "sbtn-t" }, [el("strong", { text: curt ? t("sessioPdf") : quan + (s.hora ? " · " + s.hora : "") }),
@@ -618,7 +618,9 @@
                 es: ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"] };
   var DSEM = { ca: ["dg", "dl", "dt", "dc", "dj", "dv", "ds"], es: ["do", "lu", "ma", "mi", "ju", "vi", "sá"] };
   function dObj(k) { return new Date(k + "T12:00:00"); }
-  function dCurt(k) { var x = dObj(k); return DSEM[estat.idioma][x.getDay()] + " " + x.getDate(); }
+  var DSEM_LL = { ca: ["diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte"], es: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"] };
+  function nomDia(k) { var n = DSEM_LL[estat.idioma][dObj(k).getDay()]; return n.charAt(0).toUpperCase() + n.slice(1); }
+  function dCurt(k) { return nomDia(k) + " " + dObj(k).getDate(); }
   function diesFins(k, avui) { return Math.round((dObj(k) - dObj(avui)) / 864e5); }
 
   function vistaCalendari() {
@@ -810,8 +812,8 @@
         return el("button", { type: "button", class: "wbtn" + (s.id === f.id ? " on" : ""), text: f.nom, onclick: function () { s.id = f.id; pinta2(); } }); }))]) : null;
       var dies = el("div", { class: "dies-av" });
       for (var n = 0; n < 14; n++) (function (k) {
-        dies.appendChild(el("button", { type: "button", class: "dia-av" + (s.data === k ? " on" : ""), text: (n === 0 ? t("avuiMin") : dCurt(k)) + (n === 0 ? "" : "/" + k.slice(5, 7)),
-          onclick: function () { s.data = k; pinta2(); } }));
+        dies.appendChild(el("button", { type: "button", class: "dia-av" + (s.data === k ? " on" : ""),
+          onclick: function () { s.data = k; pinta2(); } }, [el("span", { text: n === 0 ? t("avuiMin") : nomDia(k) }), el("span", { class: "dia-av-n", text: k.slice(8, 10) + "/" + k.slice(5, 7) })]));
       })(avuiMes(n));
       var tipus = el("div", { class: "wb" }, [t("tNoVinc"), t("tTard"), t("tAbans")].map(function (tx, i) {
         var val = ["No vinc", "Arribaré tard", "Marxaré abans"][i];
@@ -866,7 +868,48 @@
       return (/avisat/i.test(f.punt) || f.app) ? ["as-av", t("asFaltaAv")] : ["as-no", t("asFalta")];
     }
     function pct(a, b) { return b ? Math.round(a / b * 100) + "%" : "—"; }
+    function calAssist(fs, mesos) {
+      if (!estat.asMes || mesos.indexOf(estat.asMes) < 0) estat.asMes = mesos[0];
+      var mk = estat.asMes, y = Number(mk.slice(0, 4)), m = Number(mk.slice(5, 7));
+      var i = mesos.indexOf(mk);
+      var l = fs.filter(function (f) { return f.data.slice(0, 7) === mk; });
+      function compta(x) { return x.filter(function (f) { return f.present; }).length; }
+      cont.appendChild(el("div", { class: "cal-nav" }, [
+        el("button", { type: "button", class: "cal-fl", "aria-label": "‹", text: "‹", disabled: i >= mesos.length - 1, onclick: function () { estat.asMes = mesos[i + 1]; estat.asDia = null; dibuixa(ultimaR); } }),
+        el("strong", { text: MESOS[estat.idioma][m - 1] + " " + y + " · " + pct(compta(l), l.length) }),
+        el("button", { type: "button", class: "cal-fl", "aria-label": "›", text: "›", disabled: i <= 0, onclick: function () { estat.asMes = mesos[i - 1]; estat.asDia = null; dibuixa(ultimaR); } })
+      ]));
+      var g = el("div", { class: "cal-graella" });
+      (estat.idioma === "es" ? ["L", "M", "X", "J", "V", "S", "D"] : ["DL", "DT", "DC", "DJ", "DV", "DS", "DG"]).forEach(function (n) { g.appendChild(el("div", { class: "cal-gcap", text: n })); });
+      var off = (new Date(y, m - 1, 1).getDay() + 6) % 7, nd = new Date(y, m, 0).getDate();
+      for (var b = 0; b < off; b++) g.appendChild(el("div", { class: "cal-gbuit" }));
+      for (var d = 1; d <= nd; d++) (function (d) {
+        var dk = mk + "-" + ("0" + d).slice(-2);
+        var del = l.filter(function (f) { return f.data === dk; });
+        var cls = "";
+        if (del.length) {
+          var es = del.map(function (f) { return estatFila(f)[0]; });
+          cls = es.indexOf("as-no") >= 0 ? "as-no" : (es.indexOf("as-av") >= 0 ? "as-av" : (es.indexOf("as-t") >= 0 ? "as-t" : "as-ok"));
+        }
+        g.appendChild(el("button", { type: "button", class: "cal-gdia " + cls + (dk === estat.asDia ? " sel" : ""), disabled: !del.length, "aria-label": dk,
+          onclick: function () { estat.asDia = dk; dibuixa(ultimaR); } }, [el("span", { text: String(d) })]));
+      })(d);
+      cont.appendChild(g);
+      cont.appendChild(el("div", { class: "as-lleg gris" }, [["as-ok", t("asPresent")], ["as-t", "⏰ " + t("asTardC")], ["as-av", t("asFaltaAv")], ["as-no", t("asFalta")]].map(function (x) {
+        return el("span", {}, [el("span", { class: "as-q " + x[0] }), x[1].replace(/^\S+\s/, "")]); })));
+      var dia = estat.asDia && estat.asDia.slice(0, 7) === mk ? estat.asDia : null;
+      if (dia) {
+        var caixa = el("div", { class: "caixa" }, [el("h2", { text: dCurt(dia) + " " + MESOS[estat.idioma][m - 1] })]);
+        l.filter(function (f) { return f.data === dia; }).forEach(function (f) {
+          var e = estatFila(f);
+          caixa.appendChild(el("div", { class: "as-f" }, [el("div", { class: "gris", text: f.grup.replace(/^(Dl|Dt|Dc|Dj|Dv|Ds|Dg)\s+/, "") }), el("span", { class: "as-x " + e[0], text: e[1] })]));
+        });
+        cont.appendChild(caixa);
+      } else cont.appendChild(el("div", { class: "gris", text: t("asToca") }));
+    }
+    var ultimaR = null;
     function dibuixa(r) {
+      ultimaR = r;
       cont.textContent = "";
       if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
       if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("asTecnic") })); return; }
@@ -891,6 +934,12 @@
         el("div", { class: "conv-h" }, [el("span", { text: t("asAbans") }), el("strong", { text: String(abans) })])]));
       var mesos = [];
       fs.forEach(function (f) { var k = f.data.slice(0, 7); if (mesos.indexOf(k) < 0) mesos.push(k); });
+      var vista = estat.asVista || "cal";
+      var tog = el("div", { class: "cal-zoom as-tog" }, [["cal", "🗓️ " + t("calendari")], ["llista", "☰ " + t("asLlista")]].map(function (z) {
+        return el("button", { type: "button", class: vista === z[0] ? "on" : "", text: z[1], onclick: function () { estat.asVista = z[0]; dibuixa(r); } });
+      }));
+      cont.appendChild(tog);
+      if (vista === "cal") { calAssist(fs, mesos); cont.appendChild(el("div", { class: "gris", text: t("asTxt") })); return; }
       (mostraTot ? mesos : mesos.slice(0, 2)).forEach(function (mk) {
         var l = fs.filter(function (f) { return f.data.slice(0, 7) === mk; });
         var caixa = el("div", { class: "caixa" }, [el("h2", { text: MESOS[estat.idioma][Number(mk.slice(5)) - 1] + " " + mk.slice(0, 4) + " · " + pct(compta(l), l.length) })]);
