@@ -274,3 +274,12 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .caixa.botiga{align-items:center;text-align:center;padding:24px 16px}
 .botiga-ic{font-size:44px}
 .caixa.botiga .btn{text-decoration:none;display:flex;align-items:center;justify-content:center;width:100%}
+.wm-kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.wm-kpi .as-n{padding:10px}.wm-kpi .as-n strong{font-size:22px}
+.wm-g{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+.wm-barres{display:flex;align-items:flex-end;gap:2px;height:44px;background:#141414;border-radius:8px;padding:4px}
+.wm-b{flex:1;background:#F1C332;border-radius:2px 2px 0 0;min-width:2px}
+.wm-b.buit{background:#2A2A2A}
+.cal-punt.wm-dolor{background:#ff6b6b}
+.wm-r{display:flex;flex-direction:column;gap:1px;padding:5px 0;border-bottom:1px solid #2A2A2A}
+.wm-r:last-child{border-bottom:0}

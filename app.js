@@ -59,7 +59,7 @@
       tmFitxa: "Llicència", tmCat: "Categoria", tmAny: "Any", tmMillors: "Millors marques", tmToca: "Toca una prova per veure com ha anat evolucionant.",
       tmUltimes: "Últimes competicions", tmTests: "Els meus tests", tmTestsTxt: "Només els veus tu.", tmBuit: "Encara no hi ha cap marca oficial.",
       tmTecnic: "Per veure els temps d'un nedador, fes servir ☰ › Veure com…", tmMajors: "A partir dels 18 anys, els temps només els veu el mateix nedador.",
-      tmManual: "M = cronometratge manual", tecCerca: "Cerca un nedador…", botigaTit: "La botiga del club", botigaTxt: "Roba i material del Club Natació Navàs: fotos, descripció i talles. Aviat també hi podràs fer comandes.", botigaObrir: "Obrir la botiga", botigaSense: "Aviat hi trobaràs l'enllaç a la botiga.", tecMeu: "el teu fill/a", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
+      tmManual: "M = cronometratge manual", tecCerca: "Cerca un nedador…", wmeu: "El meu wellness", wmTit: "El meu wellness", wmPriv: "🔒 Només ho veus tu i l'equip tècnic. Les respostes no es poden canviar.", wmBuit: "Encara no hi ha respostes de les últimes setmanes.", wmSense: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", wmMissatge: "💬 Missatge del Jaime", wm4: "Últimes 4 setmanes", wmFets: "Wellness fets", wmSon: "Son (mitjana)", wmDesc: "Descans", wmTrobes: "Com et trobes", wmAigua: "Duresa aigua", wmSec: "Duresa sec", wmDolor: "Dies amb dolor", wmOn: "On t'ha fet mal", wmDies: "dies", wmToca: "Toca un dia per veure què vas respondre.", wmLlegB: "Bé", wmLlegR: "Regular", wmLlegM: "Fluix", wmLlegD: "Dolor", wmGraf: "Dia a dia", wmTecnic: "Per veure el wellness d'un nedador, tria'l a dalt.", botigaTit: "La botiga del club", botigaTxt: "Roba i material del Club Natació Navàs: fotos, descripció i talles. Aviat també hi podràs fer comandes.", botigaObrir: "Obrir la botiga", botigaSense: "Aviat hi trobaràs l'enllaç a la botiga.", tecMeu: "el teu fill/a", tmMarques: "Marques", tmMinimes: "Mínimes", tmMinProx: "Pròximament · Consulta-ho amb l'entrenador.", tmMinCap: "Ara mateix no hi ha cap competició amb mínimes per a tu.", tmAssol: "mínimes aconseguides", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tu:", tmOk: "✅ Mínima!", tmFalten: "Falten {s} s", tmSense: "Sense marca", tmSup: "Competició de categoria superior: es compara amb l'any {a} de la taula.", tmMarquesDes: "Marques vàlides del {d} al {f}.", tmMinTxt: "Cada marca es compara amb la taula de la seva piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o més).", tmP: "Piscina", tmTxt: "Marques oficials de competició. Si en falta alguna, parla amb el Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Aquesta sessió s'ha actualitzat. Torna-la a tocar.", avuiMin: "Avui", sessioN: "Sessió", sessioPdf: "Sessió en PDF",
       veureCom: "Veure com…", veientCom: "Veient com", sortirVC: "Sortir", triaPerfil: "Tria un perfil per veure l'app com la veu aquella persona. Només per mirar: no es pot canviar res.",
       canviObligat: "Com a administrador, la teva contrasenya ha de tenir mínim 12 caràcters. Canvia-la ara per continuar.",
@@ -154,7 +154,7 @@
       tmFitxa: "Licencia", tmCat: "Categoría", tmAny: "Año", tmMillors: "Mejores marcas", tmToca: "Toca una prueba para ver cómo ha ido evolucionando.",
       tmUltimes: "Últimas competiciones", tmTests: "Mis tests", tmTestsTxt: "Solo los ves tú.", tmBuit: "Todavía no hay ninguna marca oficial.",
       tmTecnic: "Para ver los tiempos de un nadador, usa ☰ › Ver como…", tmMajors: "A partir de los 18 años, los tiempos solo los ve el propio nadador.",
-      tmManual: "M = cronometraje manual", tecCerca: "Busca un nadador…", botigaTit: "La tienda del club", botigaTxt: "Ropa y material del Club Natació Navàs: fotos, descripción y tallas. Pronto también podrás hacer pedidos.", botigaObrir: "Abrir la tienda", botigaSense: "Pronto encontrarás aquí el enlace a la tienda.", tecMeu: "tu hijo/a", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
+      tmManual: "M = cronometraje manual", tecCerca: "Busca un nadador…", wmeu: "Mi wellness", wmTit: "Mi wellness", wmPriv: "🔒 Solo lo ves tú y el equipo técnico. Las respuestas no se pueden cambiar.", wmBuit: "Todavía no hay respuestas de las últimas semanas.", wmSense: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", wmMissatge: "💬 Mensaje de Jaime", wm4: "Últimas 4 semanas", wmFets: "Wellness hechos", wmSon: "Sueño (media)", wmDesc: "Descanso", wmTrobes: "Cómo te encuentras", wmAigua: "Dureza agua", wmSec: "Dureza seco", wmDolor: "Días con dolor", wmOn: "Dónde te ha dolido", wmDies: "días", wmToca: "Toca un día para ver qué respondiste.", wmLlegB: "Bien", wmLlegR: "Regular", wmLlegM: "Flojo", wmLlegD: "Dolor", wmGraf: "Día a día", wmTecnic: "Para ver el wellness de un nadador, elígelo arriba.", botigaTit: "La tienda del club", botigaTxt: "Ropa y material del Club Natació Navàs: fotos, descripción y tallas. Pronto también podrás hacer pedidos.", botigaObrir: "Abrir la tienda", botigaSense: "Pronto encontrarás aquí el enlace a la tienda.", tecMeu: "tu hijo/a", tmMarques: "Marcas", tmMinimes: "Mínimas", tmMinProx: "Próximamente · Consúltalo con el entrenador.", tmMinCap: "Ahora mismo no hay ninguna competición con mínimas para ti.", tmAssol: "mínimas conseguidas", tmDe: "de", tmMinA: "Mín. 50 m", tmMinB: "Mín. 25 m", tmTeva: "Tú:", tmOk: "✅ ¡Mínima!", tmFalten: "Faltan {s} s", tmSense: "Sin marca", tmSup: "Competición de categoría superior: se compara con el año {a} de la tabla.", tmMarquesDes: "Marcas válidas del {d} al {f}.", tmMinTxt: "Cada marca se compara con la tabla de su piscina. El manual suma 0,29 s (50 m) o 0,19 s (100 m o más).", tmP: "Piscina", tmTxt: "Marcas oficiales de competición. Si falta alguna, habla con Jaime.",
       entrenoTit: "Entreno", sessioCanviada: "Esta sesión se ha actualizado. Vuelve a tocarla.", avuiMin: "Hoy", sessioN: "Sesión", sessioPdf: "Sesión en PDF",
       veureCom: "Ver como…", veientCom: "Viendo como", sortirVC: "Salir", triaPerfil: "Elige un perfil para ver la app como la ve esa persona. Solo para mirar: no se puede cambiar nada.",
       canviObligat: "Como administrador, tu contraseña debe tener mínimo 12 caracteres. Cámbiala ahora para continuar.",
@@ -478,6 +478,7 @@
         else if (!w.prova && d.privacitat && d.privacitat.obligatoria && d.rol === "NEDADOR" && !d.privacitat.wellness)
           fills.push(el("span", { class: "gris", text: t("cwCal") }), el("button", { type: "button", class: "btn", text: t("cwDonar"), onclick: function () { pantallaPrivacitat(false); } }));
         else fills.push(el("button", { type: "button", class: "btn", text: w.prova ? t("wellProva") : t("wellFer"), onclick: obreWellness }), w.prova ? null : enllac);
+        if (veuWmeu(d)) fills.push(el("button", { type: "button", class: "btn3", text: "📈 " + t("wmTit"), onclick: function () { estat.pestanya = "wmeu"; apunta("wmeu"); pantallaApp(); } }));
         cos.appendChild(el("div", { class: "caixa" }, fills));
       }
       if (d.sessions && d.sessions.length) {
@@ -518,6 +519,9 @@
     } else if (pes === "calendari" && (estatModul("calendari") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("calendari") !== "no"))) {
       if (estatModul("calendari") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaCalendari());
+    } else if (pes === "wmeu" && veuWmeu(d)) {
+      if (estatModul("wmeu") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaWellnessMeu());
     } else if (pes === "botiga" && (estatModul("botiga") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("botiga") !== "no"))) {
       if (estatModul("botiga") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(el("div", { class: "caixa botiga" }, [
@@ -901,6 +905,110 @@
       caixa.appendChild(llista);
     }
     return caixa;
+  }
+
+  // ---------- El meu wellness ----------
+  function veuWmeu(d) {
+    if (!d || d.rol === "PARE" || (d.wellness && d.wellness.no)) return false;
+    var e = estatModul("wmeu");
+    return e === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && e !== "no");
+  }
+  function numW(v) { var n = parseFloat(String(v === undefined ? "" : v).replace(",", ".")); return isNaN(n) ? null : n; }
+  function vistaWellnessMeu() {
+    var cont = el("div", { class: "cal" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    function mitjana(l, k) { var x = l.map(function (o) { return numW(o[k]); }).filter(function (n) { return n !== null; }); return x.length ? x.reduce(function (a, b) { return a + b; }, 0) / x.length : null; }
+    function fmt1(n) { return n === null ? "—" : (Math.round(n * 10) / 10).toString().replace(".", ","); }
+    function colorDia(o) {
+      var v = numW(o.trobes); if (v === null) v = numW(o.arribat);
+      if (v === null) return "as-av";
+      return v >= 4 ? "as-ok" : (v >= 3 ? "as-t" : "as-no");
+    }
+    function teDolor(o) { return o.dolor && !/^no/i.test(String(o.dolor)); }
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmTecnic") })); return; }
+      if (r.llista) cont.appendChild(selectorTecnic({ llista: r.llista, nedadors: r.id ? [{ id: r.id }] : [] }, function () { dibuixa(r); }));
+      cont.appendChild(el("div", { class: "gris", text: t("wmPriv") }));
+      if (r.resum) cont.appendChild(el("div", { class: "caixa avis" }, [el("div", { class: "tit", text: t("wmMissatge") + " · " + MESOS[estat.idioma][Number(r.resum.mes.slice(5, 7)) - 1] }), el("div", { class: "txt", text: r.resum.text })]));
+      if (r.sensePerfil) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmSense") })); return; }
+      var dies = r.dies || [];
+      if (!dies.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmBuit") })); return; }
+      // Últimes 4 setmanes
+      var ara = new Date(), lim = new Date(ara.getTime() - 27 * 864e5);
+      var limK = lim.getFullYear() + "-" + ("0" + (lim.getMonth() + 1)).slice(-2) + "-" + ("0" + lim.getDate()).slice(-2);
+      var l4 = dies.filter(function (o) { return o.dia >= limK; });
+      var ambDolor = l4.filter(teDolor);
+      var kpi = [[t("wmFets"), String(l4.length)], [t("wmSon"), fmt1(mitjana(l4, "hores")) + " h"], [t("wmDesc"), fmt1(mitjana(l4, "descansat")) + "/5"],
+        [t("wmTrobes"), fmt1(mitjana(l4, "trobes")) + "/5"], [t("wmAigua"), fmt1(mitjana(l4, "duresaAigua")) + "/10"], [t("wmDolor"), String(ambDolor.length)]];
+      cont.appendChild(el("h2", { class: "cal-mes", text: t("wm4") }));
+      cont.appendChild(el("div", { class: "wm-kpi" }, kpi.map(function (k) { return el("div", { class: "as-n" }, [el("strong", { text: k[1] }), el("span", { class: "gris", text: k[0] })]); })));
+      // Gràfics dia a dia (28 dies)
+      var dies28 = [];
+      for (var i = 27; i >= 0; i--) { var d0 = new Date(ara.getTime() - i * 864e5); dies28.push(d0.getFullYear() + "-" + ("0" + (d0.getMonth() + 1)).slice(-2) + "-" + ("0" + d0.getDate()).slice(-2)); }
+      var perDia = {}; dies.forEach(function (o) { perDia[o.dia] = o; });
+      var graf = el("div", { class: "caixa" }, [el("h2", { text: t("wmGraf") })]);
+      [["hores", t("wmSon"), 10], ["descansat", t("wmDesc"), 5], ["trobes", t("wmTrobes"), 5], ["duresaAigua", t("wmAigua"), 10], ["duresaSec", t("wmSec"), 10]].forEach(function (g) {
+        var barres = el("div", { class: "wm-barres", "aria-hidden": "true" });
+        dies28.forEach(function (k) {
+          var v = perDia[k] ? numW(perDia[k][g[0]]) : null;
+          var b = el("span", { class: "wm-b" + (v === null ? " buit" : "") });
+          b.style.height = v === null ? "3px" : Math.max(6, Math.min(100, v / g[2] * 100)) + "%";
+          barres.appendChild(b);
+        });
+        graf.appendChild(el("div", { class: "wm-g" }, [el("div", { class: "conv-h" }, [el("span", { text: g[1] }), el("strong", { text: fmt1(mitjana(l4, g[0])) })]), barres]));
+      });
+      cont.appendChild(graf);
+      // On fa mal
+      if (ambDolor.length) {
+        var zones = {};
+        ambDolor.forEach(function (o) { String(o.on || "").split(/\s*,\s*/).filter(Boolean).forEach(function (z) { zones[z] = (zones[z] || 0) + 1; }); });
+        var zl = Object.keys(zones).sort(function (a, b) { return zones[b] - zones[a]; });
+        if (zl.length) cont.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("wmOn") })].concat(zl.map(function (z) {
+          return el("div", { class: "conv-h" }, [el("span", { text: z }), el("strong", { text: zones[z] + " " + t("wmDies") })]); }))));
+      }
+      // Calendari
+      var mesos = [];
+      dies.slice().reverse().forEach(function (o) { var k = o.dia.slice(0, 7); if (mesos.indexOf(k) < 0) mesos.push(k); });
+      if (!estat.wmMes || mesos.indexOf(estat.wmMes) < 0) estat.wmMes = mesos[0];
+      var mk = estat.wmMes, y = Number(mk.slice(0, 4)), m = Number(mk.slice(5, 7)), ix = mesos.indexOf(mk);
+      cont.appendChild(el("div", { class: "cal-nav" }, [
+        el("button", { type: "button", class: "cal-fl", "aria-label": "‹", text: "‹", disabled: ix >= mesos.length - 1, onclick: function () { estat.wmMes = mesos[ix + 1]; estat.wmDia = null; dibuixa(r); } }),
+        el("strong", { text: MESOS[estat.idioma][m - 1] + " " + y }),
+        el("button", { type: "button", class: "cal-fl", "aria-label": "›", text: "›", disabled: ix <= 0, onclick: function () { estat.wmMes = mesos[ix - 1]; estat.wmDia = null; dibuixa(r); } })
+      ]));
+      var g2 = el("div", { class: "cal-graella" });
+      (estat.idioma === "es" ? ["L", "M", "X", "J", "V", "S", "D"] : ["DL", "DT", "DC", "DJ", "DV", "DS", "DG"]).forEach(function (n) { g2.appendChild(el("div", { class: "cal-gcap", text: n })); });
+      var off = (new Date(y, m - 1, 1).getDay() + 6) % 7, nd = new Date(y, m, 0).getDate();
+      for (var b0 = 0; b0 < off; b0++) g2.appendChild(el("div", { class: "cal-gbuit" }));
+      for (var dd = 1; dd <= nd; dd++) (function (dd) {
+        var k = mk + "-" + ("0" + dd).slice(-2), o = perDia[k];
+        var cel = el("button", { type: "button", class: "cal-gdia " + (o ? colorDia(o) : "") + (k === estat.wmDia ? " sel" : ""), disabled: !o, "aria-label": k,
+          onclick: function () { estat.wmDia = k; dibuixa(r); } }, [el("span", { text: String(dd) })]);
+        if (o && teDolor(o)) cel.appendChild(el("span", { class: "cal-punt wm-dolor" }));
+        g2.appendChild(cel);
+      })(dd);
+      cont.appendChild(g2);
+      cont.appendChild(el("div", { class: "as-lleg gris" }, [["as-ok", t("wmLlegB")], ["as-t", t("wmLlegR")], ["as-no", t("wmLlegM")]].map(function (x) {
+        return el("span", {}, [el("span", { class: "as-q " + x[0] }), x[1]]); }).concat([el("span", {}, [el("span", { class: "cal-punt wm-dolor" }), t("wmLlegD")])])));
+      var od = estat.wmDia && perDia[estat.wmDia];
+      if (od) {
+        var det = el("div", { class: "caixa" }, [el("h2", { text: dCurt(od.dia) + " " + MESOS[estat.idioma][Number(od.dia.slice(5, 7)) - 1] })]);
+        Object.keys(r.titols || {}).forEach(function (k) {
+          if (od[k] === undefined || od[k] === "") return;
+          det.appendChild(el("div", { class: "wm-r" }, [el("span", { class: "gris", text: r.titols[k] }), el("strong", { text: String(od[k]) })]));
+        });
+        cont.appendChild(det);
+      } else cont.appendChild(el("div", { class: "gris", text: t("wmToca") }));
+    }
+    function carrega() {
+      crida("wellnessMeu", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null, idCnn: estat.tecSel || null }).then(function (r) {
+        if (estat.pestanya === "wmeu" && cont.isConnected) dibuixa(r);
+      });
+    }
+    recarregaTec = carrega;
+    carrega();
+    return cont;
   }
 
   // ---------- Temps ----------
@@ -1378,6 +1486,7 @@
     }
     var panell = el("div", { class: "panell", role: "dialog", "aria-label": t("menu") }, [
       modul("assistencia", "📊", t("assistencia")),
+      veuWmeu(dades() || {}) ? item("📈", t("wmTit"), function () { estat.pestanya = "wmeu"; apunta("wmeu"); pantallaApp(); }) : null,
       modul("botiga", "🛍️", t("botiga")),
       modul("reunions", "🤝", t("reunio")),
       modul("quotes", "💶", t("quotes")),
