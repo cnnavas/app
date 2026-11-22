@@ -1,6 +1,6 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v33';
-const FITXERS = ['./', 'index.html', 'app.css?v=33', 'app.js?v=33', 'cos.js?v=33', 'wellness.js?v=33', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const VERSIO = 'cnn-v34';
+const FITXERS = ['./', 'index.html', 'app.css?v=34', 'app.js?v=34', 'cos.js?v=34', 'wellness.js?v=34', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS)).then(() => self.skipWaiting()));
@@ -27,7 +27,7 @@ self.addEventListener('push', e => {
   const d = j.data || j || {};
   const n = j.notification || {};
   const p = PESTANYES_PUSH.indexOf(d.p) >= 0 ? d.p : 'avui';
-  const opc = { body: String(d.text || n.body || '').slice(0, 240), icon: 'icon-192.png', badge: 'icon-192.png', data: { p: p } };
+  const opc = { body: String(d.text || n.body || '').slice(0, 240), icon: 'escut-192.png', badge: 'badge-96.png', data: { p: p } };
   if (d.tag) { opc.tag = String(d.tag); opc.renotify = true; }
   e.waitUntil(self.registration.showNotification(String(d.titol || n.title || 'CN Navàs').slice(0, 80), opc));
 });
