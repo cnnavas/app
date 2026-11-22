@@ -88,7 +88,7 @@
       menu: "Menú", botiga: "Botiga", reunio: "Demanar reunió", quotes: "Quotes", eix: "Eix (bàscula)", documents: "Documents",
       perfil: "Canviar contrasenya", idioma: "Idioma · Castellano", ajuda: "Ajuda", sortir: "Sortir", sortirTot: "Sortir de tots els dispositius",
       tancar: "Tancar",
-comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
+comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", pfConeixerTxt: "Una pregunta per casella. Respon les que vulguis.", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
             elMeuPerfil: "El meu perfil", comEtDiem: "Com vols que et diguem?", comEtDiemAj: "Pots posar el teu nom, un mot o com t'agradi (màx. 25 lletres). Només canvia com et saluda l'app.", nomDesat: "Fet ✅ A partir d'ara et direm així.", desarNom: "Desar el nom", canviContra: "Canviar contrasenya",
       antiga: "Contrasenya actual", nova: "Contrasenya nova", desar: "Desar", desat: "Fet ✅ Contrasenya canviada.",
       ajudaTxt: "Dubtes amb l'app? Parla amb el Jaime a la piscina. Mai enviïs la teva contrasenya a ningú, ni tan sols al club.",
@@ -185,7 +185,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
       menu: "Menú", botiga: "Tienda", reunio: "Pedir reunión", quotes: "Cuotas", eix: "Eix (báscula)", documents: "Documentos",
       perfil: "Cambiar contraseña", idioma: "Idioma · Català", ajuda: "Ayuda", sortir: "Salir", sortirTot: "Salir de todos los dispositivos",
       tancar: "Cerrar",
-comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
+comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", pfConeixerTxt: "Una pregunta por casilla. Responde las que quieras.", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
             elMeuPerfil: "Mi perfil", comEtDiem: "¿Cómo quieres que te llamemos?", comEtDiemAj: "Puedes poner tu nombre, un mote o lo que te guste (máx. 25 letras). Solo cambia cómo te saluda la app.", nomDesat: "Hecho ✅ A partir de ahora te llamaremos así.", desarNom: "Guardar el nombre", canviContra: "Cambiar contraseña",
       antiga: "Contraseña actual", nova: "Contraseña nueva", desar: "Guardar", desat: "Hecho ✅ Contraseña cambiada.",
       ajudaTxt: "¿Dudas con la app? Habla con Jaime en la piscina. Nunca envíes tu contraseña a nadie, ni siquiera al club.",
@@ -1554,7 +1554,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     function pinta_(r) {
       cont.textContent = "";
       var camps = (r && r.camps) || {};
-      var vals = {};
+      var vals = {}, valsR = {};
       var nm = el("input", { id: "nm", type: "text", autocomplete: "nickname", maxlength: "25" });
       nm.value = (r && r.ok) ? (r.alies || r.nom || "") : ((estat.inici && (estat.inici.alies || String(estat.inici.nom || "").split(" ")[0])) || "");
       cont.appendChild(el("label", { for: "nm", text: t("comEtDiem") }));
@@ -1597,7 +1597,15 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
         seccio_(t("pfSecJo"), t("pfNomesTec"), [].concat(text_("alcada", 3, { num: 1 }), text_("pes", 5, { num: 1, dec: 1 })));
         seccio_(t("pfSecAigua"), t("pfNomesTec"), [].concat(tria_("estilFav", r.estils || []), text_("prova", 40), tria_("estilPitjor", r.estils || []), tria_("treball", r.treballs || [], true)));
         seccio_(t("pfSecTu"), t("pfNomesTec"), [].concat(text_("paraules", 60), text_("objEsport", 300, { llarg: 1 }), text_("objFora", 300, { llarg: 1 })));
-        seccio_(t("pfSecConeixer"), t("pfEquipVeu"), [].concat(text_("riure", 200, { llarg: 1 }), text_("llibre", 60), text_("peli", 60), text_("canco", 60), text_("color", 25), text_("numero", 6), text_("menjar", 40), text_("superpoder", 60)));
+        var resp = camps.r || {};
+        var fR = [el("div", { class: "gris", text: t("pfConeixerTxt") })];
+        (r.preguntes || []).forEach(function (q) {
+          var inp = el("input", { id: "pq-" + q.clau, type: "text", maxlength: "120" });
+          inp.value = resp[q.clau] || "";
+          valsR[q.clau] = function () { return inp.value; };
+          fR.push(el("label", { for: "pq-" + q.clau, text: (q.icona ? q.icona + " " : "") + (estat.idioma === "es" ? q.es : q.ca) }), inp);
+        });
+        seccio_(t("pfSecConeixer"), t("pfEquipVeu"), fR);
       }
       var errN = el("div", { class: "err", role: "alert" });
       var btN = el("button", { type: "button", class: "btn", text: esNed && r && r.ok ? t("pfDesar") : t("desarNom") });
@@ -1605,10 +1613,10 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
         errN.className = "err"; errN.textContent = "";
         var v = nm.value.replace(/\s+/g, " ").trim();
         if (v.length > 25) { errN.textContent = terr("nom_llarg"); nm.focus(); return; }
-        var cs = null;
-        if (esNed && r && r.ok) { cs = {}; for (var k in vals) cs[k] = vals[k](); }
+        var cs = null, rs = null;
+        if (esNed && r && r.ok) { cs = {}; for (var k in vals) cs[k] = vals[k](); rs = {}; for (var q in valsR) rs[q] = valsR[q](); }
         btN.disabled = true;
-        crida("desarPerfil", { token: estat.token, alies: v, camps: cs }).then(function (x) {
+        crida("desarPerfil", { token: estat.token, alies: v, camps: cs, respostes: rs }).then(function (x) {
           btN.disabled = false;
           if (x.ok) { desaAliesLocal(x.alies); errN.className = "ok"; errN.textContent = cs ? t("pfDesat") : t("nomDesat"); }
           else if (x.error === "sessio") { oblida(); pantallaEntrar(); }
@@ -1627,7 +1635,6 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   function vistaEquip() {
     var cont = el("div", { class: "eq" }, [el("div", { class: "carrega", text: t("carregant") })]);
     var obert = {};
-    var ICONES = { riure: "😂", llibre: "📚", peli: "🎬", canco: "🎵", color: "🎨", numero: "🔢", menjar: "🍝", superpoder: "🦸" };
     var PRIV = ["alcada", "pes", "estilFav", "prova", "estilPitjor", "treball", "paraules", "objEsport", "objFora"];
     function dibuixa(r) {
       cont.textContent = "";
@@ -1636,8 +1643,9 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
       if (!r.llista.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("eqBuit") })); return; }
       r.llista.forEach(function (n, i) {
         var linies = [];
-        Object.keys(ICONES).forEach(function (k) {
-          if (n[k]) linies.push(el("div", { class: "eq-l" }, [el("span", { class: "eq-ic", "aria-hidden": "true", text: ICONES[k] }), el("span", {}, [el("strong", { text: t("eq_" + k) + ": " }), el("span", { text: n[k] })])]));
+        (r.preguntes || []).forEach(function (q) {
+          var v = n.r && n.r[q.clau];
+          if (v) linies.push(el("div", { class: "eq-l" }, [el("span", { class: "eq-ic", "aria-hidden": "true", text: q.icona || "•" }), el("span", {}, [el("strong", { text: (estat.idioma === "es" ? q.ees : q.eca) + ": " }), el("span", { text: v })])]));
         });
         var priv = [];
         if (r.tecnic) PRIV.forEach(function (k) {
