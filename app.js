@@ -42,11 +42,11 @@
       convPreAvis: "És una preconvocatòria: les hores, sèries i carrers encara poden canviar.",
       convLlista: "Llista de convocats", convLlistaTxt: "Del més petit al més gran. Toca un nom per veure què neda i quan.",
       convVas: "Hi anirà?", convSi: "✅ Sí, hi va", convNo: "❌ No pot venir", convAnada: "Anada", convTornada: "Tornada",
-      trPorto: "L'hi portem nosaltres", trLloc: "Ens veiem al lloc", trNecessita: "Necessita que algú el porti", trSol: "Hi va pel seu compte",
+      trPorto: "L'hi portem nosaltres", trLloc: "Ens veiem al lloc", trNecessita: "Necessita que algú el porti", trSol: "Hi va pel seu compte", trPortoN: "M'hi porten els meus pares", trNecessitaN: "Necessito que algú em porti", trSolN: "Hi vaig pel meu compte", convSiN: "✅ Sí, hi vaig", convNoN: "❌ No puc venir", convVasN: "Hi aniràs?", convDinarN: "Et quedes a dinar?",
       convPlaces: "Places lliures al cotxe per a altres nedadors", convDinar: "Es queda a dinar?", dSi: "Sí", dNo: "No",
       convNota: "Nota per al Jaime (opcional)", convDesar: "Enviar la resposta", convCanviar: "Canviar la resposta", convDesat: "Fet ✅ Resposta enviada. Només la veu l'equip tècnic.",
       convFaltaResp: "Contesta si hi va, l'anada i la tornada.", convFaltaDinar: "Contesta si es queda a dinar.", convProvaAdmin: "Mode prova (admin): no s'ha desat res.",
-      convPares: "Ho confirmaran els teus pares des del seu compte.", convPrivat: "Les respostes només les veu l'equip tècnic.",
+      convPares: "Ho confirmaran els teus pares des del seu compte.", convPerNed: "📣 {n} ha respost: {r}. Si no hi esteu d'acord, podeu canviar-ho aquí.", convPerPare: "Els teus pares han canviat la resposta.", convAvisPares: "Els teus pares veuran la teva resposta.", convNedResp: "📣 {n} ha respost", convPrivat: "Les respostes només les veu l'equip tècnic.",
       convResum: "Respostes (només equip tècnic)", convVan: "Hi van", convNoVan: "No poden", convSense: "Sense resposta", convNecessiten: "Necessiten transport", convPlacesOf: "Places ofertes", convDinen: "Dinen",
       convLlic: "Llicència", convVCForm: "👁️ Aquí la família veu el formulari per respondre (hi va, anada, tornada, places al cotxe). En «Veure com…» no es pot respondre: és només per mirar.",
       convNoPub: "👁️ No publicada: només la veus tu. Marca «Publicar a l'app» a la hoja.", convCap: "Ara mateix no hi ha cap convocatòria.",
@@ -137,11 +137,11 @@
       convPreAvis: "Es una preconvocatoria: las horas, series y calles todavía pueden cambiar.",
       convLlista: "Lista de convocados", convLlistaTxt: "Del más pequeño al más mayor. Toca un nombre para ver qué nada y cuándo.",
       convVas: "¿Irá?", convSi: "✅ Sí, va", convNo: "❌ No puede ir", convAnada: "Ida", convTornada: "Vuelta",
-      trPorto: "Lo llevamos nosotros", trLloc: "Nos vemos allí", trNecessita: "Necesita que alguien lo lleve", trSol: "Va por su cuenta",
+      trPorto: "Lo llevamos nosotros", trLloc: "Nos vemos allí", trNecessita: "Necesita que alguien lo lleve", trSol: "Va por su cuenta", trPortoN: "Me llevan mis padres", trNecessitaN: "Necesito que alguien me lleve", trSolN: "Voy por mi cuenta", convSiN: "✅ Sí, voy", convNoN: "❌ No puedo ir", convVasN: "¿Irás?", convDinarN: "¿Te quedas a comer?",
       convPlaces: "Plazas libres en el coche para otros nadadores", convDinar: "¿Se queda a comer?", dSi: "Sí", dNo: "No",
       convNota: "Nota para Jaime (opcional)", convDesar: "Enviar la respuesta", convCanviar: "Cambiar la respuesta", convDesat: "Hecho ✅ Respuesta enviada. Solo la ve el equipo técnico.",
       convFaltaResp: "Contesta si va, la ida y la vuelta.", convFaltaDinar: "Contesta si se queda a comer.", convProvaAdmin: "Modo prueba (admin): no se ha guardado nada.",
-      convPares: "Lo confirmarán tus padres desde su cuenta.", convPrivat: "Las respuestas solo las ve el equipo técnico.",
+      convPares: "Lo confirmarán tus padres desde su cuenta.", convPerNed: "📣 {n} ha respondido: {r}. Si no estáis de acuerdo, podéis cambiarlo aquí.", convPerPare: "Tus padres han cambiado la respuesta.", convAvisPares: "Tus padres verán tu respuesta.", convNedResp: "📣 {n} ha respondido", convPrivat: "Las respuestas solo las ve el equipo técnico.",
       convResum: "Respuestas (solo equipo técnico)", convVan: "Van", convNoVan: "No pueden", convSense: "Sin respuesta", convNecessiten: "Necesitan transporte", convPlacesOf: "Plazas ofrecidas", convDinen: "Comen",
       convLlic: "Licencia", convVCForm: "👁️ Aquí la familia ve el formulario para responder (va, ida, vuelta, plazas en el coche). En «Ver como…» no se puede responder: es solo para mirar.",
       convNoPub: "👁️ No publicada: solo la ves tú. Marca «Publicar a l'app» en la hoja.", convCap: "Ahora mismo no hay ninguna convocatoria.",
@@ -1271,12 +1271,14 @@
 
   function targetaConv(c) {
     var pendents = (c.meus || []).filter(function (m) { return m.potRespondre && !m.resposta; }).length;
+    var perNed = (dades() || {}).rol === "PARE" ? (c.meus || []).filter(function (m) { return m.resposta && m.resposta.per === "NEDADOR"; }) : [];
     var fills = [
       el("h2", { text: "📣 " + t("convTit") + " · " + c.fase }),
       el("strong", { text: c.nom }),
       el("span", { class: "gris", text: dataLlarga(c.data) + (c.sede ? " · " + c.sede : "") + (c.hConv ? " · " + c.hConv : "") }),
       c.noPublicada ? el("span", { class: "gris", text: t("convNoPub") }) : null,
       (c.meus || []).length ? el("span", { class: pendents ? "conv-pend" : "ok", text: pendents ? t("convFalta") : ((c.meus || []).some(function (m) { return m.resposta; }) ? t("convRespost") : "") }) : null,
+      perNed.length ? el("span", { class: "conv-pend", text: perNed.map(function (m) { return t("convNedResp").replace("{n}", String(m.nom).split(" ")[0]) + ": " + (m.resposta.va === "Sí" ? t("convSi") : t("convNo")); }).join(" · ") }) : null,
       el("button", { type: "button", class: "btn", text: t("convVeure"), onclick: function () { pantallaConv(c.k); } })
     ];
     return el("div", { class: "caixa conv" }, fills);
@@ -1317,7 +1319,14 @@
         ]));
       });
       if (m.potRespondre && estat.veureCom) bloc.push(el("div", { class: "caixa gris", text: t("convVCForm") }));
-      else if (m.potRespondre) bloc.push(formResposta(c, m));
+      else if (m.potRespondre) {
+        var rolJo = (dades() || {}).rol, rr = m.resposta;
+        if (rr && rolJo === "PARE" && rr.per === "NEDADOR")
+          bloc.push(el("div", { class: "caixa avis" }, [el("div", { class: "txt", text: t("convPerNed").replace("{n}", String(m.nom).split(" ")[0]).replace("{r}", rr.va === "Sí" ? t("convSi") : t("convNo")) })]));
+        if (rr && rolJo === "NEDADOR" && rr.per === "PARE") bloc.push(el("div", { class: "gris", text: t("convPerPare") }));
+        bloc.push(formResposta(c, m));
+        if (rolJo === "NEDADOR") bloc.push(el("div", { class: "gris", text: t("convAvisPares") }));
+      }
       else if (m.resposta) bloc.push(el("div", { class: "ok", text: t("convRespost") + ": " + (m.resposta.va === "Sí" ? t("convSi") : t("convNo")) }));
       else if (!estat.veureCom && (dades() || {}).rol === "NEDADOR") bloc.push(el("div", { class: "gris", text: t("convPares") }));
       f.push(el("div", { class: "caixa" }, bloc));
@@ -1360,6 +1369,8 @@
   }
 
   function formResposta(c, m) {
+    var jo = (dades() || {}).rol === "NEDADOR";
+    var tn = function (k) { return jo && T[estat.idioma][k + "N"] ? t(k + "N") : t(k); };
     var r0 = m.resposta || {};
     var s = { va: r0.va === "Sí" ? "si" : (r0.va === "No" ? "no" : null), anada: r0.anada || null, tornada: r0.tornada || null,
               places: r0.places || "0", dinar: r0.dinar === "Sí" ? "si" : (r0.dinar === "No" ? "no" : null) };
@@ -1374,9 +1385,9 @@
     }
     function dibuixa() {
       caixa.textContent = "";
-      var trs = [["porto", t("trPorto")], ["lloc", t("trLloc")], ["necessita", t("trNecessita")], ["sol", t("trSol")]];
-      caixa.appendChild(el("div", { class: "wq-t", text: t("convVas") }));
-      caixa.appendChild(botons([["si", t("convSi")], ["no", t("convNo")]], "va"));
+      var trs = [["porto", tn("trPorto")], ["lloc", tn("trLloc")], ["necessita", tn("trNecessita")], ["sol", tn("trSol")]];
+      caixa.appendChild(el("div", { class: "wq-t", text: tn("convVas") }));
+      caixa.appendChild(botons([["si", tn("convSi")], ["no", tn("convNo")]], "va"));
       if (s.va === "si") {
         caixa.appendChild(el("div", { class: "wq-t", text: t("convAnada") })); caixa.appendChild(botons(trs, "anada"));
         caixa.appendChild(el("div", { class: "wq-t", text: t("convTornada") })); caixa.appendChild(botons(trs, "tornada"));
@@ -1386,7 +1397,7 @@
           ["0", "1", "2", "3", "4"].forEach(function (n) { pl.appendChild(el("button", { type: "button", class: "wbtn" + (String(s.places) === n ? " on" : ""), text: n === "4" ? "4+" : n, onclick: function () { s.places = n; dibuixa(); } })); });
           caixa.appendChild(pl);
         }
-        if (c.dinar) { caixa.appendChild(el("div", { class: "wq-t", text: t("convDinar") })); caixa.appendChild(botons([["si", t("dSi")], ["no", t("dNo")]], "dinar")); }
+        if (c.dinar) { caixa.appendChild(el("div", { class: "wq-t", text: tn("convDinar") })); caixa.appendChild(botons([["si", t("dSi")], ["no", t("dNo")]], "dinar")); }
       }
       caixa.appendChild(nota);
       caixa.appendChild(err);
