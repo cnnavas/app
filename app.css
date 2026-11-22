@@ -286,3 +286,23 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .wm-mesos{display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px}
 .wm-mes{flex:0 0 auto;border:2px solid #3A3A3A;background:#1C1C1C;color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;text-transform:capitalize}
 .wm-mes.on{border-color:#F1C332;background:#3A2F0C;color:#F1C332}
+/* El meu perfil + Equip (v31) */
+.pf{display:flex;flex-direction:column;gap:12px}
+.pf-sec{display:flex;flex-direction:column;gap:10px;background:#1C1C1C;border-radius:14px;padding:14px;margin-top:4px}
+.pf-sec input[type=text]{background:#111}
+.pf-nota{font-size:13px;font-weight:700;color:#F1C332}
+.pf-chips{display:flex;flex-wrap:wrap;gap:8px}
+.pf-chips .pf-chip{background:#111;text-transform:none}
+.pf-chips .pf-chip.on{background:#3A2F0C}
+.pf-ta{width:100%;min-height:84px;border-radius:12px;border:2px solid #3A3A3A;background:#111;color:#fff;font:inherit;font-size:17px;padding:12px 14px;resize:vertical}
+.pf-ta:focus{outline:none;border-color:#F1C332}
+.pf-h{margin-top:18px}
+.eq{display:flex;flex-direction:column;gap:10px}
+.eq-t{padding:0;gap:0}
+.eq-t.jo{border:2px solid #F1C332}
+.eq-cap{display:flex;align-items:center;gap:10px;width:100%;min-height:56px;background:none;border:0;color:#fff;font:inherit;text-align:left;padding:12px 14px}
+.eq-nom{font-size:18px;font-weight:800;flex:1}
+.eq-real{font-size:13px}
+.eq-cos{display:flex;flex-direction:column;gap:8px;padding:0 14px 14px}
+.eq-l{display:flex;gap:8px;font-size:15px;line-height:1.45}
+.eq-ic{flex:0 0 auto}

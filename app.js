@@ -88,6 +88,8 @@
       menu: "Menú", botiga: "Botiga", reunio: "Demanar reunió", quotes: "Quotes", eix: "Eix (bàscula)", documents: "Documents",
       perfil: "Canviar contrasenya", idioma: "Idioma · Castellano", ajuda: "Ajuda", sortir: "Sortir", sortirTot: "Sortir de tots els dispositius",
       tancar: "Tancar",
+comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
+            elMeuPerfil: "El meu perfil", comEtDiem: "Com vols que et diguem?", comEtDiemAj: "Pots posar el teu nom, un mot o com t'agradi (màx. 25 lletres). Només canvia com et saluda l'app.", nomDesat: "Fet ✅ A partir d'ara et direm així.", desarNom: "Desar el nom", canviContra: "Canviar contrasenya",
       antiga: "Contrasenya actual", nova: "Contrasenya nova", desar: "Desar", desat: "Fet ✅ Contrasenya canviada.",
       ajudaTxt: "Dubtes amb l'app? Parla amb el Jaime a la piscina. Mai enviïs la teva contrasenya a ningú, ni tan sols al club.",
       sortirSeg: "Segur que vols tancar la sessió a tots els dispositius?",
@@ -101,7 +103,7 @@
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", tutor: "Escriu el nom complet del pare, mare o tutor i marca l'autorització.", privacitat: "Cal acceptar la informació de privacitat.", sense_consentiment: "Per fer el wellness a l'app, primer cal el teu permís (menú ☰ › Privacitat).", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", tutor: "Escriu el nom complet del pare, mare o tutor i marca l'autorització.", privacitat: "Cal acceptar la informació de privacitat.", sense_consentiment: "Per fer el wellness a l'app, primer cal el teu permís (menú ☰ › Privacitat).", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho.", nom_llarg: "Massa llarg: màxim 25 lletres."
       }
     },
     es: {
@@ -183,6 +185,8 @@
       menu: "Menú", botiga: "Tienda", reunio: "Pedir reunión", quotes: "Cuotas", eix: "Eix (báscula)", documents: "Documentos",
       perfil: "Cambiar contraseña", idioma: "Idioma · Català", ajuda: "Ayuda", sortir: "Salir", sortirTot: "Salir de todos los dispositivos",
       tancar: "Cerrar",
+comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
+            elMeuPerfil: "Mi perfil", comEtDiem: "¿Cómo quieres que te llamemos?", comEtDiemAj: "Puedes poner tu nombre, un mote o lo que te guste (máx. 25 letras). Solo cambia cómo te saluda la app.", nomDesat: "Hecho ✅ A partir de ahora te llamaremos así.", desarNom: "Guardar el nombre", canviContra: "Cambiar contraseña",
       antiga: "Contraseña actual", nova: "Contraseña nueva", desar: "Guardar", desat: "Hecho ✅ Contraseña cambiada.",
       ajudaTxt: "¿Dudas con la app? Habla con Jaime en la piscina. Nunca envíes tu contraseña a nadie, ni siquiera al club.",
       sortirSeg: "¿Seguro que quieres cerrar la sesión en todos los dispositivos?",
@@ -196,7 +200,7 @@
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", tutor: "Escribe el nombre completo del padre, madre o tutor y marca la autorización.", privacitat: "Hay que aceptar la información de privacidad.", sense_consentiment: "Para hacer el wellness en la app, primero hace falta tu permiso (menú ☰ › Privacidad).", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", tutor: "Escribe el nombre completo del padre, madre o tutor y marca la autorización.", privacitat: "Hay que aceptar la información de privacidad.", sense_consentiment: "Para hacer el wellness en la app, primero hace falta tu permiso (menú ☰ › Privacidad).", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo.", nom_llarg: "Demasiado largo: máximo 25 letras."
       }
     }
   };
@@ -412,7 +416,7 @@
 
   // ---------- Inici ----------
   function guardaInici(r) {
-    estat.inici = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "" };
+    estat.inici = { nom: r.nom, alies: r.alies || "", rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "" };
     escriu("inici", JSON.stringify(estat.inici));
     estat.inici.convs = r.convs || [];   // les convocatòries no es desen al mòbil
   }
@@ -422,7 +426,7 @@
     if (estat.veureCom) {
       pinta(el("div", { class: "carrega", text: t("carregant") }));
       crida("inici", { token: estat.token, veureCom: estat.veureCom.id }).then(function (r) {
-        if (r.ok) { estat.dadesVC = { nom: r.nom, rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], convs: r.convs || [], botigaUrl: r.botigaUrl || "" }; pantallaApp(); }
+        if (r.ok) { estat.dadesVC = { nom: r.nom, alies: r.alies || "", rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], convs: r.convs || [], botigaUrl: r.botigaUrl || "" }; pantallaApp(); }
         else { estat.veureCom = null; estat.dadesVC = null; carregaInici(); }
       });
       return;
@@ -460,7 +464,7 @@
     var pes = estat.pestanya;
     var cap = el("div", { class: "cap" }, [
       el("div", {}, [
-        el("div", { class: "nom", text: t("hola") + ", " + String(d.nom || "").split(" ")[0] }),
+        el("div", { class: "nom", text: t("hola") + ", " + (d.alies || String(d.nom || "").split(" ")[0]) }),
         el("h1", { text: t(pes) })
       ]),
       el("button", { type: "button", class: "ham", "aria-label": t("menu"), text: "☰", onclick: obreMenu })
@@ -534,6 +538,9 @@
     } else if (pes === "temps" && (estatModul("temps") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("temps") !== "no"))) {
       if (estatModul("temps") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaTemps());
+    } else if (pes === "equip" && (estatModul("equip") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("equip") !== "no"))) {
+      if (estatModul("equip") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
+      cos.appendChild(vistaEquip());
     } else if (pes === "assistencia" && (estatModul("assistencia") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("assistencia") !== "no"))) {
       if (estatModul("assistencia") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaAssistencia());
@@ -1514,7 +1521,7 @@
       el("hr"),
       estat.veureCom ? item("👁️", t("sortirVC") + " · " + t("veureCom"), surtVeureCom) : null,
       !estat.veureCom && estat.inici && estat.inici.rol === "ADMIN" ? item("👁️", t("veureCom"), pantallaPerfils) : null,
-      estat.veureCom ? null : item("🔑", t("perfil"), function () { pantallaContrasenya(false); }),
+      estat.veureCom ? null : item("🙂", t("elMeuPerfil"), function () { pantallaContrasenya(false); }),
       item("🌐", t("idioma"), function () { canviaIdioma(estat.idioma === "ca" ? "es" : "ca"); }),
       estat.veureCom ? null : item("🔒", t("privTit"), function () { pantallaPrivacitat(false); }),
       item("❓", t("ajuda"), pantallaAjuda),
@@ -1536,6 +1543,133 @@
 
   function pantallaAjuda() { pantallaSimple(t("ajuda"), [el("p", { text: t("ajudaTxt") })]); }
 
+  // ---------- El meu perfil ----------
+  function desaAliesLocal(al) {
+    if (!estat.inici) return;
+    estat.inici.alies = al || "";
+    try { var cp = {}; for (var k in estat.inici) if (k !== "convs") cp[k] = estat.inici[k]; escriu("inici", JSON.stringify(cp)); } catch (e) {}
+  }
+  function formPerfil(cont) {
+    var esNed = estat.inici && estat.inici.rol === "NEDADOR" && !estat.veureCom;
+    function pinta_(r) {
+      cont.textContent = "";
+      var camps = (r && r.camps) || {};
+      var vals = {};
+      var nm = el("input", { id: "nm", type: "text", autocomplete: "nickname", maxlength: "25" });
+      nm.value = (r && r.ok) ? (r.alies || r.nom || "") : ((estat.inici && (estat.inici.alies || String(estat.inici.nom || "").split(" ")[0])) || "");
+      cont.appendChild(el("label", { for: "nm", text: t("comEtDiem") }));
+      cont.appendChild(el("div", { class: "gris", text: esNed ? t("comEtDiemEq") : t("comEtDiemAj") }));
+      cont.appendChild(nm);
+
+      function text_(k, max, opts) {
+        opts = opts || {};
+        var inp = el(opts.llarg ? "textarea" : "input", opts.llarg ? { id: "pf-" + k, maxlength: String(max), rows: "3", class: "pf-ta" } : { id: "pf-" + k, type: "text", inputmode: opts.num ? (opts.dec ? "decimal" : "numeric") : null, maxlength: String(max) });
+        inp.value = camps[k] || "";
+        vals[k] = function () { return inp.value; };
+        return [el("label", { for: "pf-" + k, text: t("pf_" + k) }), inp];
+      }
+      function tria_(k, opcions, multi) {
+        var sel = multi ? String(camps[k] || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean) : (camps[k] ? [camps[k]] : []);
+        var caixa = el("div", { class: "pf-chips", role: "group", "aria-label": t("pf_" + k) });
+        function dib() {
+          caixa.textContent = "";
+          opcions.forEach(function (o) {
+            var on = sel.indexOf(o) >= 0;
+            caixa.appendChild(el("button", { type: "button", class: "wm-mes pf-chip" + (on ? " on" : ""), "aria-pressed": on ? "true" : "false", text: o,
+              onclick: function () {
+                if (multi) { if (on) sel = sel.filter(function (x) { return x !== o; }); else sel.push(o); }
+                else sel = on ? [] : [o];
+                dib();
+              } }));
+          });
+        }
+        dib();
+        vals[k] = function () { return sel.join(", "); };
+        return [el("label", { text: t("pf_" + k) }), multi ? el("div", { class: "gris", text: t("pfTriaVaries") }) : null, caixa];
+      }
+      function seccio_(tit, nota, fills) {
+        var s = el("div", { class: "pf-sec" }, [el("h2", { text: tit }), el("div", { class: "pf-nota", text: nota })]);
+        fills.forEach(function (f) { if (f) s.appendChild(f); });
+        cont.appendChild(s);
+      }
+      if (esNed && r && r.ok) {
+        cont.appendChild(el("div", { class: "caixa gris", text: t("pfIntro") }));
+        seccio_(t("pfSecJo"), t("pfNomesTec"), [].concat(text_("alcada", 3, { num: 1 }), text_("pes", 5, { num: 1, dec: 1 })));
+        seccio_(t("pfSecAigua"), t("pfNomesTec"), [].concat(tria_("estilFav", r.estils || []), text_("prova", 40), tria_("estilPitjor", r.estils || []), tria_("treball", r.treballs || [], true)));
+        seccio_(t("pfSecTu"), t("pfNomesTec"), [].concat(text_("paraules", 60), text_("objEsport", 300, { llarg: 1 }), text_("objFora", 300, { llarg: 1 })));
+        seccio_(t("pfSecConeixer"), t("pfEquipVeu"), [].concat(text_("riure", 200, { llarg: 1 }), text_("llibre", 60), text_("peli", 60), text_("canco", 60), text_("color", 25), text_("numero", 6), text_("menjar", 40), text_("superpoder", 60)));
+      }
+      var errN = el("div", { class: "err", role: "alert" });
+      var btN = el("button", { type: "button", class: "btn", text: esNed && r && r.ok ? t("pfDesar") : t("desarNom") });
+      btN.addEventListener("click", function () {
+        errN.className = "err"; errN.textContent = "";
+        var v = nm.value.replace(/\s+/g, " ").trim();
+        if (v.length > 25) { errN.textContent = terr("nom_llarg"); nm.focus(); return; }
+        var cs = null;
+        if (esNed && r && r.ok) { cs = {}; for (var k in vals) cs[k] = vals[k](); }
+        btN.disabled = true;
+        crida("desarPerfil", { token: estat.token, alies: v, camps: cs }).then(function (x) {
+          btN.disabled = false;
+          if (x.ok) { desaAliesLocal(x.alies); errN.className = "ok"; errN.textContent = cs ? t("pfDesat") : t("nomDesat"); }
+          else if (x.error === "sessio") { oblida(); pantallaEntrar(); }
+          else { errN.textContent = terr(x.error); }
+        });
+      });
+      cont.appendChild(errN); cont.appendChild(btN);
+    }
+    if (!esNed) { pinta_(null); return; }
+    crida("perfil", { token: estat.token }).then(function (r) {
+      if (r.error === "sessio") { oblida(); pantallaEntrar(); return; }
+      pinta_(r);
+    });
+  }
+
+  function vistaEquip() {
+    var cont = el("div", { class: "eq" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    var obert = {};
+    var ICONES = { riure: "😂", llibre: "📚", peli: "🎬", canco: "🎵", color: "🎨", numero: "🔢", menjar: "🍝", superpoder: "🦸" };
+    var PRIV = ["alcada", "pes", "estilFav", "prova", "estilPitjor", "treball", "paraules", "objEsport", "objFora"];
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      cont.appendChild(el("div", { class: "caixa gris", text: r.tecnic ? t("eqTxtTec") : t("eqTxt") }));
+      if (!r.llista.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("eqBuit") })); return; }
+      r.llista.forEach(function (n, i) {
+        var linies = [];
+        Object.keys(ICONES).forEach(function (k) {
+          if (n[k]) linies.push(el("div", { class: "eq-l" }, [el("span", { class: "eq-ic", "aria-hidden": "true", text: ICONES[k] }), el("span", {}, [el("strong", { text: t("eq_" + k) + ": " }), el("span", { text: n[k] })])]));
+        });
+        var priv = [];
+        if (r.tecnic) PRIV.forEach(function (k) {
+          if (n[k]) priv.push(el("div", { class: "eq-l" }, [el("span", {}, [el("strong", { text: t("pf_" + k) + " " }), el("span", { text: n[k] })])]));
+        });
+        var obre = !!obert[i];
+        var cap = el("button", { type: "button", class: "eq-cap", "aria-expanded": obre ? "true" : "false", onclick: function () { obert[i] = !obre; dibuixa(r); } }, [
+          el("span", { class: "eq-nom", text: n.nom + (n.jo ? " · " + t("eqTu") : "") }),
+          r.tecnic && n.real ? el("span", { class: "gris eq-real", text: n.real }) : null,
+          el("span", { class: "tm-sel-f", text: obre ? "▴" : "▾" })
+        ]);
+        var cos = null;
+        if (obre) {
+          cos = el("div", { class: "eq-cos" });
+          if (!linies.length && !priv.length) cos.appendChild(el("div", { class: "gris", text: n.fet ? t("eqRes") : t("eqSense") }));
+          linies.forEach(function (x) { cos.appendChild(x); });
+          if (priv.length) {
+            cos.appendChild(el("div", { class: "pf-nota", text: t("pfNomesTec") }));
+            priv.forEach(function (x) { cos.appendChild(x); });
+          }
+          if (r.tecnic && n.actualitzat) cos.appendChild(el("div", { class: "gris", text: t("eqAct") + " " + n.actualitzat }));
+        }
+        cont.appendChild(el("div", { class: "caixa eq-t" + (n.jo ? " jo" : "") }, [cap, cos]));
+      });
+    }
+    crida("equip", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) {
+      if (r.error === "sessio") { oblida(); pantallaEntrar(); return; }
+      dibuixa(r);
+    });
+    return cont;
+  }
+
   function pantallaContrasenya(obligat) {
     var a = el("input", { id: "a", type: "password", autocomplete: "current-password", maxlength: "100" });
     var n = el("input", { id: "n", type: "password", autocomplete: "new-password", maxlength: "100" });
@@ -1555,13 +1689,20 @@
         else { err.className = "err"; err.textContent = terr(r.error); }
       });
     });
-    pantallaSimple(t("perfil"), [
-      obligat ? el("div", { class: "caixa", text: t("canviObligat") }) : null,
+    var blocNom = null;
+    if (!obligat) {
+      var pc = el("div", { class: "pf" }, [el("div", { class: "carrega", text: t("carregant") })]);
+      formPerfil(pc);
+      blocNom = [pc, el("h2", { class: "pf-h", text: t("canviContra") })];
+    }
+    var fills = [obligat ? el("div", { class: "caixa", text: t("canviObligat") }) : null];
+    if (blocNom) fills = fills.concat(blocNom);
+    pantallaSimple(obligat ? t("perfil") : t("elMeuPerfil"), fills.concat([
       el("label", { for: "a", text: t("antiga") }), a,
       el("label", { for: "n", text: t("nova") }), n,
       el("label", { for: "n2", text: t("repeteix") }), n2,
       err, bt
-    ]);
+    ]));
   }
 
   function apunta(clau) {
