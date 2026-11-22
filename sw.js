@@ -1,6 +1,6 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v32';
-const FITXERS = ['./', 'index.html', 'app.css?v=32', 'app.js?v=32', 'cos.js?v=32', 'wellness.js?v=32', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
+const VERSIO = 'cnn-v33';
+const FITXERS = ['./', 'index.html', 'app.css?v=33', 'app.js?v=33', 'cos.js?v=33', 'wellness.js?v=33', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS)).then(() => self.skipWaiting()));
@@ -17,4 +17,26 @@ self.addEventListener('fetch', e => {
       return guardat || xarxa;
     }))
   );
+});
+
+// ---------- Avisos (push) ----------
+const PESTANYES_PUSH = ['avui', 'setmana', 'calendari', 'temps', 'equip', 'wmeu', 'assistencia', 'botiga'];
+self.addEventListener('push', e => {
+  let j = {};
+  try { j = e.data ? e.data.json() : {}; } catch (x) { j = { data: { text: e.data ? e.data.text() : '' } }; }
+  const d = j.data || j || {};
+  const n = j.notification || {};
+  const p = PESTANYES_PUSH.indexOf(d.p) >= 0 ? d.p : 'avui';
+  const opc = { body: String(d.text || n.body || '').slice(0, 240), icon: 'icon-192.png', badge: 'icon-192.png', data: { p: p } };
+  if (d.tag) { opc.tag = String(d.tag); opc.renotify = true; }
+  e.waitUntil(self.registration.showNotification(String(d.titol || n.title || 'CN Navàs').slice(0, 80), opc));
+});
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  const p = (e.notification.data && e.notification.data.p) || 'avui';
+  e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(llista => {
+    const c = llista.filter(x => x.url.indexOf(self.registration.scope) === 0)[0];
+    if (c) { c.postMessage({ obre: p }); return c.focus(); }
+    return self.clients.openWindow('./?p=' + encodeURIComponent(p));
+  }));
 });

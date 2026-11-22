@@ -88,7 +88,7 @@
       menu: "Menú", botiga: "Botiga", reunio: "Demanar reunió", quotes: "Quotes", eix: "Eix (bàscula)", documents: "Documents",
       perfil: "Canviar contrasenya", idioma: "Idioma · Castellano", ajuda: "Ajuda", sortir: "Sortir", sortirTot: "Sortir de tots els dispositius",
       tancar: "Tancar",
-comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", calTots: "Tots", pfStaff: "Tu també surts a Equip, a l'apartat de l'equip tècnic. Els nedadors veuran el teu nom i les respostes per conèixer-nos.", eqStaff: "Equip tècnic", pfProva: "👁️ Mode prova: així ho veu un nedador. No es desa res.", pfConeixerTxt: "Una pregunta per casella. Respon les que vulguis.", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
+comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", calTots: "Tots", pushTit: "Avisos al mòbil", pushTxt: "Activa'ls i rebràs un avís quan hi hagi una convocatòria nova, el recordatori del wellness o un avís del club.", pushIOS: "A l'iPhone, els avisos només funcionen si l'app està a la pantalla d'inici: toca Compartir ⬆️ › «Afegir a la pantalla d'inici» i obre l'app des d'aquella icona.", pushActivar: "Activar els avisos", pushAraNo: "Ara no", pushNoPerm: "No has donat permís. Si canvies d'opinió, torna-ho a provar des de ☰ › Avisos al mòbil.", pushErr: "No s'han pogut activar. Torna-ho a provar d'aquí a una estona.", pushActiu: "✅ Els avisos estan activats en aquest mòbil.", pushBloq: "Has bloquejat els avisos d'aquesta app. Per activar-los, ves a la configuració del navegador o del mòbil › Notificacions › CN Navàs.", pushNoSup: "Aquest navegador no permet avisos. Prova-ho amb Chrome (Android) o amb l'app afegida a la pantalla d'inici (iPhone).", pushProvar: "Enviar-me un avís de prova", pushProvat: "Fet ✅ T'hauria d'arribar en uns segons.", pushDesactivar: "Desactivar els avisos en aquest mòbil", pushQue: "Els avisos només diuen que hi ha alguna cosa nova (mai dades privades). Si comparteixes el mòbil, en sortir de l'app es desactiven.", pfStaff: "Tu també surts a Equip, a l'apartat de l'equip tècnic. Els nedadors veuran el teu nom i les respostes per conèixer-nos.", eqStaff: "Equip tècnic", pfProva: "👁️ Mode prova: així ho veu un nedador. No es desa res.", pfConeixerTxt: "Una pregunta per casella. Respon les que vulguis.", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
             elMeuPerfil: "El meu perfil", comEtDiem: "Com vols que et diguem?", comEtDiemAj: "Pots posar el teu nom, un mot o com t'agradi (màx. 25 lletres). Només canvia com et saluda l'app.", nomDesat: "Fet ✅ A partir d'ara et direm així.", desarNom: "Desar el nom", canviContra: "Canviar contrasenya",
       antiga: "Contrasenya actual", nova: "Contrasenya nova", desar: "Desar", desat: "Fet ✅ Contrasenya canviada.",
       ajudaTxt: "Dubtes amb l'app? Parla amb el Jaime a la piscina. Mai enviïs la teva contrasenya a ningú, ni tan sols al club.",
@@ -185,7 +185,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
       menu: "Menú", botiga: "Tienda", reunio: "Pedir reunión", quotes: "Cuotas", eix: "Eix (báscula)", documents: "Documentos",
       perfil: "Cambiar contraseña", idioma: "Idioma · Català", ajuda: "Ayuda", sortir: "Salir", sortirTot: "Salir de todos los dispositivos",
       tancar: "Cerrar",
-comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", calTots: "Todos", pfStaff: "Tú también sales en Equipo, en el apartado del equipo técnico. Los nadadores verán tu nombre y las respuestas para conocernos.", eqStaff: "Equipo técnico", pfProva: "👁️ Modo prueba: así lo ve un nadador. No se guarda nada.", pfConeixerTxt: "Una pregunta por casilla. Responde las que quieras.", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
+comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", calTots: "Todos", pushTit: "Avisos en el móvil", pushTxt: "Actívalos y recibirás un aviso cuando haya una convocatoria nueva, el recordatorio del wellness o un aviso del club.", pushIOS: "En el iPhone, los avisos solo funcionan si la app está en la pantalla de inicio: toca Compartir ⬆️ › «Añadir a la pantalla de inicio» y abre la app desde ese icono.", pushActivar: "Activar los avisos", pushAraNo: "Ahora no", pushNoPerm: "No has dado permiso. Si cambias de opinión, vuelve a probarlo desde ☰ › Avisos en el móvil.", pushErr: "No se han podido activar. Vuelve a probarlo dentro de un rato.", pushActiu: "✅ Los avisos están activados en este móvil.", pushBloq: "Has bloqueado los avisos de esta app. Para activarlos, ve a la configuración del navegador o del móvil › Notificaciones › CN Navàs.", pushNoSup: "Este navegador no permite avisos. Pruébalo con Chrome (Android) o con la app añadida a la pantalla de inicio (iPhone).", pushProvar: "Enviarme un aviso de prueba", pushProvat: "Hecho ✅ Te debería llegar en unos segundos.", pushDesactivar: "Desactivar los avisos en este móvil", pushQue: "Los avisos solo dicen que hay algo nuevo (nunca datos privados). Si compartes el móvil, al salir de la app se desactivan.", pfStaff: "Tú también sales en Equipo, en el apartado del equipo técnico. Los nadadores verán tu nombre y las respuestas para conocernos.", eqStaff: "Equipo técnico", pfProva: "👁️ Modo prueba: así lo ve un nadador. No se guarda nada.", pfConeixerTxt: "Una pregunta por casilla. Responde las que quieras.", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
             elMeuPerfil: "Mi perfil", comEtDiem: "¿Cómo quieres que te llamemos?", comEtDiemAj: "Puedes poner tu nombre, un mote o lo que te guste (máx. 25 letras). Solo cambia cómo te saluda la app.", nomDesat: "Hecho ✅ A partir de ahora te llamaremos así.", desarNom: "Guardar el nombre", canviContra: "Cambiar contraseña",
       antiga: "Contraseña actual", nova: "Contraseña nueva", desar: "Guardar", desat: "Hecho ✅ Contraseña cambiada.",
       ajudaTxt: "¿Dudas con la app? Habla con Jaime en la piscina. Nunca envíes tu contraseña a nadie, ni siquiera al club.",
@@ -213,7 +213,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     idioma: llegeix("idioma") || ((navigator.language || "ca").slice(0, 2) === "es" ? "es" : "ca"),
     token: llegeix("token"),
     inici: null,
-    pestanya: "avui",
+    pestanya: (function () { try { var q = new URLSearchParams(location.search).get("p"); return ["avui", "setmana", "calendari", "temps", "equip", "wmeu", "assistencia", "botiga"].indexOf(q) >= 0 ? q : "avui"; } catch (e) { return "avui"; } })(),
     offline: false,
     veureCom: null
   };
@@ -438,6 +438,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
         guardaInici(r);
         if (r.privacitat && r.privacitat.obligatoria && !r.privacitat.acceptada) { pantallaPrivacitat(true); return; }
         pantallaApp();
+        refrescaPush();
       } else if (r.error === "xarxa" && estat.inici) {
         estat.offline = true; pantallaApp();
       } else if (r.error === "xarxa") {
@@ -472,6 +473,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     var cos = el("div", { class: "cos" });
 
     if (pes === "avui") {
+      var tp = targetaPush(); if (tp) cos.appendChild(tp);
       if (estatModul("wellness") === "on" && d.rol !== "PARE" && !(d.wellness && d.wellness.no)) {
         var w = d.wellness || { prova: true };
         var enllac = el("a", { href: FORM_WELLNESS, target: "_blank", rel: "noopener noreferrer", class: "wform", text: t("wellForm") });
@@ -1535,6 +1537,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
       estat.veureCom ? item("👁️", t("sortirVC") + " · " + t("veureCom"), surtVeureCom) : null,
       !estat.veureCom && estat.inici && estat.inici.rol === "ADMIN" ? item("👁️", t("veureCom"), pantallaPerfils) : null,
       (!estat.veureCom || (dades() && dades().rol === "NEDADOR")) ? item("🙂", t("elMeuPerfil"), function () { pantallaContrasenya(false); }) : null,
+      estat.veureCom ? null : item("🔔", t("pushTit"), pantallaAvisos),
       item("🌐", t("idioma"), function () { canviaIdioma(estat.idioma === "ca" ? "es" : "ca"); }),
       estat.veureCom ? null : item("🔒", t("privTit"), function () { pantallaPrivacitat(false); }),
       item("❓", t("ajuda"), pantallaAjuda),
@@ -1701,6 +1704,97 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     return cont;
   }
 
+  // ---------- Notificacions push (Firebase) ----------
+  var FB = { apiKey: "AIzaSyAv70MQt1issIzoUJFp-oi2kBe21ldpikQ", authDomain: "cnn-app-aab6a.firebaseapp.com", projectId: "cnn-app-aab6a",
+    storageBucket: "cnn-app-aab6a.firebasestorage.app", messagingSenderId: "696295294635", appId: "1:696295294635:web:ba2d65f00c6973a62699ee" };
+  var FB_VAPID = "BGa9_-a4L9cmxCPMgmd3QgcQDNjOAIJxj1jEfG_hF3P-RIwuBqyA1Zal7Y-dAYkSehkl704Ae1A74dMX9lUb8hE";
+  var FB_SDK = "https://www.gstatic.com/firebasejs/13.4.0/";
+  function esIOS() { return /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); }
+  function esInstal() { return window.navigator.standalone === true || (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches); }
+  function pushEstat() {
+    if (!("serviceWorker" in navigator)) return "nosuport";
+    if (!("PushManager" in window) || !("Notification" in window)) return (esIOS() && !esInstal()) ? "ios" : "nosuport";
+    if (Notification.permission === "denied") return "bloquejat";
+    if (Notification.permission === "granted" && llegeix("push")) return "actiu";
+    return "inactiu";
+  }
+  function fbMessaging() {
+    return Promise.all([import(FB_SDK + "firebase-app.js"), import(FB_SDK + "firebase-messaging.js")]).then(function (m) {
+      var a = m[0].getApps().length ? m[0].getApp() : m[0].initializeApp(FB);
+      return { m: m[1], msg: m[1].getMessaging(a) };
+    });
+  }
+  function pushToken() {
+    return navigator.serviceWorker.ready.then(function (reg) {
+      return fbMessaging().then(function (x) { return x.m.getToken(x.msg, { vapidKey: FB_VAPID, serviceWorkerRegistration: reg }); });
+    });
+  }
+  function nomDispositiu() {
+    var ua = navigator.userAgent;
+    return esIOS() ? "iPhone/iPad" : (/Android/.test(ua) ? "Android" : (/Windows/.test(ua) ? "Windows" : (/Mac/.test(ua) ? "Mac" : "Altres")));
+  }
+  function desaPush(tk) {
+    return crida("pushGuardar", { token: estat.token, push: tk, disp: nomDispositiu() }).then(function (r) {
+      if (r.ok) { escriu("push", tk); escriu("pushData", String(Date.now())); }
+      return r;
+    });
+  }
+  function activarPush() {
+    return Notification.requestPermission().then(function (perm) {
+      if (perm !== "granted") return { ok: false, error: "push_no" };
+      return pushToken().then(function (tk) { if (!tk) return { ok: false, error: "push_err" }; return desaPush(tk); });
+    }).catch(function () { return { ok: false, error: "push_err" }; });
+  }
+  function desactivarPush() {
+    var tk = llegeix("push");
+    escriu("push", null); escriu("pushData", null);
+    if (!tk) return Promise.resolve({ ok: true });
+    fbMessaging().then(function (x) { return x.m.deleteToken(x.msg); }).catch(function () {});
+    return estat.token ? crida("pushTreure", { token: estat.token, push: tk }) : Promise.resolve({ ok: true });
+  }
+  // Un cop per setmana es renova el token en silenci
+  function refrescaPush() {
+    try {
+      if (estat.veureCom || pushEstat() !== "actiu") return;
+      if (Date.now() - Number(llegeix("pushData") || 0) < 7 * 864e5) return;
+      pushToken().then(function (tk) { if (tk) desaPush(tk); }).catch(function () {});
+    } catch (e) {}
+  }
+  function targetaPush() {
+    if (estat.veureCom) return null;
+    var e = pushEstat();
+    if (e === "actiu" || e === "nosuport" || e === "bloquejat") return null;
+    if (Date.now() - Number(llegeix("pushNo") || 0) < 14 * 864e5) return null;
+    var res = el("div", { class: "err", role: "alert" });
+    var fills = [el("h2", { text: "🔔 " + t("pushTit") }), el("span", { class: "gris", text: e === "ios" ? t("pushIOS") : t("pushTxt") })];
+    if (e === "inactiu") {
+      var bt = el("button", { type: "button", class: "btn", text: t("pushActivar") });
+      bt.addEventListener("click", function () {
+        bt.disabled = true; res.textContent = "";
+        activarPush().then(function (r) { bt.disabled = false; if (r.ok) pantallaApp(); else res.textContent = t(r.error === "push_no" ? "pushNoPerm" : "pushErr"); });
+      });
+      fills.push(bt);
+    }
+    fills.push(res, el("button", { type: "button", class: "btn3", text: t("pushAraNo"), onclick: function () { escriu("pushNo", String(Date.now())); pantallaApp(); } }));
+    return el("div", { class: "caixa" }, fills);
+  }
+  function pantallaAvisos() {
+    var e = pushEstat();
+    var res = el("div", { class: "err", role: "alert" });
+    var txt = { actiu: t("pushActiu"), inactiu: t("pushTxt"), ios: t("pushIOS"), bloquejat: t("pushBloq"), nosuport: t("pushNoSup") }[e];
+    var fills = [el("div", { class: "caixa" + (e === "actiu" ? "" : " gris"), text: txt })];
+    function boto(text, cls, fn) { var b = el("button", { type: "button", class: cls, text: text }); b.addEventListener("click", function () { b.disabled = true; res.className = "err"; res.textContent = ""; fn(b); }); return b; }
+    if (e === "inactiu") fills.push(boto(t("pushActivar"), "btn", function (b) { activarPush().then(function (r) { b.disabled = false; if (r.ok) pantallaAvisos(); else res.textContent = t(r.error === "push_no" ? "pushNoPerm" : "pushErr"); }); }));
+    if (e === "actiu") {
+      fills.push(boto(t("pushProvar"), "btn", function (b) {
+        crida("pushProva", { token: estat.token }).then(function (r) { b.disabled = false; if (r.ok && r.enviats) { res.className = "ok"; res.textContent = t("pushProvat"); } else res.textContent = t("pushErr"); });
+      }));
+      fills.push(boto(t("pushDesactivar"), "btn2", function () { desactivarPush().then(function () { pantallaAvisos(); }); }));
+    }
+    fills.push(res, el("p", { class: "gris", text: t("pushQue") }));
+    pantallaSimple("🔔 " + t("pushTit"), fills);
+  }
+
   function pantallaContrasenya(obligat) {
     var a = el("input", { id: "a", type: "password", autocomplete: "current-password", maxlength: "100" });
     var n = el("input", { id: "n", type: "password", autocomplete: "new-password", maxlength: "100" });
@@ -1770,6 +1864,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
 
   function surt(totes) {
     var tk = estat.token;
+    try { var pk = llegeix("push"); if (pk && tk) crida("pushTreure", { token: tk, push: pk }); escriu("push", null); escriu("pushData", null); } catch (e) {}
     oblida();
     if (tk) crida(totes ? "sortirTot" : "sortir", { token: tk });
     alta = { pas: 1 };
@@ -1786,6 +1881,10 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   document.documentElement.lang = estat.idioma;
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () { navigator.serviceWorker.register("sw.js").catch(function () {}); });
+    navigator.serviceWorker.addEventListener("message", function (ev) {
+      var p = ev.data && ev.data.obre;
+      if (p && estat.token && ["avui", "setmana", "calendari", "temps", "equip", "wmeu", "assistencia", "botiga"].indexOf(p) >= 0) { estat.pestanya = p; estat.veureCom = null; estat.dadesVC = null; carregaInici(); }
+    });
   }
   if (estat.token) carregaInici(); else pantallaAlta();
 })();
