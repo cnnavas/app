@@ -283,3 +283,6 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .cal-punt.wm-dolor{background:#ff6b6b}
 .wm-r{display:flex;flex-direction:column;gap:1px;padding:5px 0;border-bottom:1px solid #2A2A2A}
 .wm-r:last-child{border-bottom:0}
+.wm-mesos{display:flex;gap:6px;overflow-x:auto;padding:2px 0 4px}
+.wm-mes{flex:0 0 auto;border:2px solid #3A3A3A;background:#1C1C1C;color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:14px;font-weight:700;cursor:pointer;text-transform:capitalize}
+.wm-mes.on{border-color:#F1C332;background:#3A2F0C;color:#F1C332}

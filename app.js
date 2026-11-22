@@ -930,7 +930,17 @@
       if (r.tecnic) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmTecnic") })); return; }
       if (r.llista) cont.appendChild(selectorTecnic({ llista: r.llista, nedadors: r.id ? [{ id: r.id }] : [] }, function () { dibuixa(r); }));
       cont.appendChild(el("div", { class: "gris", text: t("wmPriv") }));
-      if (r.resum) cont.appendChild(el("div", { class: "caixa avis" }, [el("div", { class: "tit", text: t("wmMissatge") + " · " + MESOS[estat.idioma][Number(r.resum.mes.slice(5, 7)) - 1] }), el("div", { class: "txt", text: r.resum.text })]));
+      var rs = r.resums || (r.resum ? [r.resum] : []);
+      if (rs.length) {
+        var sel = rs.filter(function (x) { return x.mes === estat.wmResum; })[0] || rs[0];
+        var nomMes = function (k) { return MESOS[estat.idioma][Number(k.slice(5, 7)) - 1] + " " + k.slice(0, 4); };
+        var cx = el("div", { class: "caixa avis" }, [el("div", { class: "tit", text: t("wmMissatge") })]);
+        if (rs.length > 1) cx.appendChild(el("div", { class: "wm-mesos" }, rs.map(function (x) {
+          return el("button", { type: "button", class: "wm-mes" + (x.mes === sel.mes ? " on" : ""), text: nomMes(x.mes), onclick: function () { estat.wmResum = x.mes; dibuixa(r); } }); })));
+        else cx.appendChild(el("div", { class: "gris", text: nomMes(sel.mes) }));
+        cx.appendChild(el("div", { class: "txt", text: sel.text }));
+        cont.appendChild(cx);
+      }
       if (r.sensePerfil) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmSense") })); return; }
       var dies = r.dies || [];
       if (!dies.length) { cont.appendChild(el("div", { class: "caixa gris", text: t("wmBuit") })); return; }
