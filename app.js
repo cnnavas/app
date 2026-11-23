@@ -416,7 +416,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
 
   // ---------- Inici ----------
   function guardaInici(r) {
-    estat.inici = { nom: r.nom, alies: r.alies || "", rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "" };
+    estat.inici = { nom: r.nom, alies: r.alies || "", rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "", pushActiu: !!r.pushActiu };
     escriu("inici", JSON.stringify(estat.inici));
     estat.inici.convs = r.convs || [];   // les convocatòries no es desen al mòbil
   }
@@ -1892,7 +1892,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   }
   function desaPush(tk) {
     return crida("pushGuardar", { token: estat.token, push: tk, disp: nomDispositiu() }).then(function (r) {
-      if (r.ok) { escriu("push", tk); escriu("pushData", String(Date.now())); }
+      if (r.ok) { escriu("push", tk); escriu("pushData", String(Date.now())); escriu("pushOff", null); if (estat.inici) estat.inici.pushActiu = true; }
       return r;
     });
   }
@@ -1904,7 +1904,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   }
   function desactivarPush() {
     var tk = llegeix("push");
-    escriu("push", null); escriu("pushData", null);
+    escriu("push", null); escriu("pushData", null); escriu("pushOff", "1");
     if (!tk) return Promise.resolve({ ok: true });
     fbMessaging().then(function (x) { return x.m.deleteToken(x.msg); }).catch(function () {});
     return estat.token ? crida("pushTreure", { token: estat.token, push: tk }) : Promise.resolve({ ok: true });
@@ -1912,13 +1912,15 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   // Un cop per setmana es renova el token en silenci
   function refrescaPush() {
     try {
-      if (estat.veureCom || pushEstat() !== "actiu") return;
-      if (Date.now() - Number(llegeix("pushData") || 0) < 7 * 864e5) return;
+      if (estat.veureCom || llegeix("pushOff") || !("Notification" in window) || Notification.permission !== "granted" || !("PushManager" in window)) return;
+      // Permís ja donat però el mòbil no recorda el token (p. ex. després de sortir): es torna a registrar en silenci
+      if (llegeix("push") && Date.now() - Number(llegeix("pushData") || 0) < 7 * 864e5) return;
       pushToken().then(function (tk) { if (tk) desaPush(tk); }).catch(function () {});
     } catch (e) {}
   }
   function targetaPush() {
     if (estat.veureCom) return null;
+    if (estat.inici && estat.inici.pushActiu) return null;   // ja els té activats en algun dispositiu (es poden activar aquí des de ☰ › Avisos)
     var e = pushEstat();
     if (e === "actiu" || e === "nosuport" || e === "bloquejat") return null;
     if (Date.now() - Number(llegeix("pushNo") || 0) < 14 * 864e5) return null;
