@@ -88,7 +88,7 @@
       menu: "Menú", botiga: "Botiga", reunio: "Demanar reunió", quotes: "Quotes", eix: "Eix (bàscula)", documents: "Documents",
       perfil: "Canviar contrasenya", idioma: "Idioma · Castellano", ajuda: "Ajuda", sortir: "Sortir", sortirTot: "Sortir de tots els dispositius",
       tancar: "Tancar",
-comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", calTots: "Tots", pushTit: "Avisos al mòbil", pushQuins: "Què vols que t'avisi?", pushQuinsTxt: "Toca per activar 🔔 o silenciar 🔕 cada tipus d'avís.", pushDesat: "Desat ✅", pushTxt: "Activa'ls i rebràs un avís quan hi hagi una convocatòria nova, el recordatori del wellness o un avís del club.", pushIOS: "A l'iPhone, els avisos només funcionen si l'app està a la pantalla d'inici: toca Compartir ⬆️ › «Afegir a la pantalla d'inici» i obre l'app des d'aquella icona.", pushActivar: "Activar els avisos", pushAraNo: "Ara no", pushNoPerm: "No has donat permís. Si canvies d'opinió, torna-ho a provar des de ☰ › Avisos al mòbil.", pushErr: "No s'han pogut activar. Torna-ho a provar d'aquí a una estona.", pushActiu: "✅ Els avisos estan activats en aquest mòbil.", pushBloq: "Has bloquejat els avisos d'aquesta app. Per activar-los, ves a la configuració del navegador o del mòbil › Notificacions › CN Navàs.", pushNoSup: "Aquest navegador no permet avisos. Prova-ho amb Chrome (Android) o amb l'app afegida a la pantalla d'inici (iPhone).", pushProvar: "Enviar-me un avís de prova", pushProvat: "Fet ✅ T'hauria d'arribar en uns segons.", pushDesactivar: "Desactivar els avisos en aquest mòbil", pushQue: "Els avisos només diuen que hi ha alguna cosa nova (mai dades privades). Si comparteixes el mòbil, en sortir de l'app es desactiven.", pfStaff: "Tu també surts a Equip, a l'apartat de l'equip tècnic. Els nedadors veuran el teu nom i les respostes per conèixer-nos.", eqStaff: "Equip tècnic", pfProva: "👁️ Mode prova: així ho veu un nedador. No es desa res.", pfConeixerTxt: "Una pregunta per casella. Respon les que vulguis.", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
+comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 25 lletres).", calTots: "Tots", cancel: "Cancel·lar", eqReptes: "Reptes", eqXat: "Xat", eqGent: "Equip", rpBuit: "Encara no hi ha cap repte. Proposa'n un! 😉", rpObert: "Obert fins", rpTancat: "Tancat", rpTria: "Toca el teu vot:", rpCanvia: "Ja has votat. Pots canviar el vot fins que es tanqui.", rpVotat: "Vot desat ✅", rpVots: "Vots", rpSenseVots: "Ningú no ha votat.", rpNomesTec: "👀 Resultats en directe: només els veu l'equip tècnic.", rpRegles: "Els reptes són per riure i fer equip, mai per fer mal. Tot queda registrat i els entrenadors ho revisen.", rpProposa: "Proposa un repte", rpPropTxt: "El Jaime el revisarà abans de publicar-lo.", rpPregunta: "La pregunta", rpExemple: "Qui ha estat el/la més fort/a aquesta setmana?", rpQui: "Es vota entre…", rpCompanys: "Companys", rpEntrenadors: "Entrenadors", rpOpcions: "Opcions", rpOps: "Opcions (separades amb ;)", rpOpsEx: "Pizza; Hamburguesa; Sushi", rpEnviar: "Enviar la proposta", rpEnviat: "Enviada ✅ El Jaime la revisarà.", rpPublicat: "Publicat ✅", xatAvis: "Xat del grup. Tot el que s'hi escriu queda registrat i ho poden veure els entrenadors. Respecte sempre: si algú et fa sentir malament, toca ⚠️ o parla amb un entrenador.", xatEscriu: "Escriu un missatge…", xatEnviar: "Enviar", xatBuit: "Encara no hi ha missatges. Saluda! 👋", xatAvisar: "Avisar d'aquest missatge", xatAvisarQ: "Vols avisar els entrenadors d'aquest missatge?", xatSegur: "Avisar? ⚠️", xatAmagar: "Amagar el missatge", xatMostrar: "Tornar a mostrar", xatAmagat: "amagat", pushTit: "Avisos al mòbil", pushQuins: "Què vols que t'avisi?", pushQuinsTxt: "Toca per activar 🔔 o silenciar 🔕 cada tipus d'avís.", pushDesat: "Desat ✅", pushTxt: "Activa'ls i rebràs un avís quan hi hagi una convocatòria nova, el recordatori del wellness o un avís del club.", pushIOS: "A l'iPhone, els avisos només funcionen si l'app està a la pantalla d'inici: toca Compartir ⬆️ › «Afegir a la pantalla d'inici» i obre l'app des d'aquella icona.", pushActivar: "Activar els avisos", pushAraNo: "Ara no", pushNoPerm: "No has donat permís. Si canvies d'opinió, torna-ho a provar des de ☰ › Avisos al mòbil.", pushErr: "No s'han pogut activar. Torna-ho a provar d'aquí a una estona.", pushActiu: "✅ Els avisos estan activats en aquest mòbil.", pushBloq: "Has bloquejat els avisos d'aquesta app. Per activar-los, ves a la configuració del navegador o del mòbil › Notificacions › CN Navàs.", pushNoSup: "Aquest navegador no permet avisos. Prova-ho amb Chrome (Android) o amb l'app afegida a la pantalla d'inici (iPhone).", pushProvar: "Enviar-me un avís de prova", pushProvat: "Fet ✅ T'hauria d'arribar en uns segons.", pushDesactivar: "Desactivar els avisos en aquest mòbil", pushQue: "Els avisos només diuen que hi ha alguna cosa nova (mai dades privades). Si comparteixes el mòbil, en sortir de l'app es desactiven.", pfStaff: "Tu també surts a Equip, a l'apartat de l'equip tècnic. Els nedadors veuran el teu nom i les respostes per conèixer-nos.", eqStaff: "Equip tècnic", pfProva: "👁️ Mode prova: així ho veu un nedador. No es desa res.", pfConeixerTxt: "Una pregunta per casella. Respon les que vulguis.", pfIntro: "Totes les preguntes són opcionals: respon només el que vulguis. Ho pots canviar sempre que vulguis.", pfSecJo: "📏 Sobre tu", pfSecAigua: "🏊 A l'aigua", pfSecTu: "🎯 Com ets i què esperes", pfSecConeixer: "😄 Per conèixer-nos", pfNomesTec: "🔒 Només ho veu l'equip tècnic", pfEquipVeu: "👥 Ho veuran els teus companys a Equip", pfTriaVaries: "Pots triar-ne més d'un.", pfDesar: "Desar el perfil", pfDesat: "Fet ✅ Perfil desat.", pf_alcada: "Alçada (cm)", pf_pes: "Pes (kg)", pf_estilFav: "Estil preferit", pf_prova: "Prova preferida", pf_estilPitjor: "L'estil que menys t'agrada", pf_treball: "El treball que més t'agrada", pf_paraules: "Com et definiries en 3 paraules?", pf_objEsport: "Què esperes del final de temporada a la piscina?", pf_objFora: "I fora de la natació, què t'agradaria aconseguir aquest any?", pf_riure: "Què és el que més et fa riure o gaudir de la natació?", pf_llibre: "Llibre preferit", pf_peli: "Pel·lícula o sèrie preferida", pf_canco: "Cançó o grup preferit", pf_color: "Color preferit", pf_numero: "Número preferit", pf_menjar: "Menjar preferit", pf_superpoder: "Si tinguessis un superpoder, quin seria?", eqTxt: "L'equip! Toca un company o companya per conèixer-lo una mica més.", eqTxtTec: "Nedadors amb compte a l'app. Tu veus també la part privada del perfil.", eqBuit: "Encara no hi ha ningú.", eqTu: "tu", eqSense: "Encara no ha omplert el perfil.", eqRes: "No ha respost les preguntes per conèixer-nos.", eqAct: "Actualitzat:", eq_riure: "Li fa riure", eq_llibre: "Llibre", eq_peli: "Peli o sèrie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Menjar", eq_superpoder: "Superpoder",
             elMeuPerfil: "El meu perfil", comEtDiem: "Com vols que et diguem?", comEtDiemAj: "Pots posar el teu nom, un mot o com t'agradi (màx. 25 lletres). Només canvia com et saluda l'app.", nomDesat: "Fet ✅ A partir d'ara et direm així.", desarNom: "Desar el nom", canviContra: "Canviar contrasenya",
       antiga: "Contrasenya actual", nova: "Contrasenya nova", desar: "Desar", desat: "Fet ✅ Contrasenya canviada.",
       ajudaTxt: "Dubtes amb l'app? Parla amb el Jaime a la piscina. Mai enviïs la teva contrasenya a ningú, ni tan sols al club.",
@@ -103,7 +103,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
         credencials: "Usuari o contrasenya incorrectes.", bloquejat: "Massa intents. Espera 15 minuts o demana al club que et desbloquegi.",
         inactiu: "Aquest compte no està actiu. Parla amb el club.", espera: "Massa intents seguits. Espera un minut.",
         sessio: "La sessió ha caducat. Torna a entrar.", xarxa: "No hi ha connexió. Torna-ho a provar.", altre: "Alguna cosa ha fallat. Torna-ho a provar.",
-        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", tutor: "Escriu el nom complet del pare, mare o tutor i marca l'autorització.", privacitat: "Cal acceptar la informació de privacitat.", sense_consentiment: "Per fer el wellness a l'app, primer cal el teu permís (menú ☰ › Privacitat).", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho.", nom_llarg: "Massa llarg: màxim 25 lletres."
+        noCoincideixen: "Les contrasenyes no coincideixen.", contrasenya_admin: "La contrasenya d'administrador ha de tenir com a mínim 12 caràcters.", permis: "No tens permís per fer això.", sense_entreno: "Aquest apartat no està actiu per a tu.", tutor: "Escriu el nom complet del pare, mare o tutor i marca l'autorització.", privacitat: "Cal acceptar la informació de privacitat.", sense_consentiment: "Per fer el wellness a l'app, primer cal el teu permís (menú ☰ › Privacitat).", sense_perfil: "El teu perfil encara no està connectat al wellness. Parla amb el Jaime.", ja_fet: "Ja has fet el wellness d'aquesta sessió. Gràcies!", dades: "Falta alguna resposta. Revisa-ho.", nom_llarg: "Massa llarg: màxim 25 lletres.", tancat: "Aquest repte ja està tancat.", massa_propostes: "Ja tens 3 propostes pendents. Espera que el Jaime les revisi.", massa_llarg: "Massa llarg (màxim 300 caràcters).", massa_rapid: "Espera uns segons abans d'enviar un altre missatge."
       }
     },
     es: {
@@ -185,7 +185,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
       menu: "Menú", botiga: "Tienda", reunio: "Pedir reunión", quotes: "Cuotas", eix: "Eix (báscula)", documents: "Documentos",
       perfil: "Cambiar contraseña", idioma: "Idioma · Català", ajuda: "Ayuda", sortir: "Salir", sortirTot: "Salir de todos los dispositivos",
       tancar: "Cerrar",
-comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", calTots: "Todos", pushTit: "Avisos en el móvil", pushQuins: "¿De qué quieres que te avise?", pushQuinsTxt: "Toca para activar 🔔 o silenciar 🔕 cada tipo de aviso.", pushDesat: "Guardado ✅", pushTxt: "Actívalos y recibirás un aviso cuando haya una convocatoria nueva, el recordatorio del wellness o un aviso del club.", pushIOS: "En el iPhone, los avisos solo funcionan si la app está en la pantalla de inicio: toca Compartir ⬆️ › «Añadir a la pantalla de inicio» y abre la app desde ese icono.", pushActivar: "Activar los avisos", pushAraNo: "Ahora no", pushNoPerm: "No has dado permiso. Si cambias de opinión, vuelve a probarlo desde ☰ › Avisos en el móvil.", pushErr: "No se han podido activar. Vuelve a probarlo dentro de un rato.", pushActiu: "✅ Los avisos están activados en este móvil.", pushBloq: "Has bloqueado los avisos de esta app. Para activarlos, ve a la configuración del navegador o del móvil › Notificaciones › CN Navàs.", pushNoSup: "Este navegador no permite avisos. Pruébalo con Chrome (Android) o con la app añadida a la pantalla de inicio (iPhone).", pushProvar: "Enviarme un aviso de prueba", pushProvat: "Hecho ✅ Te debería llegar en unos segundos.", pushDesactivar: "Desactivar los avisos en este móvil", pushQue: "Los avisos solo dicen que hay algo nuevo (nunca datos privados). Si compartes el móvil, al salir de la app se desactivan.", pfStaff: "Tú también sales en Equipo, en el apartado del equipo técnico. Los nadadores verán tu nombre y las respuestas para conocernos.", eqStaff: "Equipo técnico", pfProva: "👁️ Modo prueba: así lo ve un nadador. No se guarda nada.", pfConeixerTxt: "Una pregunta por casilla. Responde las que quieras.", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
+comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (máx. 25 letras).", calTots: "Todos", cancel: "Cancelar", eqReptes: "Retos", eqXat: "Chat", eqGent: "Equipo", rpBuit: "Todavía no hay ningún reto. ¡Propón uno! 😉", rpObert: "Abierto hasta", rpTancat: "Cerrado", rpTria: "Toca tu voto:", rpCanvia: "Ya has votado. Puedes cambiar el voto hasta que se cierre.", rpVotat: "Voto guardado ✅", rpVots: "Votos", rpSenseVots: "Nadie ha votado.", rpNomesTec: "👀 Resultados en directo: solo los ve el equipo técnico.", rpRegles: "Los retos son para reír y hacer equipo, nunca para hacer daño. Todo queda registrado y los entrenadores lo revisan.", rpProposa: "Propón un reto", rpPropTxt: "Jaime lo revisará antes de publicarlo.", rpPregunta: "La pregunta", rpExemple: "¿Quién ha estado más fuerte esta semana?", rpQui: "Se vota entre…", rpCompanys: "Compañeros", rpEntrenadors: "Entrenadores", rpOpcions: "Opciones", rpOps: "Opciones (separadas con ;)", rpOpsEx: "Pizza; Hamburguesa; Sushi", rpEnviar: "Enviar la propuesta", rpEnviat: "Enviada ✅ Jaime la revisará.", rpPublicat: "Publicado ✅", xatAvis: "Chat del grupo. Todo lo que se escribe queda registrado y lo pueden ver los entrenadores. Respeto siempre: si alguien te hace sentir mal, toca ⚠️ o habla con un entrenador.", xatEscriu: "Escribe un mensaje…", xatEnviar: "Enviar", xatBuit: "Todavía no hay mensajes. ¡Saluda! 👋", xatAvisar: "Avisar de este mensaje", xatAvisarQ: "¿Quieres avisar a los entrenadores de este mensaje?", xatSegur: "¿Avisar? ⚠️", xatAmagar: "Ocultar el mensaje", xatMostrar: "Volver a mostrar", xatAmagat: "oculto", pushTit: "Avisos en el móvil", pushQuins: "¿De qué quieres que te avise?", pushQuinsTxt: "Toca para activar 🔔 o silenciar 🔕 cada tipo de aviso.", pushDesat: "Guardado ✅", pushTxt: "Actívalos y recibirás un aviso cuando haya una convocatoria nueva, el recordatorio del wellness o un aviso del club.", pushIOS: "En el iPhone, los avisos solo funcionan si la app está en la pantalla de inicio: toca Compartir ⬆️ › «Añadir a la pantalla de inicio» y abre la app desde ese icono.", pushActivar: "Activar los avisos", pushAraNo: "Ahora no", pushNoPerm: "No has dado permiso. Si cambias de opinión, vuelve a probarlo desde ☰ › Avisos en el móvil.", pushErr: "No se han podido activar. Vuelve a probarlo dentro de un rato.", pushActiu: "✅ Los avisos están activados en este móvil.", pushBloq: "Has bloqueado los avisos de esta app. Para activarlos, ve a la configuración del navegador o del móvil › Notificaciones › CN Navàs.", pushNoSup: "Este navegador no permite avisos. Pruébalo con Chrome (Android) o con la app añadida a la pantalla de inicio (iPhone).", pushProvar: "Enviarme un aviso de prueba", pushProvat: "Hecho ✅ Te debería llegar en unos segundos.", pushDesactivar: "Desactivar los avisos en este móvil", pushQue: "Los avisos solo dicen que hay algo nuevo (nunca datos privados). Si compartes el móvil, al salir de la app se desactivan.", pfStaff: "Tú también sales en Equipo, en el apartado del equipo técnico. Los nadadores verán tu nombre y las respuestas para conocernos.", eqStaff: "Equipo técnico", pfProva: "👁️ Modo prueba: así lo ve un nadador. No se guarda nada.", pfConeixerTxt: "Una pregunta por casilla. Responde las que quieras.", pfIntro: "Todas las preguntas son opcionales: responde solo lo que quieras. Puedes cambiarlo siempre que quieras.", pfSecJo: "📏 Sobre ti", pfSecAigua: "🏊 En el agua", pfSecTu: "🎯 Cómo eres y qué esperas", pfSecConeixer: "😄 Para conocernos", pfNomesTec: "🔒 Solo lo ve el equipo técnico", pfEquipVeu: "👥 Lo verán tus compañeros en Equipo", pfTriaVaries: "Puedes elegir más de uno.", pfDesar: "Guardar el perfil", pfDesat: "Hecho ✅ Perfil guardado.", pf_alcada: "Estatura (cm)", pf_pes: "Peso (kg)", pf_estilFav: "Estilo preferido", pf_prova: "Prueba preferida", pf_estilPitjor: "El estilo que menos te gusta", pf_treball: "El trabajo que más te gusta", pf_paraules: "¿Cómo te definirías en 3 palabras?", pf_objEsport: "¿Qué esperas del final de temporada en la piscina?", pf_objFora: "Y fuera de la natación, ¿qué te gustaría conseguir este año?", pf_riure: "¿Qué es lo que más te hace reír o disfrutar de la natación?", pf_llibre: "Libro preferido", pf_peli: "Película o serie preferida", pf_canco: "Canción o grupo preferido", pf_color: "Color preferido", pf_numero: "Número preferido", pf_menjar: "Comida preferida", pf_superpoder: "Si tuvieras un superpoder, ¿cuál sería?", eqTxt: "¡El equipo! Toca un compañero o compañera para conocerle un poco más.", eqTxtTec: "Nadadores con cuenta en la app. Tú ves también la parte privada del perfil.", eqBuit: "Todavía no hay nadie.", eqTu: "tú", eqSense: "Todavía no ha rellenado el perfil.", eqRes: "No ha respondido las preguntas para conocernos.", eqAct: "Actualizado:", eq_riure: "Le hace reír", eq_llibre: "Libro", eq_peli: "Peli o serie", eq_canco: "Música", eq_color: "Color", eq_numero: "Número", eq_menjar: "Comida", eq_superpoder: "Superpoder",
             elMeuPerfil: "Mi perfil", comEtDiem: "¿Cómo quieres que te llamemos?", comEtDiemAj: "Puedes poner tu nombre, un mote o lo que te guste (máx. 25 letras). Solo cambia cómo te saluda la app.", nomDesat: "Hecho ✅ A partir de ahora te llamaremos así.", desarNom: "Guardar el nombre", canviContra: "Cambiar contraseña",
       antiga: "Contraseña actual", nova: "Contraseña nueva", desar: "Guardar", desat: "Hecho ✅ Contraseña cambiada.",
       ajudaTxt: "¿Dudas con la app? Habla con Jaime en la piscina. Nunca envíes tu contraseña a nadie, ni siquiera al club.",
@@ -200,7 +200,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
         credencials: "Usuario o contraseña incorrectos.", bloquejat: "Demasiados intentos. Espera 15 minutos o pide al club que te desbloquee.",
         inactiu: "Esta cuenta no está activa. Habla con el club.", espera: "Demasiados intentos seguidos. Espera un minuto.",
         sessio: "La sesión ha caducado. Vuelve a entrar.", xarxa: "No hay conexión. Vuelve a intentarlo.", altre: "Algo ha fallado. Vuelve a intentarlo.",
-        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", tutor: "Escribe el nombre completo del padre, madre o tutor y marca la autorización.", privacitat: "Hay que aceptar la información de privacidad.", sense_consentiment: "Para hacer el wellness en la app, primero hace falta tu permiso (menú ☰ › Privacidad).", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo.", nom_llarg: "Demasiado largo: máximo 25 letras."
+        noCoincideixen: "Las contraseñas no coinciden.", contrasenya_admin: "La contraseña de administrador debe tener como mínimo 12 caracteres.", permis: "No tienes permiso para hacer esto.", sense_entreno: "Este apartado no está activo para ti.", tutor: "Escribe el nombre completo del padre, madre o tutor y marca la autorización.", privacitat: "Hay que aceptar la información de privacidad.", sense_consentiment: "Para hacer el wellness en la app, primero hace falta tu permiso (menú ☰ › Privacidad).", sense_perfil: "Tu perfil todavía no está conectado al wellness. Habla con Jaime.", ja_fet: "Ya has hecho el wellness de esta sesión. ¡Gracias!", dades: "Falta alguna respuesta. Revísalo.", nom_llarg: "Demasiado largo: máximo 25 letras.", tancat: "Este reto ya está cerrado.", massa_propostes: "Ya tienes 3 propuestas pendientes. Espera a que Jaime las revise.", massa_llarg: "Demasiado largo (máximo 300 caracteres).", massa_rapid: "Espera unos segundos antes de enviar otro mensaje."
       }
     }
   };
@@ -542,7 +542,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
       cos.appendChild(vistaTemps());
     } else if (pes === "equip" && (estatModul("equip") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("equip") !== "no"))) {
       if (estatModul("equip") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
-      cos.appendChild(vistaEquip());
+      cos.appendChild(vistaEquipTot());
     } else if (pes === "assistencia" && (estatModul("assistencia") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("assistencia") !== "no"))) {
       if (estatModul("assistencia") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaAssistencia());
@@ -1654,6 +1654,157 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
       if (r.error === "sessio") { oblida(); pantallaEntrar(); return; }
       pinta_(r);
     });
+  }
+
+  // ---------- Equip interactiu: reptes + xat ----------
+  function vistaEquipTot() {
+    var cont = el("div", { class: "eq" });
+    var tab = estat.eqTab || "reptes";
+    var sel = el("div", { class: "cal-zoom" }, [["reptes", "🏆 " + t("eqReptes")], ["xat", "💬 " + t("eqXat")], ["equip", "👥 " + t("eqGent")]].map(function (x) {
+      return el("button", { type: "button", class: x[0] === tab ? "on" : "", "aria-pressed": x[0] === tab ? "true" : "false", text: x[1], onclick: function () { estat.eqTab = x[0]; pantallaApp(); } });
+    }));
+    cont.appendChild(sel);
+    if (estat.xatTimer) { clearInterval(estat.xatTimer); estat.xatTimer = null; }
+    if (tab === "xat") cont.appendChild(vistaXat());
+    else if (tab === "equip") cont.appendChild(vistaEquip());
+    else cont.appendChild(vistaReptes());
+    return cont;
+  }
+
+  function vistaReptes() {
+    var cont = el("div", { class: "eq" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    function carrega() { crida("equipReptes", { token: estat.token }).then(function (r) { if (r.error === "sessio") { oblida(); pantallaEntrar(); return; } dibuixa(r); }); }
+    function dibuixa(r) {
+      cont.textContent = "";
+      if (!r.ok) { cont.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+      if (!r.reptes.length) cont.appendChild(el("div", { class: "caixa gris", text: t("rpBuit") }));
+      r.reptes.forEach(function (x) {
+        var fills = [el("div", { class: "rp-est", text: x.obert ? "🟢 " + t("rpObert") + " " + x.fi : "🏁 " + t("rpTancat") }), el("h2", { text: x.pregunta })];
+        if (x.obert && x.pot) {
+          var msg = el("div", { class: "ok", role: "status" });
+          var llista = el("div", { class: "pf-chips" });
+          x.cand.forEach(function (c) {
+            var on = x.meu === c.k;
+            llista.appendChild(el("button", { type: "button", class: "wm-mes pf-chip" + (on ? " on" : ""), "aria-pressed": on ? "true" : "false", text: c.nom, onclick: function (ev) {
+              var b = ev.currentTarget; b.disabled = true;
+              crida("equipVotar", { token: estat.token, repte: x.id, vot: c.k }).then(function (v) {
+                b.disabled = false;
+                if (v.ok) { x.meu = c.k; Array.prototype.forEach.call(llista.children, function (e) { e.className = "wm-mes pf-chip"; e.setAttribute("aria-pressed", "false"); }); b.className = "wm-mes pf-chip on"; b.setAttribute("aria-pressed", "true"); msg.className = "ok"; msg.textContent = t("rpVotat"); }
+                else { msg.className = "err"; msg.textContent = terr(v.error); }
+              });
+            } }));
+          });
+          fills.push(el("div", { class: "gris", text: x.meu ? t("rpCanvia") : t("rpTria") }), llista, msg);
+        } else if (x.obert) {
+          fills.push(el("div", { class: "gris", text: t("rpVots") + ": " + x.vots }));
+        }
+        if (x.res) {
+          var max = x.res.length ? x.res[0].n : 1;
+          if (!x.res.length) fills.push(el("div", { class: "gris", text: t("rpSenseVots") }));
+          x.res.forEach(function (o, i) {
+            fills.push(el("div", { class: "rp-res" }, [
+              el("span", { class: "rp-nom", text: (i === 0 && !x.obert ? "🏆 " : "") + o.nom }),
+              el("span", { class: "rp-barra" }, [el("span", { style: "width:" + Math.round(100 * o.n / max) + "%" })]),
+              el("span", { class: "rp-n", text: String(o.n) })]));
+          });
+          if (x.obert) fills.push(el("div", { class: "gris", text: t("rpNomesTec") }));
+        }
+        cont.appendChild(el("div", { class: "caixa" + (x.obert ? "" : " gris") }, fills));
+      });
+      if (r.potProposar) cont.appendChild(formProposta(carrega));
+      cont.appendChild(el("p", { class: "gris", text: t("rpRegles") }));
+    }
+    carrega();
+    return cont;
+  }
+
+  function formProposta(fet) {
+    var obert = false;
+    var caixa = el("div", { class: "caixa" });
+    function pinta() {
+      caixa.textContent = "";
+      if (!obert) { caixa.appendChild(el("button", { type: "button", class: "btn2", text: "➕ " + t("rpProposa"), onclick: function () { obert = true; pinta(); } })); return; }
+      var preg = el("input", { id: "rp-p", type: "text", maxlength: "140", placeholder: t("rpExemple") });
+      var tipus = "Companys";
+      var ops = el("input", { id: "rp-o", type: "text", maxlength: "300", placeholder: t("rpOpsEx") });
+      var lblOps = el("label", { for: "rp-o", text: t("rpOps") });
+      var tria = el("div", { class: "pf-chips" });
+      function dibTria() {
+        tria.textContent = "";
+        [["Companys", t("rpCompanys")], ["Entrenadors", t("rpEntrenadors")], ["Opcions", t("rpOpcions")]].forEach(function (o) {
+          tria.appendChild(el("button", { type: "button", class: "wm-mes pf-chip" + (tipus === o[0] ? " on" : ""), text: o[1], onclick: function () { tipus = o[0]; dibTria(); lblOps.style.display = ops.style.display = tipus === "Opcions" ? "" : "none"; } }));
+        });
+      }
+      dibTria(); lblOps.style.display = ops.style.display = "none";
+      var err = el("div", { class: "err", role: "alert" });
+      var bt = el("button", { type: "button", class: "btn", text: t("rpEnviar") });
+      bt.addEventListener("click", function () {
+        err.className = "err"; err.textContent = "";
+        bt.disabled = true;
+        crida("equipProposar", { token: estat.token, pregunta: preg.value, tipus: tipus, opcions: ops.value }).then(function (r) {
+          bt.disabled = false;
+          if (r.ok) { obert = false; pinta(); caixa.appendChild(el("div", { class: "ok", text: r.aprovat ? t("rpPublicat") : t("rpEnviat") })); if (r.aprovat) fet(); }
+          else err.textContent = terr(r.error);
+        });
+      });
+      caixa.appendChild(el("h2", { text: "➕ " + t("rpProposa") }));
+      caixa.appendChild(el("div", { class: "gris", text: t("rpPropTxt") }));
+      [el("label", { for: "rp-p", text: t("rpPregunta") }), preg, el("label", { text: t("rpQui") }), tria, lblOps, ops, err, bt,
+       el("button", { type: "button", class: "btn3", text: t("cancel"), onclick: function () { obert = false; pinta(); } })].forEach(function (e) { caixa.appendChild(e); });
+    }
+    pinta();
+    return caixa;
+  }
+
+  function vistaXat() {
+    var cont = el("div", { class: "eq" });
+    var avis = el("div", { class: "caixa avis xat-avis", text: "🔒 " + t("xatAvis") });
+    var llista = el("div", { class: "xat-llista", role: "log", "aria-live": "polite" }, [el("div", { class: "carrega", text: t("carregant") })]);
+    var inp = el("textarea", { id: "xat-t", class: "pf-ta xat-in", maxlength: "300", rows: "2", placeholder: t("xatEscriu"), "aria-label": t("xatEscriu") });
+    var err = el("div", { class: "err", role: "alert" });
+    var bt = el("button", { type: "button", class: "btn", text: t("xatEnviar") });
+    var darrer = "";
+    function hora(ms) { var d = new Date(ms); return nomDia(d.toISOString().slice(0, 10)).split(" ")[0].slice(0, 3) + " " + ("0" + d.getHours()).slice(-2) + ":" + ("0" + d.getMinutes()).slice(-2); }
+    function carrega(baixa) {
+      crida("xat", { token: estat.token }).then(function (r) {
+        if (r.error === "sessio") { oblida(); pantallaEntrar(); return; }
+        if (!r.ok) { llista.textContent = ""; llista.appendChild(el("div", { class: "caixa gris", text: terr(r.error) })); return; }
+        var sig = r.msgs.length + "|" + (r.msgs.length ? r.msgs[r.msgs.length - 1].k + "|" + r.msgs.filter(function (m) { return m.amagat; }).length : "");
+        if (sig === darrer) return;
+        darrer = sig;
+        var abaix = baixa || (llista.scrollHeight - llista.scrollTop - llista.clientHeight < 80);
+        llista.textContent = "";
+        if (!r.msgs.length) llista.appendChild(el("div", { class: "gris", text: t("xatBuit") }));
+        r.msgs.forEach(function (m) {
+          var accions = null;
+          if (r.staff) accions = el("button", { type: "button", class: "xat-acc", "aria-label": m.amagat ? t("xatMostrar") : t("xatAmagar"), text: m.amagat ? "👁️" : "🗑️", onclick: function () {
+            crida("xatAmagar", { token: estat.token, k: m.k, amagar: !m.amagat }).then(function () { darrer = ""; carrega(); }); } });
+          else if (!m.jo) accions = el("button", { type: "button", class: "xat-acc", "aria-label": t("xatAvisar"), text: "⚠️", onclick: function (ev) {
+            var b = ev.currentTarget;
+            if (!b.getAttribute("data-segur")) { b.setAttribute("data-segur", "1"); b.textContent = t("xatSegur"); b.className = "xat-acc segur"; return; }
+            b.disabled = true;
+            crida("xatAvisar", { token: estat.token, k: m.k }).then(function (x) { b.textContent = x.ok ? "✅" : "⚠️"; }); } });
+          llista.appendChild(el("div", { class: "xat-m" + (m.jo ? " jo" : "") + (m.staff ? " staff" : "") + (m.amagat ? " amagat" : "") }, [
+            el("div", { class: "xat-cap" }, [el("strong", { text: (m.staff ? "🧢 " : "") + (m.jo ? t("eqTu") : m.nom) }), el("span", { class: "gris", text: hora(m.t) + (m.amagat ? " · " + t("xatAmagat") : "") }), accions]),
+            el("div", { class: "xat-txt", text: m.text })]));
+        });
+        if (abaix) llista.scrollTop = llista.scrollHeight;
+      });
+    }
+    bt.addEventListener("click", function () {
+      var v = inp.value.trim();
+      err.textContent = "";
+      if (!v) return;
+      bt.disabled = true;
+      crida("xatEnviar", { token: estat.token, text: v }).then(function (r) {
+        bt.disabled = false;
+        if (r.ok) { inp.value = ""; carrega(true); } else err.textContent = terr(r.error);
+      });
+    });
+    cont.appendChild(avis); cont.appendChild(llista); cont.appendChild(inp); cont.appendChild(err); cont.appendChild(bt);
+    carrega(true);
+    estat.xatTimer = setInterval(function () { if (document.body.contains(llista)) carrega(); else { clearInterval(estat.xatTimer); estat.xatTimer = null; } }, 20000);
+    return cont;
   }
 
   function vistaEquip() {
