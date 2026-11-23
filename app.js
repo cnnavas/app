@@ -652,6 +652,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   var DSEM = { ca: ["dg", "dl", "dt", "dc", "dj", "dv", "ds"], es: ["do", "lu", "ma", "mi", "ju", "vi", "sá"] };
   function dObj(k) { return new Date(k + "T12:00:00"); }
   var DSEM_LL = { ca: ["diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte"], es: ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"] };
+  function datesConv(c) { return c.fi && c.fi !== c.data ? dataLlarga(c.data) + " – " + dataLlarga(c.fi) : dataLlarga(c.data); }
   function nomDia(k) { var n = DSEM_LL[estat.idioma][dObj(k).getDay()]; return n.charAt(0).toUpperCase() + n.slice(1); }
   function dCurt(k) { return nomDia(k) + " " + dObj(k).getDate(); }
   function diesFins(k, avui) { return Math.round((dObj(k) - dObj(avui)) / 864e5); }
@@ -1281,7 +1282,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   // ---------- Convocatòries ----------
   function clauNom(x) { return String(x || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\([^)]*\)/g, " ").replace(/[^a-z0-9]+/g, " ").trim(); }
   function convDe(e) {
-    var cs = ((dades() || {}).convs || []).filter(function (c) { return c.data >= e.inici && c.data <= e.fi; });
+    var cs = ((dades() || {}).convs || []).filter(function (c) { return c.data <= e.fi && (c.fi || c.data) >= e.inici; });
     if (!cs.length) return null;
     var ke = clauNom(e.nom);
     var bo = cs.filter(function (c) { var kc = clauNom(c.nom); return kc.indexOf(ke) >= 0 || ke.indexOf(kc) >= 0 ||
@@ -1297,7 +1298,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     var fills = [
       el("h2", { text: "📣 " + t("convTit") + " · " + c.fase }),
       el("strong", { text: c.nom }),
-      el("span", { class: "gris", text: dataLlarga(c.data) + (c.sede ? " · " + c.sede : "") + (c.hConv ? " · " + c.hConv : "") }),
+      el("span", { class: "gris", text: datesConv(c) + (c.sede ? " · " + c.sede : "") + (c.hConv ? " · " + c.hConv : "") }),
       c.noPublicada ? el("span", { class: "gris", text: t("convNoPub") }) : null,
       (c.meus || []).length ? el("span", { class: pendents ? "conv-pend" : "ok", text: pendents ? t("convFalta") : ((c.meus || []).some(function (m) { return m.resposta; }) ? t("convRespost") : "") }) : null,
       perNed.length ? el("span", { class: "conv-pend", text: perNed.map(function (m) { return t("convNedResp").replace("{n}", String(m.nom).split(" ")[0]) + ": " + (m.resposta.va === "Sí" ? t("convSi") : t("convNo")); }).join(" · ") }) : null,
@@ -1312,7 +1313,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     apunta("convocatories");
     var y = window.scrollY || 0;
     var f = [];
-    f.push(el("div", { class: "conv-cap" }, [el("span", { class: "conv-fase", text: c.fase }), el("span", { class: "gris", text: dataLlarga(c.data) + (c.franja ? " · " + c.franja : "") })]));
+    f.push(el("div", { class: "conv-cap" }, [el("span", { class: "conv-fase", text: c.fase }), el("span", { class: "gris", text: datesConv(c) + (c.franja ? " · " + c.franja : "") })]));
     f.push(el("h2", { class: "conv-nom", text: c.nom }));
     if (c.noPublicada) f.push(el("div", { class: "caixa gris", text: t("convNoPub") }));
     if (missatge) f.push(el("div", { class: "ok gran", text: missatge }));
