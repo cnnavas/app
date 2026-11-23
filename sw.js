@@ -1,6 +1,6 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v40';
-const FITXERS = ['./', 'index.html', 'app.css?v=40', 'app.js?v=40', 'cos.js?v=40', 'wellness.js?v=40', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
+const VERSIO = 'cnn-v41';
+const FITXERS = ['./', 'index.html', 'app.css?v=41', 'app.js?v=41', 'cos.js?v=41', 'wellness.js?v=41', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS)).then(() => self.skipWaiting()));
@@ -20,7 +20,7 @@ self.addEventListener('fetch', e => {
 });
 
 // ---------- Avisos (push) ----------
-const PESTANYES_PUSH = ['avui', 'setmana', 'calendari', 'temps', 'equip', 'wmeu', 'assistencia', 'botiga'];
+const PESTANYES_PUSH = ['avui', 'setmana', 'calendari', 'temps', 'equip', 'wmeu', 'assistencia', 'botiga', 'polar'];
 self.addEventListener('push', e => {
   let j = {};
   try { j = e.data ? e.data.json() : {}; } catch (x) { j = { data: { text: e.data ? e.data.text() : '' } }; }
