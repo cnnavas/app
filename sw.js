@@ -1,5 +1,5 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v45';
+const VERSIO = 'cnn-v46';
 const FITXERS = ['./', 'index.html', 'app.css?v=45', 'app.js?v=45', 'cos.js?v=45', 'wellness.js?v=45', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
 
 self.addEventListener('install', e => {

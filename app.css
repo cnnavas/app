@@ -330,3 +330,15 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .xat-txt{font-size:16px;line-height:1.4;white-space:pre-wrap;word-break:break-word}
 .xat-in{min-height:60px}
 .xat-acc.segur{font-size:12px;font-weight:800;color:#F1C332;border:1px solid #F1C332;border-radius:8px;padding:2px 8px}
+.menu a.it{text-decoration:none;box-sizing:border-box}
+
+.av{cursor:pointer}
+.av-cap{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.av-fl{color:#F1C332;font-size:18px;line-height:1;transition:transform .2s}
+.av.obert .av-fl{transform:rotate(180deg)}
+.av-cos .txt{margin-top:8px}
+.av-cos .btn3{margin-top:10px}
+.av-toca{font-size:12px;margin-top:4px}
+.av.llegit{opacity:.6;border-left-color:#555}
+.av-vells{margin:4px 0 10px}
+.av.obert .av-toca{display:none}

@@ -79,7 +79,7 @@
       instPeu: "Així tindràs la icona del club com qualsevol altra app.", entrarApp: "Entrar a l'app",
       entrarTit: "Entrar", entrar: "Entrar", oblidat: "Si has oblidat la contrasenya, demana al club que et desbloquegi o et faci un codi nou.",
       hola: "Hola", avui: "Avui", setmana: "Setmana", calendari: "Calendari", temps: "Temps", equip: "Equip",
-      noAvisos: "Cap avís nou. Bon entrenament! 💪",
+      noAvisos: "Cap avís nou. Bon entrenament! 💪", avToca: "Toca per llegir-lo", avEntesos: "Entesos (amagar)", avTornar: "Tornar a mostrar", avLlegits: "Avisos llegits ({n})",
       wellTit: "Wellness", wellTxt: "Aviat el podràs omplir aquí mateix. De moment, fes servir el formulari de sempre.",
       wellBtn: "Obrir el formulari", wellFer: "Fer el wellness", wellProva: "Provar el wellness (no s'envia)", wellSessio: "Sessió de",
       wellFet: "Fet ✅ Gràcies!", wellForm: "o fes servir el formulari", wellSensePerfil: "El teu perfil encara no està connectat al wellness. De moment, fes servir el formulari.",
@@ -176,7 +176,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
       instPeu: "Así tendrás el icono del club como cualquier otra app.", entrarApp: "Entrar en la app",
       entrarTit: "Entrar", entrar: "Entrar", oblidat: "Si has olvidado la contraseña, pide al club que te desbloquee o te haga un código nuevo.",
       hola: "Hola", avui: "Hoy", setmana: "Semana", calendari: "Calendario", temps: "Tiempos", equip: "Equipo",
-      noAvisos: "Ningún aviso nuevo. ¡Buen entreno! 💪",
+      noAvisos: "Ningún aviso nuevo. ¡Buen entreno! 💪", avToca: "Toca para leerlo", avEntesos: "Entendido (ocultar)", avTornar: "Volver a mostrar", avLlegits: "Avisos leídos ({n})",
       wellTit: "Wellness", wellTxt: "Pronto lo podrás rellenar aquí mismo. De momento, usa el formulario de siempre.",
       wellBtn: "Abrir el formulario", wellFer: "Hacer el wellness", wellProva: "Probar el wellness (no se envía)", wellSessio: "Sesión de",
       wellFet: "Hecho ✅ ¡Gracias!", wellForm: "o usa el formulario", wellSensePerfil: "Tu perfil todavía no está conectado al wellness. De momento, usa el formulario.",
@@ -414,6 +414,59 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   function desaToken(tk) { estat.token = tk; escriu("token", tk); }
   function oblida() { estat.token = null; estat.inici = null; escriu("token", null); escriu("inici", null); }
 
+  // ---------- Avisos llegits (es recorden en aquest mòbil) ----------
+  function clauAvis(a) { var h = 0, x = (a.data || "") + "|" + (a.titol || "") + "|" + (a.text || ""); for (var i = 0; i < x.length; i++) h = (h * 31 + x.charCodeAt(i)) | 0; return String(h); }
+  function avisosLlegits() { try { var v = JSON.parse(llegeix("llegits") || "[]"); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
+  function marcaLlegit(k, si) {
+    if (estat.veureCom) return;   // «Veure com» no desa res
+    var l = avisosLlegits().filter(function (x) { return x !== k; });
+    if (si) l.push(k);
+    escriu("llegits", JSON.stringify(l.slice(-200)));
+  }
+  function vistaAvisos(d) {
+    var caixa = el("div", { class: "avisos" });
+    var llegits = estat.veureCom ? [] : avisosLlegits();
+    var nous = [], vells = [];
+    (d.avisos || []).forEach(function (a) { (llegits.indexOf(clauAvis(a)) >= 0 ? vells : nous).push(a); });
+    function targeta(a, llegit) {
+      var obert = false;
+      var cos2 = el("div", { class: "av-cos" });
+      var c = el("div", { class: "caixa avis av" + (llegit ? " llegit" : ""), role: "button", tabindex: "0", "aria-expanded": "false" }, [
+        el("div", { class: "av-cap" }, [
+          el("div", {}, [a.data ? el("div", { class: "data", text: a.data }) : null, el("div", { class: "tit", text: a.titol })]),
+          el("span", { class: "av-fl", "aria-hidden": "true", text: "▾" })]),
+        cos2]);
+      function obre() {
+        obert = !obert; c.setAttribute("aria-expanded", obert ? "true" : "false"); c.classList.toggle("obert", obert);
+        cos2.textContent = "";
+        if (!obert) return;
+        if (a.text) cos2.appendChild(el("div", { class: "txt", text: a.text }));
+        cos2.appendChild(el("button", { type: "button", class: "btn3", text: llegit ? "↩️ " + t("avTornar") : "✓ " + t("avEntesos"), onclick: function (ev) {
+          ev.stopPropagation(); marcaLlegit(clauAvis(a), !llegit); pinta(); } }));
+      }
+      c.addEventListener("click", obre);
+      c.addEventListener("keydown", function (ev) { if (ev.target === c && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); obre(); } });
+      if (!llegit) c.appendChild(el("div", { class: "av-toca gris", text: t("avToca") }));
+      return c;
+    }
+    var veureVells = false;
+    function pinta() {
+      llegits = estat.veureCom ? [] : avisosLlegits();
+      nous = []; vells = [];
+      (d.avisos || []).forEach(function (a) { (llegits.indexOf(clauAvis(a)) >= 0 ? vells : nous).push(a); });
+      caixa.textContent = "";
+      if (!nous.length) caixa.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
+      nous.forEach(function (a) { caixa.appendChild(targeta(a, false)); });
+      if (vells.length) {
+        caixa.appendChild(el("button", { type: "button", class: "btn3 av-vells", text: (veureVells ? "▴ " : "📂 ") + t("avLlegits").replace("{n}", vells.length),
+          onclick: function () { veureVells = !veureVells; pinta(); } }));
+        if (veureVells) vells.forEach(function (a) { caixa.appendChild(targeta(a, true)); });
+      }
+    }
+    pinta();
+    return caixa;
+  }
+
   // ---------- Inici ----------
   function guardaInici(r) {
     estat.inici = { nom: r.nom, alies: r.alies || "", rol: r.rol, moduls: r.moduls || {}, avisos: r.avisos || [], wellness: r.wellness || null, sessions: r.sessions || [], faltes: r.faltes || [], fills: r.fills || [], privacitat: r.privacitat || null, botigaUrl: r.botigaUrl || "", eixUrl: r.eixUrl || "", pushActiu: !!r.pushActiu, anivAvui: r.anivAvui || [], eixPend: r.eixPend || [] };
@@ -531,14 +584,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
         if (!tecnic && estatModul("assistencia") === "on") fl.push(el("button", { type: "button", class: "btn3", text: t("asVeure"), onclick: function () { estat.pestanya = "assistencia"; apunta("assistencia"); pantallaApp(); } }));
         cos.appendChild(el("div", { class: "caixa" }, fl));
       }
-      if (!d.avisos.length) cos.appendChild(el("div", { class: "caixa gris", text: t("noAvisos") }));
-      d.avisos.forEach(function (a) {
-        cos.appendChild(el("div", { class: "caixa avis" }, [
-          a.data ? el("div", { class: "data", text: a.data }) : null,
-          el("div", { class: "tit", text: a.titol }),
-          a.text ? el("div", { class: "txt", text: a.text }) : null
-        ]));
-      });
+      cos.appendChild(vistaAvisos(d));
     } else if (pes === "setmana" && (estatModul("setmana") === "on" || ((d.rol === "ADMIN" || d.rol === "TECNIC") && estatModul("setmana") !== "no"))) {
       if (estatModul("setmana") !== "on") cos.appendChild(el("div", { class: "caixa gris", text: t("ocultModul") }));
       cos.appendChild(vistaSetmana());
