@@ -342,3 +342,12 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .av.llegit{opacity:.6;border-left-color:#555}
 .av-vells{margin:4px 0 10px}
 .av.obert .av-toca{display:none}
+
+.fis{margin-top:6px}
+.fis-btn{display:flex;align-items:center;gap:6px;width:100%;text-align:left}
+.fis-btn .av-fl{margin-left:auto}
+.fis-btn.obert .av-fl{transform:rotate(180deg)}
+.fis-det .fis-guia{margin:6px 0}
+.fis-llista{margin:6px 0 2px;padding-left:18px}
+.fis-ex{margin:4px 0;line-height:1.35}
+.fis-fase{color:#F1C332}

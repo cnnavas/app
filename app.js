@@ -14,7 +14,7 @@
       oficial: "App oficial del Club Natació Navàs",
       ocultModul: "👁️ Només ho veus tu: aquest apartat encara està tancat per als nedadors (MÒDULS).",
       setmanaVinent: "Setmana vinent", aiguaK: "Aigua", secK: "Sec", kmK: "Km", mati: "Matí", tarda: "Tarda", sec: "Sec",
-      descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.",
+      descans: "Descans", festiu: "Festiu", avuiTag: "AVUI", setTancada: "La setmana encara no està publicada. El Jaime l'obrirà aviat.", fisTit: "Físic", fisAvui: "💪 Físic d'avui", fisVeure: "Veure exercicis", fisAmagar: "Amagar exercicis", fisSenseEx: "Els exercicis encara no estan escrits.", fisSuau: "intensitat suau", fisMitja: "intensitat mitjana", fisAlta: "intensitat alta", fisSer: "sèr.", fisFase: "Fase", fisSetm: "💪 Físic de la setmana",
       noObertaAdmin: "No publicada (només la veus tu)",
       avisarTit: "Avisar", faltesTit: "📋 Avisos de falta", avisarTxt: "Si un dia no pots venir, arribaràs tard o marxaràs abans, avisa aquí.", avisarBtn: "Avisar que no vinc / arribaré tard",
       perPares: "avisat pels pares", anullar: "Anul·lar", anullarSeg: "Vols anul·lar aquest avís?", quiFalta: "Qui?", quinDia: "Quin dia?", queFas: "Què passa?",
@@ -111,7 +111,7 @@ comEtDiemEq: "És el nom que veuran els teus companys a l'apartat Equip (màx. 2
       oficial: "App oficial del Club Natació Navàs",
       ocultModul: "👁️ Solo lo ves tú: este apartado todavía está cerrado para los nadadores (MÒDULS).",
       setmanaVinent: "Semana que viene", aiguaK: "Agua", secK: "Seco", kmK: "Km", mati: "Mañana", tarda: "Tarde", sec: "Seco",
-      descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.",
+      descans: "Descanso", festiu: "Festivo", avuiTag: "HOY", setTancada: "La semana todavía no está publicada. Jaime la abrirá pronto.", fisTit: "Físico", fisAvui: "💪 Físico de hoy", fisVeure: "Ver ejercicios", fisAmagar: "Ocultar ejercicios", fisSenseEx: "Los ejercicios todavía no están escritos.", fisSuau: "intensidad suave", fisMitja: "intensidad media", fisAlta: "intensidad alta", fisSer: "series", fisFase: "Fase", fisSetm: "💪 Físico de la semana",
       noObertaAdmin: "No publicada (solo la ves tú)",
       avisarTit: "Avisar", faltesTit: "📋 Avisos de falta", avisarTxt: "Si un día no puedes venir, llegarás tarde o te irás antes, avisa aquí.", avisarBtn: "Avisar que no voy / llegaré tarde",
       perPares: "avisado por los padres", anullar: "Anular", anullarSeg: "¿Quieres anular este aviso?", quiFalta: "¿Quién?", quinDia: "¿Qué día?", queFas: "¿Qué pasa?",
@@ -423,6 +423,52 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
     if (si) l.push(k);
     escriu("llegits", JSON.stringify(l.slice(-200)));
   }
+  // ---------- 💪 Físic ----------
+  function liniaExercici(e) {
+    var det = [];
+    if (e.s && (e.r || e.t)) det.push(e.s + " × " + (e.r || e.t)); else if (e.s) det.push(e.s + " " + t("fisSer")); else if (e.r || e.t) det.push(e.r || e.t);
+    if (e.r && e.t) det.push(e.t);
+    if (e.rm && e.rm !== "-") {
+      var n = parseFloat(String(e.rm).replace(",", "."));
+      if (!isNaN(n)) { if (n <= 1.5) n = n * 100; det.push((n >= 80 ? t("fisAlta") : n >= 60 ? t("fisMitja") : t("fisSuau")) + " (" + Math.round(n) + "% RM)"); }
+    }
+    return el("li", { class: "fis-ex" }, [el("strong", { text: e.n }), det.length ? el("span", { class: "gris", text: " · " + det.join(" · ") }) : null]);
+  }
+  function blocFisic(fs, ambDia) {
+    var obert = false;
+    var det = el("div", { class: "fis-det" });
+    var titol = (ambDia ? nomDia(fs.data) + " " + fs.data.slice(8, 10) + "/" + fs.data.slice(5, 7) + " · " : "") + (fs.tipus || t("fisTit")) + (fs.durada ? " · " + fs.durada + " min" : "");
+    var b = el("button", { type: "button", class: "btn3 fis-btn", "aria-expanded": "false" }, [
+      el("span", { "aria-hidden": "true", text: "💪 " }), el("span", { text: titol }), el("span", { class: "av-fl", "aria-hidden": "true", text: "▾" })]);
+    b.addEventListener("click", function () {
+      obert = !obert; b.setAttribute("aria-expanded", obert ? "true" : "false"); b.classList.toggle("obert", obert);
+      det.textContent = "";
+      if (!obert) return;
+      if (fs.guia) det.appendChild(el("div", { class: "gris fis-guia", text: fs.guia }));
+      if (!fs.ex || !fs.ex.length) { det.appendChild(el("div", { class: "gris", text: t("fisSenseEx") })); return; }
+      det.appendChild(el("ul", { class: "fis-llista" }, fs.ex.map(liniaExercici)));
+    });
+    return el("div", { class: "fis" }, [b, det]);
+  }
+  function fisicDe(r, data) {
+    var out = [];
+    ((r && r.setmanes) || []).forEach(function (s) { ((s.fisic && s.fisic.sessions) || []).forEach(function (fs) { if (fs.data === data) out.push(fs); }); });
+    return out;
+  }
+  function targetaFisicAvui() {
+    var caixa = el("div", {});
+    var avui = new Date(); var ka = avui.getFullYear() + "-" + ("0" + (avui.getMonth() + 1)).slice(-2) + "-" + ("0" + avui.getDate()).slice(-2);
+    function pinta(r) {
+      caixa.textContent = "";
+      var ss = fisicDe(r, ka);
+      if (!ss.length) return;
+      caixa.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("fisAvui") })].concat(ss.map(function (fs) { return blocFisic(fs, false); }))));
+    }
+    if (estat.cacheSetmana) pinta(estat.cacheSetmana);
+    else if (estatModul("setmana") !== "no") crida("setmana", { token: estat.token, veureCom: estat.veureCom ? estat.veureCom.id : null }).then(function (r) { if (r.ok) { estat.cacheSetmana = r; if (caixa.isConnected) pinta(r); } });
+    return caixa;
+  }
+
   function vistaAvisos(d) {
     var caixa = el("div", { class: "avisos" });
     var llegits = estat.veureCom ? [] : avisosLlegits();
@@ -563,6 +609,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
       if (d.sessions && d.sessions.length) {
         cos.appendChild(el("div", { class: "caixa" }, [el("h2", { text: t("entrenoTit") })].concat(d.sessions.map(function (s) { return botoSessio(s, false); }))));
       }
+      if (estatModul("setmana") !== "no" && (estatModul("fisic") === "on" || d.rol === "ADMIN" || d.rol === "TECNIC")) cos.appendChild(targetaFisicAvui());
       (d.convs || []).forEach(function (c) { cos.appendChild(targetaConv(c)); });
       var potAvisar = (d.rol === "NEDADOR" || d.rol === "PARE" || d.rol === "ADMIN") && !estat.veureCom &&
         (estatModul("avisar") === "on" || d.rol === "ADMIN") && (d.rol === "ADMIN" || (d.fills || []).some(function (f) { return f.entreno; }));
@@ -654,6 +701,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
           el("div", { class: "setm-tit", text: s.titol }),
           s.oberta === false ? el("div", { class: "wprova", text: t("noObertaAdmin") }) : null,
           s.obs ? el("div", { class: "setm-obs", text: s.obs }) : null,
+          s.fisic && s.fisic.fase ? el("div", { class: "setm-obs fis-fase", text: "💪 " + t("fisFase") + ": " + s.fisic.fase }) : null,
           el("div", { class: "setm-xifres" }, [
             el("div", {}, [el("strong", { text: s.aigua || "–" }), el("span", { text: t("aiguaK") })]),
             el("div", {}, [el("strong", { text: s.sec || "–" }), el("span", { text: t("secK") })]),
@@ -671,6 +719,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
           }
           franja(t("mati"), dd.am); franja(t("tarda"), dd.pm);
           if (dd.sec) linies.push(el("div", { class: "setm-lin" }, [el("span", { class: "setm-fr", text: t("sec") }), el("span", { class: "setm-xip sec", text: dd.sec.t })]));
+          ((s.fisic && s.fisic.sessions) || []).filter(function (fs) { return fs.data === dd.data; }).forEach(function (fs) { linies.push(blocFisic(fs, false)); });
           if (!linies.length) linies.push(el("div", { class: "gris", text: dd.festiu ? t("festiu") : t("descans") }));
           (r.sessions || []).filter(function (x) { return x.data === dd.data; }).forEach(function (x) { linies.push(botoSessio(x, true)); });
           var dm = dd.data ? dd.data.slice(8, 10) + "/" + dd.data.slice(5, 7) : "";
