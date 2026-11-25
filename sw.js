@@ -1,9 +1,9 @@
 /* CNN App · service worker: només guarda la "carcassa" (disseny i codi), mai dades. */
-const VERSIO = 'cnn-v51';
-const FITXERS = ['./', 'index.html', 'app.css?v=51', 'app.js?v=51', 'cos.js?v=51', 'wellness.js?v=51', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
+const VERSIO = 'cnn-v53';
+const FITXERS = ['./', 'index.html', 'app.css?v=53', 'app.js?v=53', 'cos.js?v=53', 'wellness.js?v=53', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'escut-192.png', 'badge-96.png'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(VERSIO).then(c => c.addAll(FITXERS.map(f => new Request(f, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 self.addEventListener('activate', e => {
   e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSIO).map(k => caches.delete(k)))).then(() => self.clients.claim()));
@@ -11,11 +11,12 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== self.location.origin) return;
+  // Primer la xarxa (sempre la versió més nova); si no hi ha connexió, la còpia guardada
   e.respondWith(
-    caches.open(VERSIO).then(c => c.match(e.request).then(guardat => {
-      const xarxa = fetch(e.request).then(r => { if (r.ok) c.put(e.request, r.clone()); return r; }).catch(() => guardat);
-      return guardat || xarxa;
-    }))
+    caches.open(VERSIO).then(c =>
+      fetch(e.request, { cache: 'no-cache' }).then(r => { if (r.ok) c.put(e.request, r.clone()); return r; })
+        .catch(() => c.match(e.request).then(g => g || c.match('index.html')))
+    )
   );
 });
 
