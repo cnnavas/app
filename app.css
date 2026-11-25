@@ -388,3 +388,16 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .versio-app{text-align:center;font-size:12px;margin-top:10px}
 
 .jc-honest{font-size:13px;color:#F1C332;margin:-4px 0 10px}
+
+.xat-m{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.rx-fila{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;align-items:center}
+.rx-xip{display:inline-flex;align-items:center;gap:4px;background:#111;border:1px solid #3A3A3A;border-radius:999px;padding:2px 8px;color:#fff;font:inherit;font-size:13px;cursor:pointer}
+.rx-xip.meva{border-color:#F1C332;background:#3A2F0C;color:#F1C332}
+.rx-mes{background:transparent;border:1px dashed #555;border-radius:999px;color:#BDBDBD;font-size:13px;padding:2px 8px;cursor:pointer}
+.rx-e{font-size:16px;line-height:1}
+.rx-img{width:20px;height:20px;object-fit:contain;display:block}
+.rx-picker{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;padding:8px;background:#111;border:1px solid #F1C332;border-radius:14px}
+.rx-op{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#1C1C1C;border:1px solid #333;border-radius:10px;cursor:pointer}
+.rx-op.meva{border-color:#F1C332;background:#3A2F0C}
+.rx-op .rx-e{font-size:22px}
+.rx-op .rx-img{width:30px;height:30px}
