@@ -427,7 +427,7 @@ comEtDiemEq: "Es el nombre que verán tus compañeros en el apartado Equipo (má
   function liniaExercici(e) {
     var det = [];
     if (e.s && (e.r || e.t)) det.push(e.s + " × " + (e.r || e.t)); else if (e.s) det.push(e.s + " " + t("fisSer")); else if (e.r || e.t) det.push(e.r || e.t);
-    if (e.r && e.t) det.push(e.t);
+    if (e.r && e.t && /[^0-9.,\s]/.test(e.t)) det.push(e.t);   // el temps només si porta unitat (30", 2')
     if (e.rm && e.rm !== "-") {
       var n = parseFloat(String(e.rm).replace(",", "."));
       if (!isNaN(n)) { if (n <= 1.5) n = n * 100; det.push((n >= 80 ? t("fisAlta") : n >= 60 ? t("fisMitja") : t("fisSuau")) + " (" + Math.round(n) + "% RM)"); }
