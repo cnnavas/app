@@ -415,3 +415,10 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .rp-h.ok{color:#fff}
 .rp-h.avui span{color:#F1C332;font-weight:700}
 .rp-hnota{font-size:12px;margin-top:6px}
+
+.xat-m.club{border:2px solid #F1C332;background:linear-gradient(135deg,#2A220A,#141414);max-width:100%;margin-left:0;margin-right:0}
+.xat-m.club .xat-txt{font-weight:700;color:#fff}
+.xat-escut{width:20px;height:20px;border-radius:50%;margin-right:4px;vertical-align:middle}
+.mm-ult{margin-top:10px;font-size:13px}
+.mm-l{display:flex;justify-content:space-between;gap:8px;font-size:14px;padding:4px 0;border-bottom:1px solid #222}
+.mm-l strong{color:#F1C332}
