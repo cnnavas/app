@@ -436,3 +436,19 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .mm-dt strong{color:#F1C332}
 .mm-dm{color:#7FD18B;font-size:13px}
 .mm-det[hidden]{display:none}
+
+/* v59 · sala d'Equip (grans / màsters) */
+.eq-sala{margin-bottom:8px}
+.eq-sala button{font-size:13px}
+.eq > .cal-zoom.c4{grid-template-columns:repeat(4,1fr)}
+.eq > .cal-zoom.eq-sala{grid-template-columns:repeat(2,1fr)}
+
+/* v60 · baixa */
+.bx .bx-tip{display:block;width:100%;text-align:left;background:#1C1C1C;border:2px solid #333;border-radius:12px;padding:12px;margin:8px 0;color:#EDEDED}
+.bx .bx-tip.on{border-color:#F1C332;background:#2A230A}
+.bx .bx-tip strong{display:block;font-size:16px;margin-bottom:4px}
+.bx .bx-tip span{display:block;font-size:13px;line-height:1.4}
+.bx .bx-perd{background:#2A1414;border-left:4px solid #B91C1C;border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.bx .bx-perd ul{margin:6px 0 0;padding-left:18px}
+.bx select,.bx textarea{width:100%;box-sizing:border-box;margin-top:4px}
+.bx .bx-si{background:#B91C1C;color:#fff}
