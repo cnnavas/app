@@ -422,3 +422,17 @@ button.conv-ll{width:100%;flex-direction:column;align-items:stretch;color:#fff;f
 .mm-ult{margin-top:10px;font-size:13px}
 .mm-l{display:flex;justify-content:space-between;gap:8px;font-size:14px;padding:4px 0;border-bottom:1px solid #222}
 .mm-l strong{color:#F1C332}
+
+/* v58 · detall de les millors marques */
+.mm-toca{font-size:13px;margin-top:6px}
+.mm-rank li.mm-li{display:block;cursor:pointer}
+.mm-fila{display:flex;align-items:center;gap:10px}
+.mm-fl{color:#F1C332;transition:transform .2s}
+.mm-li.obert .mm-fl{transform:rotate(180deg)}
+.mm-det{margin:8px 0 4px 38px;border-left:2px solid #F1C332;padding-left:10px}
+.mm-dl{padding:5px 0;border-bottom:1px solid #222;font-size:14px}
+.mm-dl:last-child{border-bottom:0}
+.mm-dt{margin-top:2px}
+.mm-dt strong{color:#F1C332}
+.mm-dm{color:#7FD18B;font-size:13px}
+.mm-det[hidden]{display:none}
